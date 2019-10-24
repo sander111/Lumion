@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lumion</title>
+    <base href="">
+    <link rel="stylesheet" href="app/fonts/fontello/css/fontello.css" media="screen">
+    <link rel="stylesheet" href="app/css/app.css" media="screen">
+</head>
+<body>
+    <div class="layout">
+        <header class="page-header">
+            <div class="uibox-container">
+                <div class="uibox-row header-top">
+                    <div class="col s3 header-left">
+                        <a class="logo-link" href="/">
+                            <img src="app/img/logo.png" alt="{$_modx->config.site_name}">
+                            <span class="logo-title">Lumion</span>
+                        </a>
+                    </div>
+                    <div class="col s9 header-right">
+                        <div class="search">
+                            <button type="button" class="btn icon-btn white-text search-toggle">
+                                <i class="icon icon-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="minicart">
+                            <button type="button" class="btn icon-btn white-text minicart-toggle">
+                                <span class="minicart-count">1</span>
+                                <i class="icon icon-cart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <ul class="header-nav">
+                            <li><a href="">Каталог</a></li>
+                            <li><a href="">Услуги</a></li>
+                        </ul>
+                        <button type="button" class="btn icon-btn nav-toggle">
+                            <svg width="35" height="24" viewBox="0 0 35 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="35" height="4" rx="2" fill="#CD293D"/>
+                                <rect width="26" height="4" rx="2" y="10" x="8" fill="#CD293D"/>
+                                <rect width="35" height="4" rx="2" y="20" fill="#CD293D"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="header-banner">
+            <img class="banner-img" src="uploads/image2-2.jpg" alt="">
+            <div class="banner-descr">
+                <div class="banner-container">
+                    <div class="banner-title">Засияй вместе <br>с LUMION</div>
+                    <a class="btn btn-primary link-btn primary red-light" href="">Подобрать онлайн</a>
+                </div>
+            </div>
+            <div class="banner-overlay"></div>
+        </div>
+        
+        <main class="main">
+            <div class="section categories categories-container">
+                <div class="category-list">
+                    <div class="col s6 category-item">
+                        <div class="category-item-inner">
+                            <a href="" class="category-img-link">
+                                <img class="category-item-img" src="uploads/categories/image1.jpg" alt="{$pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="">HoReCa</a>
+                                    <div class="category-item-intro white-text">Праздничное оформление ресторана новогодними гирляндами создает особую атмосферу, приподнятое настроение, ощущение сказки.</div>
+                                </div>
+                                <div class="category-item-footer">
+                                    <a class="category-item-more btn btn-secondary" href="">
+                                        <i class="icon icon-right-open-mini"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col s6 category-item">
+                        <div class="category-item-inner">
+                            <a href="" class="category-img-link">
+                                <img class="category-item-img" src="uploads/categories/image2.jpg" alt="{$pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="">Интерьер</a>
+                                    <div class="category-item-intro white-text">Праздничное оформление ресторана новогодними гирляндами создает особую атмосферу, приподнятое настроение, ощущение сказки.</div>
+                                    <div class="category-item-footer">
+                                        <a class="category-item-more btn btn-secondary" href="">
+                                            <i class="icon icon-right-open-mini"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="col s6 category-item">
+                        <div class="category-item-inner">
+                            <a href="" class="category-img-link">
+                                <img class="category-item-img" src="uploads/categories/beautification.jpg" alt="{$pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="">Благоустройство</a>
+                                    <div class="category-item-intro white-text">Праздничное оформление ресторана новогодними гирляндами создает особую атмосферу, приподнятое настроение, ощущение сказки.</div>
+                                </div>
+                                <div class="category-item-footer">
+                                    <a class="category-item-more btn btn-secondary" href="">
+                                        <i class="icon icon-right-open-mini"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="col s6 category-item">
+                        <div class="category-item-inner">
+                            <a href="" class="category-img-link">
+                                <img class="category-item-img" src="uploads/categories/shopping-center.jpg" alt="{$pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="">Торговый центр</a>
+                                    <div class="category-item-intro white-text">Праздничное оформление ресторана новогодними гирляндами создает особую атмосферу, приподнятое настроение, ощущение сказки.</div>
+                                </div>
+                            </div>
+                            <div class="category-item-footer">
+                                <a class="category-item-more btn btn-secondary" href="">
+                                    <i class="icon icon-right-open-mini"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col s6 category-item">
+                        <div class="category-item-inner">
+                            <a href="" class="category-img-link">
+                                <img class="category-item-img" src="uploads/categories/cottage.jpg" alt="{$pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="">Коттеджи</a>
+                                    <div class="category-item-intro white-text">Праздничное оформление ресторана новогодними гирляндами создает особую атмосферу, приподнятое настроение, ощущение сказки.</div>
+                                </div>
+                            </div>
+                            <div class="category-item-footer">
+                                <a class="category-item-more btn btn-secondary" href="">
+                                    <i class="icon icon-right-open-mini"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col s6 category-item">
+                        <div class="category-item-inner">
+                            <a href="" class="category-img-link">
+                                <img class="category-item-img" src="uploads/categories/developers.jpg" alt="{$pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="">Застройщики</a>
+                                    <div class="category-item-intro white-text">Праздничное оформление ресторана новогодними гирляндами создает особую атмосферу, приподнятое настроение, ощущение сказки.</div>
+                                </div>
+                            </div>
+                            <div class="category-item-footer">
+                                <a class="category-item-more btn btn-secondary" href="">
+                                    <i class="icon icon-right-open-mini"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col s6 category-item">
+                        <div class="category-item-inner">
+                            <a href="" class="category-img-link">
+                                <img class="category-item-img" src="uploads/categories/decor.jpg" alt="{$pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="">Декорации</a>
+                                    <div class="category-item-intro white-text">Праздничное оформление ресторана новогодними гирляндами создает особую атмосферу, приподнятое настроение, ощущение сказки.</div>
+                                </div>
+                            </div>
+                            <div class="category-item-footer">
+                                <a class="category-item-more btn btn-secondary" href="">
+                                    <i class="icon icon-right-open-mini"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            
+
+            <div class="section beautify darkless">
+                <div class="uibox-container">
+                    <div class="uibox-row">
+                        <div class="col s5 beautify-left">
+                            <div class="subtitle white-text">
+                                Украсьте помещение онлайн
+                            </div>
+                            <div class="intro white-text">
+                                Выберите тип вашего коттеджа
+                            </div>
+                            <ul class="beautify-nav metro-nav">
+                                <li class="white-text">
+                                    <span class="metro-nav-item-inner">
+                                        <img class="icon" src="app/svg/dacha.svg" alt="">
+                                        <span class="metro-nav-title white-text">Дача</span>
+                                    </span>
+                                </li>
+                                <li class="white-text">
+                                    <span class="metro-nav-item-inner">
+                                        <img class="icon" src="app/svg/cottage.svg" alt="">
+                                        <span class="metro-nav-title white-text">Коттедж</span>
+                                    </span>
+                                </li>
+                                <li class="white-text">
+                                    <span class="metro-nav-item-inner">
+                                        <img class="icon" src="app/svg/vacation-home.svg" alt="">
+                                        <span class="metro-nav-title white-text">Загородный дом</span>
+                                    </span>
+                                </li>
+                                <li class="white-text">
+                                    <span class="metro-nav-item-inner">
+                                        <img class="icon" src="app/svg/terrace.svg" alt="">
+                                        <span class="metro-nav-title white-text">Терасса</span>
+                                    </span>
+                                </li>
+                                <li class="white-text">
+                                    <span class="metro-nav-item-inner">
+                                        <img class="icon" src="app/svg/private-house.svg" alt="">
+                                        <span class="metro-nav-title">Частный дом</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col s7 beautify-right">
+                            <div class="img-layout">
+                                <img src="uploads/image-3-1.jpg" alt="">
+                                <a class="btn btn-primary primary link-btn" href="">Перейти в каталог</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section products-home">
+                <div class="uibox-container">
+                    <div class="uibox-row">
+                        <div class="col s7 products-home-left">
+                            <h2>Каталог</h2>
+                            <ul class="products-home-list">
+                                <li>
+                                    <a href="">
+                                        <span class="nav-icon">
+                                            <img class="icon" src="" alt="">
+                                        </span>
+                                        <span class="products-home-list-title">Гирлянда "String light" (нить)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="nav-icon">
+                                            <img class="icon" src="" alt="">
+                                        </span>
+                                        <span class="products-home-list-title">Гирлянда "Icicle" (бахрома)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="nav-icon">
+                                            <img class="icon" src="" alt="">
+                                        </span>
+                                        <span class="products-home-list-title">Гирлянда "Curtain" (штора)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="nav-icon">
+                                            <img class="icon" src="" alt="">
+                                        </span>
+                                        <span class="products-home-list-title">Гирлянда "Bulb string" (лампочки)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="nav-icon">
+                                            <img class="icon" src="" alt="">
+                                        </span>
+                                        <span class="products-home-list-title">Гирлянда "Led filament" (сосулька)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="nav-icon">
+                                            <img class="icon" src="" alt="">
+                                        </span>
+                                        <span class="products-home-list-title">Светодиодные новогодние мотивы</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a class="all-products-link" href="">Все товары</a>
+                        </div>
+                        <div class="col s5 products-home-right">
+                            <div class="section-img-wrap">
+                                <img class="section-img" src="uploads/lamps.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section fullscreen" style="padding: 0;">
+                <div class="uibox-row">
+                    <div class="col s5 section-col section-col-left">
+                        <div class="section-img-wrap">
+                            <img class="section-img" src="uploads/hall.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col s7 section-col section-col-right gd-dark">
+                        <div class="section-form">
+                            <h2 class="white-text">Для оптовых поставок за эксклюзивом</h2>
+                            <div class="form-layout">
+                                <form class="form dealers-form" action="send" method="POST">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="input-text" placeholder="Ваше имя">
+                                        <div class="error-msg"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="phone" class="input-text" placeholder="+380 (__) ___-__-__">
+                                        <div class="error-msg"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="msg" class="textarea" cols="30" rows="10" placeholder="Что хотели бы заказать?"></textarea>
+                                        <div class="error-msg"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary primary red-light">Отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section works">
+                <div class="uibox-container">
+                    <h2 class="black-text">Наши проекты</h2>
+                </div>
+                <div class="uibox-row works-list">
+                    <div class="col s3 work-item">
+                        <div class="work-item-inner">
+                            <a class="work-item-link" href="">
+                                <img class="work-item-img" src="uploads/work1.jpg" alt="">
+                            </a>
+                            <div class="work-item-content">
+                                <a class="work-item-title" href="">Парк Горького</a>
+                                <div class="work-item-intro">Светящиеся шары для парков, скверов, фасадов</div>
+                                <a class="btn btn-outlined link-btn" href="">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s3 work-item">
+                        <div class="work-item-inner">
+                            <a class="work-item-link" href="">
+                                <img class="work-item-img" src="uploads/work2.jpg" alt="">
+                            </a>
+                            <div class="work-item-content">
+                                <a class="work-item-title" href="">Парк Горького</a>
+                                <div class="work-item-intro">Светящиеся шары для парков, скверов, фасадов</div>
+                                <a class="btn btn-outlined link-btn" href="">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s3 work-item">
+                        <div class="work-item-inner">
+                            <a class="work-item-link" href="">
+                                <img class="work-item-img" src="uploads/work3.jpg" alt="">
+                            </a>
+                            <div class="work-item-content">
+                                <a class="work-item-title" href="">Парк Горького</a>
+                                <div class="work-item-intro">Светящиеся шары для парков, скверов, фасадов</div>
+                                <a class="btn btn-outlined link-btn" href="">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s3 work-item">
+                        <div class="work-item-inner">
+                            <a class="work-item-link" href="">
+                                <img class="work-item-img" src="uploads/work4.jpg" alt="">
+                            </a>
+                            <div class="work-item-content">
+                                <a class="work-item-title" href="">Парк Горького</a>
+                                <div class="work-item-intro">Светящиеся шары для парков, скверов, фасадов</div>
+                                <a class="btn btn-outlined link-btn" href="">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+
+        <footer class="page-footer">
+            <div class="uibox-container footer-top">
+                <div class="uibox-row footer-row">
+                    <div class="col s3 footer-col footer-left">
+                        <a class="footer-logo-link" href="">
+                            <img class="footer-logo" src="app/img/logo.png" alt="">
+                            <span class="footer-logo-title">Lumion</span>
+                        </a>
+                    </div>
+                    <div class="col s3 footer-col footer-center-left">
+                        <ul class="footer-list footer-nav">
+                            <li><a href="">Продукция</a></li>
+                            <li><a href="">Услуги</a></li>
+                            <li><a href="">О нас</a></li>
+                            <li><a href="">Новости</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s3 footer-col footer-center-right">
+                        <ul class="footer-list footer-info">
+                            <li><a href="tel:+380503222919">(050) 322 29 19</a></li>
+                            <li><a href="mailto:lumion.ua@ukr.net">lumion.ua@ukr.net</a></li>
+                            <li>с. Чайки, Київської обл. вул. Антонова, 3</li>
+                            <li><button class="btn get-map">Смотреть на карте</button></li>
+                        </ul>
+                    </div>
+                    <div class="col s3 footer-col footer-right">
+                        <div class="footer-text">
+                            Если у вас остались вопросы свяжитесь с нами по указанным контактам
+                        </div>
+                        <ul class="footer-soc">
+                            <li><a href="" rel="nofollow"><i class="icon icon-facebook"></i></a></li>
+                            <li><a href="" rel="nofollow"><i class="icon icon-instagram"></i></a></li>
+                            <li><a href="" rel="nofollow"><i class="icon icon-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cpr">
+                <div class="uibox-container">
+                    <div class="uibox-row">
+                        <div class="cpr-left">© 2019. LUMION</div>
+                        <div class="cpr-right"><a href="">Разработано в BLENDER</a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="menu-layout">
+        <div class="menu-header">
+            <div class="uibox-container">
+                <div class="uibox-row">
+                    <div class="col s3">
+                        <a class="logo-link" href="/">
+                            <img src="app/img/logo.png" alt="{$_modx->config.site_name}">
+                            <span class="logo-title">Lumion</span>
+                        </a>
+                    </div>
+                    <div class="col s9 header-right">
+                        <div class="search">
+                            <button type="button" class="btn icon-btn white-text search-toggle">
+                                <i class="icon icon-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="langs">
+                            <div class="dropdown">
+                                <div class="dropdown-current">
+                                    <div class="dropdown-val">Ru</div>
+                                    <div class="dropdown-arrow">
+                                        <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.25593 4.12713C3.85716 4.58759 3.14284 4.58759 2.74407 4.12713L1.03586 2.15465C0.474981 1.50701 0.935034 0.5 1.79179 0.5L5.20821 0.500001C6.06497 0.500001 6.52502 1.50701 5.96414 2.15465L4.25593 4.12713Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dropdown-list">
+                                    <div class="dropdown-item">
+                                        <a href="">Ru</a>
+                                    </div>
+                                    <div class="dropdown-item">
+                                        <a href="">Ua</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-phones">
+                            <ul class="menu-phones-list">
+                                <li><a href="tel:+380503222919">(050) 322 29 19</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn icon-btn menu-close-btn">
+                            <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3.70392" y="0.213379" width="30.3796" height="4.67378" rx="2.33689" transform="rotate(45 3.70392 0.213379)" fill="#CD293D"/>
+                                <rect x="24.9847" y="3.51855" width="30.3796" height="4.67378" rx="2.33689" transform="rotate(135 24.9847 3.51855)" fill="#CD293D"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-inner">
+            <div class="menu-body">
+                <div class="uibox-row menu-row">
+                    <div class="col s3 menu-col">
+                        <div class="menu-col-title">Области применения</div>
+                        <ul class="menu-list">
+                            <li><a href="">HoReCa</a></li>
+                            <li><a href="">Интерьер</a></li>
+                            <li><a href="">Торговый центр</a></li>
+                            <li><a href="">Благоустройство</a></li>
+                            <li><a href="">Застройщики</a></li>
+                            <li><a href="">Коттеджи</a></li>
+                            <li><a href="">Декорации</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s3 menu-col">
+                        <div class="menu-col-title">Каталог</div>
+                        <ul class="menu-list">
+                            <li><a href="">String light (нить)</a></li>
+                            <li><a href="">Icicle (бахрома)</a></li>
+                            <li><a href="">Curtain (штора)</a></li>
+                            <li><a href="">Bulb string (лампочки)</a></li>
+                            <li><a href="">Led filament (сосулька)</a></li>
+                            <li><a href="">Новогодние мотивы</a></li>
+                            <li><a href="">Акриловые фигуры</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s3 menu-col">
+                        <div class="menu-col-title">Услуги</div>
+                        <ul class="menu-list">
+                            <li><a href="">Разработка дизайна</a></li>
+                            <li><a href="">Разработка технического проекта</a></li>
+                            <li><a href="">Монтажные работы</a></li>
+                            <li><a href="">Демонтаж, чистка и упаковка гирлянд</a></li>
+                            <li><a href="">Изготовление несущих конструкций</a></li>
+                            <li><a href="">Доставка гирлянд</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s3 menu-col">
+                        <div class="menu-col-title">О компании</div>
+                        <ul class="menu-list">
+                            <li><a href="">Наша миссия</a></li>
+                            <li><a href="">Наши проекты</a></li>
+                            <li><a href="">Оплата и доставка</a></li>
+                            <li><a href="">Сотрудничество</a></li>
+                            <li><a href="">Блог</a></li>
+                            <li><a href="">Мы в соц. сетях</a></li>
+                        </ul>
+                        <ul class="header-soc">
+                            <li><a href="" rel="nofollow"><i class="icon icon-facebook"></i></a></li>
+                            <li><a href="" rel="nofollow"><i class="icon icon-instagram"></i></a></li>
+                            <li><a href="" rel="nofollow"><i class="icon icon-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="alert bottom">
+        <div class="uibox-container">
+            <div class="uibox-row">
+                <div class="alert-left">
+                    <p>Наш веб-сайт использует файлы cookie для персонализации контента и анализа нашего трафика.</p>
+                    <a href="" class="white-text">Узнать больше</a>
+                </div>
+                <div class="alert-right">
+                    <button class="btn btn-primary primary">Принять</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app/app.js"></script>
+</body>
+</html>

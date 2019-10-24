@@ -1,0 +1,49 @@
+.simple-banner {
+    position: relative;
+    background: $dark;
+}
+.simple-banner-inner {
+    padding: 11% 0 7% 0;
+    background: url('../img/banner-pattern.png') repeat;
+}
+.simple-banner .banner-title {
+    text-shadow: none;
+}
+.banner-text p {
+    font-size: 20px;
+    line-height: 28px;
+}
+.banner-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.simple-banner-img-wrap {
+    position: relative;
+    width: 66%;
+    margin: 35px 15px 0 0;
+}
+.simple-banner-img-wrap::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 33%;
+    padding: 33% 0 0 0;
+    background: rgba(255, 27, 0, 0.93);
+}
+.simple-banner-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 33%;
+    padding: 33% 0 0 0;
+    background: rgba(255, 217, 0, 0.98);
+}
+.simple-banner-img {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+}

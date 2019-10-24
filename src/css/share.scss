@@ -1,0 +1,29 @@
+.share {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+}
+.share-title {
+    font-size: 20px;
+    line-height: 24px;
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+}
+.share-list {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 20px;
+}
+.share-item {
+    margin: 0 3px;
+    padding: 0;
+    font-size: 1.6rem;
+    list-style: none;
+    color: $primaryText;
+
+    a {
+        color: $primaryText;
+    }
+    a:hover {
+        color: $primary;
+    }
+}

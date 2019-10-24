@@ -1,0 +1,26 @@
+.calc-lead-block {
+    margin: 12% 0 38px 0;
+}
+.calc-lead-block-inner {
+    position: relative;
+    background: #BA1C2F;
+    padding: 35px 0;
+}
+.calc-lead-block .uibox-container {
+    position: relative;
+}
+.calc-lead-block-img-wrap {
+    position: absolute;
+    bottom: -41px;
+    line-height: 1px;
+    width: 26%;
+    left: 0;
+}
+.calc-lead-block-inner-wrap {
+    margin: 0 0 0 36%;
+}
+.calc-lead-block-inner .h3 {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    margin: 0 0 10px 0;
+}
