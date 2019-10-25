@@ -52,8 +52,10 @@
 .footer-list li {
     margin: 20px 0;
     max-width: 185px;
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
 }
 .footer-text {
+    font-family: $fontRegular, Arial, Helvetica, sans-serif;
     margin: 20px 0 20px 10%;
     position: relative;
     line-height: 20px;
@@ -81,6 +83,7 @@
     }
 }
 .get-map {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
     background: transparent;
     border: none;
     color: #FE7359;

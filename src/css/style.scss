@@ -2,8 +2,10 @@
 @import './components/uibox-grid/css/uibox-grid.css';
 
 $fontLight: 'Avenir Next Cyr Light';
+
 $fontRegular: 'Avenir Next Cyr Regular';
 $fontMedium: 'Avenir Next Cyr Medium';
+$fontDemi: 'Avenir Next Cyr Demi';
 $fontBold: 'Avenir Next Cyr Bold';
 
 // Colors
@@ -29,6 +31,10 @@ $gdDark: linear-gradient(89.04deg, #130F0C 29.97%, rgba(53, 53, 53, 0) 93.01%), 
 	font-style: normal;
 }
 
+
+
+
+// Fonts
 @font-face {
     font-family: 'Avenir Next Cyr Regular';
     font-display: swap;
@@ -40,7 +46,6 @@ $gdDark: linear-gradient(89.04deg, #130F0C 29.97%, rgba(53, 53, 53, 0) 93.01%), 
 	font-weight: normal;
 	font-style: normal;
 }
-
 @font-face {
     font-family: 'Avenir Next Cyr Medium';
     font-display: swap;
@@ -52,7 +57,17 @@ $gdDark: linear-gradient(89.04deg, #130F0C 29.97%, rgba(53, 53, 53, 0) 93.01%), 
 	font-weight: bold;
 	font-style: normal;
 }
-
+@font-face {
+    font-family: 'Avenir Next Cyr Demi';
+    font-display: swap;
+	src: url('../fonts/AvenirNextCyr-Demi.eot');
+	src: local('Avenir Next Cyr Demi'), local('AvenirNextCyr-Demi'),
+		url('../fonts/AvenirNextCyr-Demi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/AvenirNextCyr-Demi.woff') format('woff'),
+		url('../fonts/AvenirNextCyr-Demi.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
 @font-face {
     font-family: 'Avenir Next Cyr Bold';
     font-display: swap;
@@ -78,7 +93,7 @@ a:hover {
 }
 
 h2 {
-    font-family: $fontBold, Arial, Helvetica, sans-serif;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
     font-size: 40px;
     line-height: 49px;
     letter-spacing: 1px;
@@ -103,6 +118,7 @@ p {
     margin: 10px 0;
 }
 .intro {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 1px;
@@ -127,6 +143,7 @@ p {
     transition: all .3s ease 0s;
 }
 .btn-primary {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
     color: #fff;
     letter-spacing: 0.04em;
     padding: 1.7rem 1.9rem;
@@ -161,13 +178,14 @@ p {
     transition: all .3s ease 0s;
 }
 .link-btn {
-    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
 }
 .icon-btn:hover,
 .icon-btn:hover > * {
     color: $primary;
 }
 .btn-outlined {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
     color: $primary;
     border: 1px solid $primary;
     letter-spacing: 0.04em;
@@ -267,6 +285,7 @@ p {
     } 
 }
 .products-home-list-title {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
     display: inline-block;
     margin: 0 0 0 30px;
 }
@@ -276,7 +295,7 @@ p {
     color: #484848;
     display: inline-block;
     margin: 30px 0 0 80px;
-    font-family: $fontBold, Arial, Helvetica, sans-serif;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
 }
 .all-products-link:hover {
     color: $primary;
@@ -316,7 +335,7 @@ p {
 .section h2 {
     margin: 12px 0 25px 0;
     line-height: 1;
-    font-family: $fontBold, Arial, Helvetica, sans-serif;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
 }
 
 
@@ -394,6 +413,7 @@ p {
     font-size: 4rem;
 }
 .soc-title {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
     width: 100%;
     display: block;
     padding: 0 0 0 40px;
@@ -438,7 +458,7 @@ p {
         height: 55px;
         line-height: 55px;
         font-size: 20px;
-        font-family: $fontMedium, Arial, Helvetica, sans-serif;
+        font-family: $fontDemi, Arial, Helvetica, sans-serif;
         border-radius: 50%;
         border: 3px solid #CD293D;
     }

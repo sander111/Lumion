@@ -1,7 +1,7 @@
 .sidebar-title {
     padding: 22px 35px;
     font-size: 1.2rem;
-    font-family: $fontBold, Arial, Helvetica, sans-serif;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
 }
 .sidebar-nav {
     margin: 0;
@@ -9,6 +9,7 @@
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.09);
 
     li {
+        font-family: $fontMedium, Arial, Helvetica, sans-serif;
         margin: 0;
         list-style: none;
         border-bottom: 1px solid #EAEAEA;

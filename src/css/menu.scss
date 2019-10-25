@@ -59,7 +59,7 @@
 }
 .langs,
 .menu-phones {
-    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
 }
 .langs {
     margin: 0 15px;
@@ -67,7 +67,6 @@
 .dropdown-arrow {
     margin: -2px 0 0 2px;
 }
-
 .menu-phones {
     margin: 0 55px 0 15px;
 }
@@ -88,11 +87,31 @@
     font-family: $fontBold, Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: 22px;
+
+    a {
+        position: relative;
+        color: #fff;
+    }
+}
+.menu-col-title a::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    border-radius: 2px;
+    height: 3px;
+    width: 0px;
+    background: $primary;
+    box-shadow: 0px 0px 6px #CD293D;
+    transition: all .3s ease 0s;
+}
+.menu-col-title a:hover::before {
+    width: 100%;
 }
 .menu-list {
     margin: 30px 0 0 0;
 
     li {
+        font-family: $fontMedium, Arial, Helvetica, sans-serif;
         list-style: none;
         line-height: 20px;
         margin: 14px 0;

@@ -27,10 +27,12 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
 }
 .product-item-title {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
     color: #383838;
     line-height: 18px;
 }
 .product-sticker {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
     position: absolute;
     display: block;
     top: 13px;

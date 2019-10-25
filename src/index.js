@@ -17,7 +17,7 @@ $(document).ready(function(){
         if(i > 1) {
             if( i % 2 === 0) {
                 offset = {
-                    height: offsets[i - 2].height +  $(items[i]).outerHeight() / box * 100 + 10.4
+                    height: offsets[i - 2].height +  $(items[i]).outerHeight() / box * 100 + 10.75
                 }
             } else {
                 offset = {
@@ -27,7 +27,7 @@ $(document).ready(function(){
         } else {
             if (i % 2 === 0) {
                 offset = {
-                    height: $(items[i]).outerHeight() / box * 100 + 14.7
+                    height: $(items[i]).outerHeight() / box * 100 + 15.05
                 }
             } else {
                 offset = {

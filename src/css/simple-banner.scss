@@ -9,7 +9,9 @@
 .simple-banner .banner-title {
     text-shadow: none;
 }
+.banner-text,
 .banner-text p {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
     font-size: 20px;
     line-height: 28px;
 }
