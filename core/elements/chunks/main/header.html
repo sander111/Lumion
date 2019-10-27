@@ -1,0 +1,39 @@
+{set $static = ''}
+{switch $_modx->resource.template}
+    {case '3','4'}
+    {set $static = 'static'}
+{/switch}
+
+<header class="page-header {$static}">
+    <div class="uibox-container">
+        <div class="uibox-row header-top">
+            <div class="col s3 header-left">
+                <a class="logo-link" href="/">
+                    <img src="app/img/logo.png" alt="{$_modx->config.site_name}">
+                    <span class="logo-title">Lumion</span>
+                </a>
+            </div>
+            <div class="col s9 header-right">
+                <div class="search">
+                    <button type="button" class="btn icon-btn white-text search-toggle">
+                        <i class="icon icon-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="minicart">
+                    {$_modx->runSnippet('!msMiniCart', ['tpl' => '@FILE chunks/cart/minicart.html'])}
+                </div>
+                <ul class="header-nav">
+                    <li><a href="{3 | url}">Каталог</a></li>
+                    <li><a href="{4 | url}">Услуги</a></li>
+                </ul>
+                <button type="button" class="btn icon-btn nav-toggle">
+                    <svg width="35" height="24" viewBox="0 0 35 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="35" height="4" rx="2" fill="#CD293D"/>
+                        <rect width="26" height="4" rx="2" y="10" x="8" fill="#CD293D"/>
+                        <rect width="35" height="4" rx="2" y="20" fill="#CD293D"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

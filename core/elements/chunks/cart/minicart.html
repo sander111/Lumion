@@ -1,0 +1,16 @@
+
+
+<div id="msMiniCart" class="{$total_count > 0 ? 'full' : ''}">
+    <div class="empty">
+        <button type="button" class="btn icon-btn white-text minicart-toggle">
+            <span class="minicart-count">1</span>
+            <i class="icon icon-cart" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="not_empty">
+        <button type="button" class="btn icon-btn white-text minicart-toggle">
+            <span class="minicart-count ms2_total_count">{$total_count}</span>
+            <i class="icon icon-cart" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>

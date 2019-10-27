@@ -1,0 +1,391 @@
+{extends 'file:tpl/base.html'}
+{block 'main'}
+<main class="main">
+    {include 'file:chunks/main/crumbs.html'}
+    <div class="page">
+        <div class="uibox-container">
+            <div class="uibox-row">
+                <aside class="col s3 sidebar">
+                    <div class="sidebar-nav-wrap">
+                        <div class="sidebar-title dark white-text">{'catalog_title' | lexicon}</div>
+                        <ul class="sidebar-nav">
+                            {$_modx->runSnippet('Localizator', [
+                                'parents' => 3,
+                                'limit' => 0,
+                                'tpl' => '@INLINE <li><a href="{$id | url}">{$pagetitle}</a></li>'
+                            ])}
+                        </ul>
+                    </div>
+                    <div class="sidebar-info">
+                        <div class="sidebar-info-item">
+                            <div class="sidebar-info-title">{'delivery_block_title' | lexicon}</div>
+                            <div class="uibox-row">
+                                <div class="sidebar-info-left">
+                                    <img src="app/img/delivery.png" alt="{'delivery_block_title' | lexicon}">
+                                </div>
+                                <div class="sidebar-info-right">{'delivery_block_text' | lexicon}</div>
+                            </div>
+                        </div>
+                        <div class="sidebar-info-item">
+                            <div class="sidebar-info-title">{'garanty_block_title' | lexicon}</div>
+                            <div class="uibox-row">
+                                <div class="sidebar-info-left">
+                                    <img src="app/img/garanty.png" alt="{'garanty_block_title' | lexicon}">
+                                </div>
+                                <div class="sidebar-info-right">{'garanty_block_text' | lexicon}</div>
+                            </div>
+                        </div>
+                        <div class="sidebar-info-item">
+                            <div class="sidebar-info-title">{'payment_block_title' | lexicon}</div>
+                            <div class="uibox-row">
+                                <div class="sidebar-info-left">
+                                    <img src="app/img/payment.png" alt="{'payment_block_title' | lexicon}">
+                                </div>
+                                <div class="sidebar-info-right">{'payment_block_text' | lexicon}</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="col s9 product">
+                    <div class="uibox-row product-row">
+                        <div class="product-left">
+                            <div class="product-gallery">
+                                <div class="gallery-main">
+                                    <a href="uploads/product-single1.jpg" data-fancybox="gallery">
+                                        <img src="uploads/product-single1.jpg" alt="">
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=H2jCbXiEQI4" data-fancybox="gallery" class="video">
+                                        <span class="video-slide">
+                                            <img src="uploads/product-single1.jpg" alt="">
+                                            <span class="play-overlay">
+                                                <svg class="icon" width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 10.268C21.3333 11.0378 21.3333 12.9623 20 13.7321L3.5 23.2583C2.16666 24.0281 0.500001 23.0659 0.500001 21.5263L0.500002 2.47372C0.500002 0.934117 2.16667 -0.0281314 3.5 0.741669L20 10.268Z" fill="white"/>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <a href="uploads/product-single1.jpg" data-fancybox="gallery">
+                                        <img src="uploads/product-single1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="gallery-nav">
+                                    <div class="gallery-nav-item">
+                                        <div class="gallery-nav-inner">
+                                            <img src="uploads/product-single1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="gallery-nav-item">
+                                        <div class="gallery-nav-inner">
+                                            <span class="video-slide">
+                                                <img src="uploads/product-single1.jpg" alt="">
+                                                <span class="play-overlay">
+                                                    <svg class="icon" width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20 10.268C21.3333 11.0378 21.3333 12.9623 20 13.7321L3.5 23.2583C2.16666 24.0281 0.500001 23.0659 0.500001 21.5263L0.500002 2.47372C0.500002 0.934117 2.16667 -0.0281314 3.5 0.741669L20 10.268Z" fill="white"/>
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-nav-item">
+                                        <div class="gallery-nav-inner">
+                                            <img src="uploads/product-single1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="share">
+                                <span class="share-title">{'share_title' | lexicon}</span>
+                                <ul class="share-list">
+                                    <li class="share-item">
+                                        <a href="" rel="nofollow">
+                                            <i class="icon icon-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="share-item">
+                                        <a href="" rel="nofollow">
+                                            <i class="icon icon-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="share-item">
+                                        <a href="" rel="nofollow">
+                                            <i class="icon icon-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="share-item">
+                                        <a href="" rel="nofollow">
+                                            <i class="icon icon-telegram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-right">
+                            <h1>{$_modx->resource.pagetitle}</h1>
+                            <div class="product-descr">
+                                <form class="ms2_form" method="post">
+                                    <input type="hidden" name="id" value="{$_modx->resource.id}"/>
+                                    <input type="number" name="count" id="product_price" class="hidden" value="1"/>
+                                    <div class="product-descr-row uibox-row">
+                                        <div class="product-col">
+                                            <div class="options led">
+                                                <div class="options-title">{'product_option_lamps_title' | lexicon}</div>
+                                                <div class="options-list">
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="led">
+                                                            <span class="option-box-title">100 ламп</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="led">
+                                                            <span class="option-box-title">200 ламп</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-col">
+                                            <div class="stock-info">
+                                                <div class="stock-info-row stock instock">{'product_label_instock' | lexicon}</div>
+                                                <div class="stock-info-row article">
+                                                    <span class="info-label">{'product_label_article' | lexicon}: </span>
+                                                    <span class="info-value">{$article}</span>
+                                                </div>
+                                                <div class="stock-info-row vendor">
+                                                    <span class="info-label">{'product_label_vendor' | lexicon}: </span>
+                                                    <span class="info-value">{$_modx->getPlaceholder('vendor.name')}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-descr-row uibox-row">
+                                        <div class="product-col">
+                                            <div class="options colors">
+                                                <div class="options-title">{'product_option_colors_title' | lexicon}</div>
+                                                <div class="options-list">
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="color">
+                                                            <span class="option-box-title" data-tooltip="Белый холодный">
+                                                                <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="color">
+                                                            <span class="option-box-title" data-tooltip="Blue">
+                                                                <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="color">
+                                                            <span class="option-box-title" data-tooltip="Green">
+                                                                <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="color">
+                                                            <span class="option-box-title" data-tooltip="Yellow">
+                                                                <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="color">
+                                                            <span class="option-box-title" data-tooltip="Белый холодный">
+                                                                <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="color">
+                                                            <span class="option-box-title" data-tooltip="Белый холодный">
+                                                                <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="color">
+                                                            <span class="option-box-title" data-tooltip="Белый холодный">
+                                                                <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-col">
+                                            <div class="options led">
+                                                <div class="options-title">{'product_option_wire_colors_title' | lexicon}</div>
+                                                <div class="options-list">
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="wire">
+                                                            <span class="option-box-title">Белый</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="wire">
+                                                            <span class="option-box-title">Чёрный</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-descr-row uibox-row">
+                                        <div class="product-col">
+                                            <div class="options led">
+                                                <div class="options-title">{'product_option_operating_mode_title' | lexicon}</div>
+                                                <div class="options-list">
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="operating_mode">
+                                                            <span class="option-box-title">Static</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="operating_mode">
+                                                            <span class="option-box-title">Flicker</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="option-box">
+                                                        <label class="option-box-label">
+                                                            <input type="radio" name="operating_mode">
+                                                            <span class="option-box-title">All flicker</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-descr-row uibox-row product-actions-row">
+                                        <div class="price-wrap">
+                                            <span class="price">{$price}</span>
+                                            <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="add-cart-btn btn btn-primary primary" name="ms2_action" value="cart/add">{'btn_buy_title' | lexicon}</button>
+                                            <button class="one-click-btn btn btn-outlined">{'btn_one_click_buy_title' | lexicon}</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <div class="tabs product-tabs">
+                            <ul class="tabs-nav">
+                                <li class="tab active">
+                                    <span class="tab-title">{'product_tab_descr_title' | lexicon}</span>
+                                </li>
+                                <li class="tab">
+                                    <span class="tab-title">{'product_tab_params_title' | lexicon}</span>
+                                </li>
+                                <li class="tab">
+                                    <span class="tab-title">{'product_tab_reviews_title' | lexicon} (5)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabs-body">
+                            <div class="tab-content active">
+                                <img src="app/img/icon1.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
+                                <img src="app/img/icon2.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
+                                <img src="app/img/icon3.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
+                                <img src="app/img/icon4.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
+                                <img src="app/img/icon5.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
+                                <p style="clear:both;"></p>
+                                <br>
+                                <p>Идеальный вариант для оформления фасада здания по периметру, деревьев, лестничных проемов, витрин. Может использоваться автономно, без каких-либо дополнительных элементов декора.</p>
+                                <br>
+                                <p><b>Схема изделия</b></p>
+                                <img src="uploads/product-schema.jpg" alt="">
+                            </div>
+                            <div class="tab-content">Характеристики</div>
+                            <div class="tab-content">Отзывы</div>
+                        </div>
+                    </div>
+
+                    <div class="looked-products">
+                        <h4>{'looked_products_title' | lexicon}</h4>
+                        <div class="uibox-row products-list">
+                            <div class="col s4 product-item">
+                                <div class="product-item-inner">
+                                    <a class="product-item-link" href="">
+                                        <img class="product-item-img" src="uploads/product1.jpg" alt="">
+                                    </a>
+                                    <div class="product-item-content">
+                                        <a class="product-item-title" href="">Гирлянда "Icicle light" (бахрома)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s4 product-item">
+                                <div class="product-item-inner">
+                                    <a class="product-item-link" href="">
+                                        <img class="product-item-img" src="uploads/product1.jpg" alt="">
+                                    </a>
+                                    <div class="product-item-content">
+                                        <a class="product-item-title" href="">Гирлянда "Icicle light" (бахрома)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s4 product-item">
+                                <div class="product-item-inner">
+                                    <a class="product-item-link" href="">
+                                        <img class="product-item-img" src="uploads/product1.jpg" alt="">
+                                    </a>
+                                    <div class="product-item-content">
+                                        <a class="product-item-title" href="">Гирлянда "Icicle light" (бахрома)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="calc-lead-block">
+            <div class="calc-lead-block-inner">
+                <div class="uibox-container">
+                    <div class="calc-lead-block-inner-wrap">
+                        <div class="h3 white-text">{'calc_lead_block_title' | lexicon}</div>
+                        <p class="white-text">{'calc_lead_block_text' | lexicon}</p>
+                        <form class="inline-form uibox-row form lead-form" action="send" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="input-text underlined white-text" name="name" placeholder="{'form_label_name' | lexicon}">
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="input-text underlined white-text" name="phone" placeholder="{'form_label_phone' | lexicon}">
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary invert send-btn">{'form_calc_btn_title' | lexicon}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="uibox-container">
+                <div class="calc-lead-block-img-wrap">
+                    <img src="uploads/men.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+{/block}

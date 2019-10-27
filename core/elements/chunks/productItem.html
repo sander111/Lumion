@@ -1,0 +1,13 @@
+<div class="col s3 product-item">
+    <div class="product-item-inner">
+        <a class="product-item-link" href="{$id | url}">
+            {if $popular ?}
+                <div class="product-sticker top">Топ</div>
+            {/if}
+            <img class="product-item-img" src="{$thumb}" alt="{$pagetitle}">
+        </a>
+        <div class="product-item-content">
+            <a class="product-item-title" href="{$id | url}">{$pagetitle}</a>
+        </div>
+    </div>
+</div>

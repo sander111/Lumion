@@ -1,0 +1,9 @@
+{if $_modx->resource.id == 1}
+    <div class="dropdown-item">
+        <a href="/{$key === 'ru' ? '' : $key ~ '/'}">{$key | ucfirst}</a>
+    </div>
+{else}
+    <div class="dropdown-item">
+        <a href="{$key === 'ru' ? '' : '/' ~$key}/{$_modx->resource.id | url}">{$key | ucfirst}</a>
+    </div>
+{/if}

@@ -1,0 +1,22 @@
+<div class="col s3 menu-col">
+    <div class="menu-col-title">
+        <a href="{$link}">{$menutitle}</a>
+    </div>
+    {$wrapper}
+    {if $id == 5}
+        <div class="menu-soc">
+            <div class="menu-soc-title">{'social_title' | lexicon}</div>
+            <ul class="header-soc">
+                {if $_modx->config.facebook ?}
+                    <li><a href="{$_modx->config.facebook}" rel="nofollow"><i class="icon icon-facebook"></i></a></li>
+                {/if}
+                {if $_modx->config.instagram ?}
+                    <li><a href="{$_modx->config.instagram}" rel="nofollow"><i class="icon icon-instagram"></i></a></li>
+                {/if}
+                {if $_modx->config.youtube ?}
+                    <li><a href="{$_modx->config.youtube}" rel="nofollow"><i class="icon icon-youtube-play"></i></a></li>
+                {/if}
+            </ul>
+        </div>
+    {/if}
+</div>

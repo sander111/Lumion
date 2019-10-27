@@ -1,0 +1,27 @@
+{set $locale = $_modx->config.cultureKey}
+{set $phonePattern = [' ', '-', '(', ')']}
+
+<!DOCTYPE html>
+<html lang="{$locale}">
+<head>
+    {block 'head'}
+        {include 'file:chunks/main/head.html'}
+    {/block}
+</head>
+<body>
+    <div class="layout">
+        {include 'file:chunks/main/header.html'}
+        
+        {block 'main'}
+
+        {/block}
+
+        {include 'file:chunks/main/footer.html'}
+    </div>
+
+    {include 'file:chunks/menu/menu.html'}
+
+    {include 'file:chunks/main/alert.html'}
+    {include 'file:chunks/main/scripts.html'}
+</body>
+</html>

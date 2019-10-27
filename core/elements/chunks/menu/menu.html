@@ -1,0 +1,68 @@
+<div class="menu-layout">
+    <div class="menu-header">
+        <div class="uibox-container">
+            <div class="uibox-row">
+                <div class="col s3">
+                    <a class="logo-link" href="/">
+                        <img src="app/img/logo.png" alt="{$_modx->config.site_name}">
+                        <span class="logo-title">Lumion</span>
+                    </a>
+                </div>
+                <div class="col s9 header-right">
+                    <div class="search">
+                        <button type="button" class="btn icon-btn white-text search-toggle">
+                            <i class="icon icon-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="langs">
+                        <div class="dropdown">
+                            <div class="dropdown-current">
+                                <div class="dropdown-val">{$locale | ucfirst}</div>
+                                <div class="dropdown-arrow">
+                                    <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.25593 4.12713C3.85716 4.58759 3.14284 4.58759 2.74407 4.12713L1.03586 2.15465C0.474981 1.50701 0.935034 0.5 1.79179 0.5L5.20821 0.500001C6.06497 0.500001 6.52502 1.50701 5.96414 2.15465L4.25593 4.12713Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dropdown-list">
+                                {$_modx->runSnippet('!pdoResources', [
+                                    'loadModels' => 'localizator',
+                                    'class' => 'localizatorLanguage',
+                                    'sortby' => 'id',
+                                    'limit' => '0',
+                                    'sortdir' => 'asc',
+                                    'tpl' => '@FILE chunks/main/langs.html',
+                                ])}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-phones">
+                        <ul class="menu-phones-list">
+                            <li><a href="tel:+38{$_modx->config.phone | replace : $phonePattern : ''}">{$_modx->config.phone}</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn icon-btn menu-close-btn">
+                        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3.70392" y="0.213379" width="30.3796" height="4.67378" rx="2.33689" transform="rotate(45 3.70392 0.213379)" fill="#CD293D"/>
+                            <rect x="24.9847" y="3.51855" width="30.3796" height="4.67378" rx="2.33689" transform="rotate(135 24.9847 3.51855)" fill="#CD293D"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-inner">
+        <div class="menu-body">
+            {$_modx->runSnippet('!Localizator', [
+                'snippet' => 'pdoMenu',
+                'parents' => 0,
+                'resources' => '-1',
+                'level' => 2,
+                'tplOuter' => '@FILE chunks/menu/outer.html',
+                'tpl' => '@FILE chunks/menu/row.html',
+                'tplInner' => '@FILE chunks/menu/inner.html',
+                'tplInnerRow' => '@INLINE <li><a href="{$link}">{$menutitle}</a></li>'
+            ])}
+        </div>
+    </div>
+</div>

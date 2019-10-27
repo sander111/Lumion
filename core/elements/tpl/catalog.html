@@ -1,0 +1,67 @@
+{extends 'file:tpl/base.html'}
+{block 'main'}
+<main class="main">
+    {include 'file:chunks/main/crumbs.html'}
+
+    <div class="products">
+        <div class="uibox-container">
+            <div class="uibox-row products-list">
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
+            </div>
+        </div>
+    </div>
+
+    <div class="looked-products">
+        <div class="uibox-container">
+            <h4>{'looked_products_title' | lexicon}</h4>
+            <div class="uibox-row products-list">
+                <div class="col s3 product-item">
+                    <div class="product-item-inner">
+                        <a class="product-item-link" href="product.html">
+                            <img class="product-item-img" src="uploads/product1.jpg" alt="">
+                        </a>
+                        <div class="product-item-content">
+                            <a class="product-item-title" href="product.html">Гирлянда "Icicle light" (бахрома)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 product-item">
+                    <div class="product-item-inner">
+                        <a class="product-item-link" href="product.html">
+                            <img class="product-item-img" src="uploads/product1.jpg" alt="">
+                        </a>
+                        <div class="product-item-content">
+                            <a class="product-item-title" href="product.html">Гирлянда "Icicle light" (бахрома)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 product-item">
+                    <div class="product-item-inner">
+                        <a class="product-item-link" href="product.html">
+                            <img class="product-item-img" src="uploads/product1.jpg" alt="">
+                        </a>
+                        <div class="product-item-content">
+                            <a class="product-item-title" href="product.html">Гирлянда "Icicle light" (бахрома)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 product-item">
+                    <div class="product-item-inner">
+                        <a class="product-item-link" href="product.html">
+                            <img class="product-item-img" src="uploads/product1.jpg" alt="">
+                        </a>
+                        <div class="product-item-content">
+                            <a class="product-item-title" href="product.html">Гирлянда "Icicle light" (бахрома)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{/block}

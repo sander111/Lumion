@@ -1,0 +1,52 @@
+<footer class="page-footer">
+    <div class="uibox-container footer-top">
+        <div class="uibox-row footer-row">
+            <div class="col s3 footer-col footer-left">
+                <a class="footer-logo-link" href="">
+                    <img class="footer-logo" src="app/img/logo.png" alt="">
+                    <span class="footer-logo-title">Lumion</span>
+                </a>
+            </div>
+            <div class="col s3 footer-col footer-center-left">
+                {$_modx->runSnippet('Localizator', [
+                    'snippet' => 'pdoMenu',
+                    'parents' => 0,
+                    'resources' => '3,4,5',
+                    'level' => 1,
+                    'tplOuter' => '@INLINE <ul class="footer-list footer-nav">{$wrapper}</ul>',
+                    'tpl' => '@INLINE <li><a href="{$link}">{$menutitle}</a></li>'
+                ])}
+            </div>
+            <div class="col s3 footer-col footer-center-right">
+                <ul class="footer-list footer-info">
+                    <li><a href="tel:+38{$_modx->config.phone | replace : $phonePattern : ''}">{$_modx->config.phone}</a></li>
+                    <li><a href="mailto:{$_modx->config.email}">{$_modx->config.email}</a></li>
+                    <li>{$_modx->config.address}</li>
+                    <li><button class="btn get-map">Смотреть на карте</button></li>
+                </ul>
+            </div>
+            <div class="col s3 footer-col footer-right">
+                <div class="footer-text">{'footer_text' | lexicon}</div>
+                <ul class="footer-soc">
+                    {if $_modx->config.facebook ?}
+                        <li><a href="{$_modx->config.facebook}" rel="nofollow"><i class="icon icon-facebook"></i></a></li>
+                    {/if}
+                    {if $_modx->config.instagram ?}
+                        <li><a href="{$_modx->config.instagram}" rel="nofollow"><i class="icon icon-instagram"></i></a></li>
+                    {/if}
+                    {if $_modx->config.youtube ?}
+                        <li><a href="{$_modx->config.youtube}" rel="nofollow"><i class="icon icon-youtube-play"></i></a></li>
+                    {/if}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cpr">
+        <div class="uibox-container">
+            <div class="uibox-row">
+                <div class="cpr-left">© {$_modx->getPlaceholder('nowdate') | default : 'now' | strtotime | date : 'Y'}. LUMION</div>
+                <div class="cpr-right"><a href="">{'footer_backlink' | lexicon}</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
