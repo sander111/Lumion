@@ -187,5 +187,5 @@ $(document).ready(function(){
         $(this).parents('.order-row').removeClass('checked').addClass('active').find('.form-block').slideDown(300)
     })
 
-
+    require('./js/cart')
 })
