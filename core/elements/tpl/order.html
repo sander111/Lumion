@@ -1,0 +1,15 @@
+{extends 'file:tpl/base.html'}
+{block 'header'}
+    {include 'file:chunks/cart/orderHeader.html'}
+{/block}
+{block 'main'}
+<main class="main">
+    <div class="order-page">
+        <div class="uibox-container">
+            <h1>{$_modx->resource.pagetitle}</h1>
+            {$_modx->runSnippet('!msOrder', ['tpl' => '@FILE chunks/cart/orderForm.html'])}
+            {$_modx->runSnippet('!msGetOrder')}
+        </div>
+    </div>
+</main>
+{/block}

@@ -1,0 +1,28 @@
+.modal {
+    padding: 36px 26px !important;
+    width: 100%;
+    max-width: 978px !important;
+}
+.minicart-title {
+    font-size: 30px;
+    line-height: 18px;
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    color: $primaryText;
+}
+.fancybox-slide--html,
+.fancybox-close-small {
+    right: 12px !important;
+    top: 19px !important;
+}
+.fancybox-close-small svg {
+    transition: all .3s ease 0s;
+}
+.fancybox-close-small:hover path {
+    fill: $primary;
+}
+.minicart-modal .fancybox-close-small {
+    display: none !important;
+}
+.minicart-modal .fancybox-close-small.custom-fc-close {
+    display: inline-block !important;
+}

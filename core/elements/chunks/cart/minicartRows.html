@@ -1,0 +1,122 @@
+<div id="msMiniCart" class="{$total_count > 0 ? 'full' : ''}">
+    <div class="empty">
+        <div class="minicart-title">Корзина</div>
+        <div class="center minicart-empty">
+            <div class="col s12 minicart-title">В вашей корзине совсем пусто =(</div>
+            <p>У нас есть <a href="">акционные</a> и <a href="">ТОП</a> товары</p>
+        </div>
+        <div class="center">
+            <img src="/app/svg/cart.svg" alt="">
+        </div>
+        <br>
+        <br>
+        <div class="center">
+            <a href="" class="btn btn-primary primary link-btn small">Поиграть в подбор гирлянды</a>
+        </div>
+    </div>
+    <div class="not_empty">
+        <div class="minicart-title">Корзина</div>
+        <button type="button" data-fancybox-close="" class="fancybox-button fancybox-close-small custom-fc-close" title="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+        </button>
+        <div class="cart">
+            <div class="cart-body">
+                {foreach $cart as $k => $item}
+                    <div class="uibox-row cart-row">
+                        <div class="col s2 cart-col-img">
+                            {if $item.img?}
+                                <a href="{$item.id | url}">
+                                    <img src="{$item.img}" alt="{$item.pagetitle}">
+                                </a>
+                            {else}
+                                <a href="{$item.id | url}">
+                                <img src="{'assets_url' | option}components/minishop2/img/web/ms2_small.png"
+                                        srcset="{'assets_url' | option}components/minishop2/img/web/ms2_small@2x.png 2x"
+                                        alt="{$item.pagetitle}" width="50" />
+                                </a>
+                            {/if}
+                        </div>
+                        <div class="col s6 cart-col-info">
+                            <a href="{$item.id | url}" class="cart-item-title">{$item.pagetitle}</a>
+                            <div class="stock-info-row article">
+                                <span class="info-label">{'product_label_article' | lexicon}: </span>
+                                <span class="info-value">{$item.article}</span>
+                            </div>
+                            <div class="price-wrap">
+                                <span class="price">{$item.price}</span>
+                                <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
+                            </div>
+                        </div>
+                        <div class="col s4 cart-col-actions">
+                            <form method="post" class="ms2_form remove-form">
+                                <input type="hidden" name="key" value="{$k}">
+                                <input type="hidden" name="msmcd_id" value="{$item.id}">
+                                <button class="btn close cart-item-remove" type="submit" name="ms2_action" value="cart/remove" title="{'msmcd_delete' | lexicon}">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.28323 7.49955L14.6313 2.15149C15.1236 1.65919 15.1236 0.861028 14.6313 0.368804C14.139 -0.123492 13.3409 -0.123492 12.8486 0.368804L7.50047 5.71693L2.15234 0.368733C1.66005 -0.123562 0.861952 -0.123562 0.369657 0.368733C-0.122568 0.861028 -0.122568 1.65919 0.369657 2.15142L5.71778 7.49948L0.369657 12.8476C-0.122568 13.3399 -0.122568 14.1381 0.369657 14.6303C0.861952 15.1226 1.66005 15.1226 2.15234 14.6303L7.50047 9.28216L12.8486 14.6303C13.3408 15.1226 14.139 15.1226 14.6313 14.6303C15.1236 14.138 15.1236 13.3399 14.6313 12.8476L9.28323 7.49955Z" fill="#B0B0B0"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0">
+                                                <rect width="15" height="15" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </form>
+                            {if 'msmcd_change_count_mini_cart' | option}
+                                <form method="post" id="msmcd-mc-{$item.id}" class="ms2_form">
+                                    <input type="hidden" name="key" value="{$k}">
+                                    <input type="hidden" name="msmcd_id" value="{$item.id}">
+                                    <div class="uibox-row count-action-row">
+                                        <div class="cart-count-row btn-group">
+                                            <button class="btn count-btn minus">-</button>
+                                            <input type="text" min="0" name="count" value="{$item.count}"
+                                                    placeholder="0" class="input-number cart-count" />
+                                            <button class="btn count-btn plus">+</button>
+                                        </div>
+                                        <div class="btn-group cart-item-sum">
+                                            <div class="price-wrap">
+                                                <span class="price">{$item.sum}</span>
+                                                <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-default msmcd-action" type="submit"
+                                            name="ms2_action" value="cart/change" style="display: none;"></button>
+                                </form>
+                            {else}
+                                <div clss="pull-right">
+                                    <span>{$item.count}</span> x <span>{$item.price}</span> = <span>{$item.sum}</span>
+                                </div>
+                            {/if}
+                        </div>
+                    </div>
+                {/foreach}
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="col s6 offset-6 cart-total">
+                <div class="uibox-row">
+                    <div class="cart-total-title">
+                        {'cart_total_cost' | lexicon}:
+                    </div>
+                    <div class="price-wrap">
+                        <span class="price">{$total_cost}</span>
+                        <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="uibox-row cart-footer-actions">
+                <div class="col s6 cart-footer-action">
+                    <button class="col s12 btn btn-outlined small" data-fancybox-close="">Продолжить покупки</button>
+                </div>
+                <div class="col s6 cart-footer-action">
+                    <a href="{9 | url}" class="col s12 btn btn-primary primary small link-btn">Оформить заказ</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

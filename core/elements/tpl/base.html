@@ -10,7 +10,9 @@
 </head>
 <body>
     <div class="layout">
-        {include 'file:chunks/main/header.html'}
+        {block 'header'}
+            {include 'file:chunks/main/header.html'}
+        {/block}
         
         {block 'main'}
 

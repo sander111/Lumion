@@ -21,14 +21,14 @@ module.exports = {
             path: path.resolve(__dirname, './app/css')
         }),
         new CopyWebpackPlugin([
-            {
-            from: './src/fonts',
-            to: './fonts'
-          },
-          {
-            from: './src/img',
-            to: './img'
-          },
+        //     {
+        //     from: './src/fonts',
+        //     to: './fonts'
+        //   },
+        //   {
+        //     from: './src/img',
+        //     to: './img'
+        //   },
 
         ]),
     ],

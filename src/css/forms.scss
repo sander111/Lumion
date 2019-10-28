@@ -2,6 +2,12 @@
     position: relative;
     margin: 23px 0;
 }
+.form-label {
+    display: block;
+    margin: 0 0 14px 0;
+    font-size: 1.1rem;
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+}
 .input-text,
 .textarea {
     color: #696969;
@@ -29,6 +35,11 @@
     box-shadow: none;
     height: 36px;
 }
+.input-text.outlined {
+    border: 1px solid #B0B0B0;
+    height: 50px;
+    box-shadow: none;
+}
 .inline-form {
     align-items: flex-end;
     flex-wrap: nowrap;
@@ -44,4 +55,45 @@
     font-size: .9rem;
     font-family: $fontBold, Arial, Helvetica, sans-serif;
     color: $primary !important;
+}
+.custom-radio {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.custom-radio-outer {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #C4C4C4;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+}
+.custom-radio-checked {
+    display: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.custom-radio input[type="radio"]:checked + .custom-radio-outer .custom-radio-checked {
+    display: block;
+}
+.custom-radio input[type="radio"]:checked + .custom-radio-outer {
+    border-color: $primary;
+}
+.custom-radio-title {
+    display: inline-block;
+    margin: 0 0 0 .6rem;
 }

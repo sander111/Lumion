@@ -1,0 +1,162 @@
+<h1>{$_modx->resource.pagetitle}</h1>
+<div class="product-descr">
+    <form class="ms2_form" method="post">
+        <input type="hidden" name="id" value="{$_modx->resource.id}"/>
+        <input type="number" name="count" id="product_price" class="hidden" value="1"/>
+        <div class="product-descr-row uibox-row">
+            <div class="product-col">
+                <div class="options led">
+                    <div class="options-title">{'product_option_lamps_title' | lexicon}</div>
+                    <div class="options-list">
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="led">
+                                <span class="option-box-title">100 ламп</span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="led">
+                                <span class="option-box-title">200 ламп</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-col">
+                <div class="stock-info">
+                    <div class="stock-info-row stock instock">{'product_label_instock' | lexicon}</div>
+                    <div class="stock-info-row article">
+                        <span class="info-label">{'product_label_article' | lexicon}: </span>
+                        <span class="info-value">{$article}</span>
+                    </div>
+                    <div class="stock-info-row vendor">
+                        <span class="info-label">{'product_label_vendor' | lexicon}: </span>
+                        <span class="info-value">{$_modx->getPlaceholder('vendor.name')}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-descr-row uibox-row">
+            <div class="product-col">
+                <div class="options colors">
+                    <div class="options-title">{'product_option_colors_title' | lexicon}</div>
+                    <div class="options-list">
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="color">
+                                <span class="option-box-title" data-tooltip="Белый холодный">
+                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="color">
+                                <span class="option-box-title" data-tooltip="Blue">
+                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="color">
+                                <span class="option-box-title" data-tooltip="Green">
+                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="color">
+                                <span class="option-box-title" data-tooltip="Yellow">
+                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="color">
+                                <span class="option-box-title" data-tooltip="Белый холодный">
+                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="color">
+                                <span class="option-box-title" data-tooltip="Белый холодный">
+                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="color">
+                                <span class="option-box-title" data-tooltip="Белый холодный">
+                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-col">
+                <div class="options led">
+                    <div class="options-title">{'product_option_wire_colors_title' | lexicon}</div>
+                    <div class="options-list">
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="wire">
+                                <span class="option-box-title">Белый</span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="wire">
+                                <span class="option-box-title">Чёрный</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-descr-row uibox-row">
+            <div class="product-col">
+                <div class="options led">
+                    <div class="options-title">{'product_option_operating_mode_title' | lexicon}</div>
+                    <div class="options-list">
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="operating_mode">
+                                <span class="option-box-title">Static</span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="operating_mode">
+                                <span class="option-box-title">Flicker</span>
+                            </label>
+                        </div>
+                        <div class="option-box">
+                            <label class="option-box-label">
+                                <input type="radio" name="operating_mode">
+                                <span class="option-box-title">All flicker</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-descr-row uibox-row product-actions-row">
+            <div class="price-wrap">
+                <span class="price">{$price}</span>
+                <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
+            </div>
+            <div class="product-actions">
+                <button class="add-cart-btn btn btn-primary primary" name="ms2_action" value="cart/add">{'btn_buy_title' | lexicon}</button>
+                <button class="one-click-btn btn btn-outlined">{'btn_one_click_buy_title' | lexicon}</button>
+            </div>
+        </div>
+    </form>
+</div>

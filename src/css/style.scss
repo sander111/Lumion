@@ -111,11 +111,12 @@ p {
 }
 
 .subtitle {
-    font-family: $fontBold, Arial, Helvetica, sans-serif;
-    font-size: 28px;
-    line-height: 34px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    line-height: 18px;
     letter-spacing: 1px;
     margin: 10px 0;
+    position: relative;
 }
 .intro {
     font-family: $fontMedium, Arial, Helvetica, sans-serif;
@@ -125,7 +126,15 @@ p {
     margin: 10px 0;
 }
 
-
+.hidden {
+    display: none;
+}
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
 .uibox-container {
     width: 96%;
     max-width: 1200px;
@@ -198,11 +207,23 @@ p {
     background: $primary;
     color: $white;
 }
+.btn-primary.small,
+.btn-outlined.small {
+    max-height: 54px;
+    font-size: .9rem;
+}
+.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
 .white-text {
     color: $white;
 }
 .black-text {
     color: #000;
+}
+.primary-text {
+    color: $primary;
 }
 .primary {
     background: $primary;
@@ -252,6 +273,8 @@ p {
 @import './footer.scss';
 @import './menu.scss';
 @import './alert.scss';
+@import './modal.scss';
+@import './cart.scss';
 
 .products-home-list {
     margin: 0;

@@ -1,0 +1,28 @@
+<div class="calc-lead-block">
+    <div class="calc-lead-block-inner">
+        <div class="uibox-container">
+            <div class="calc-lead-block-inner-wrap">
+                <div class="h3 white-text">{'calc_lead_block_title' | lexicon}</div>
+                <p class="white-text">{'calc_lead_block_text' | lexicon}</p>
+                <form class="inline-form uibox-row form lead-form" action="send" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="input-text underlined white-text" name="name" placeholder="{'form_label_name' | lexicon}">
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="input-text underlined white-text" name="phone" placeholder="{'form_label_phone' | lexicon}">
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary invert send-btn">{'form_calc_btn_title' | lexicon}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="uibox-container">
+        <div class="calc-lead-block-img-wrap">
+            <img src="uploads/men.png" alt="">
+        </div>
+    </div>
+</div>

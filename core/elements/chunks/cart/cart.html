@@ -1,0 +1,65 @@
+<div id="msCart" class="cart-col">
+    {if !count($products)}
+        <div class="alert alert-warning">
+            {'ms2_cart_is_empty' | lexicon}
+        </div>
+    {else}
+        <h4 class="h4 cart-title">Состав заказа</h4>
+        <div class="cart">
+            <div class="cart-body">
+                {foreach $products as $product}
+                    <div class="uibox-row cart-row">
+                        <div class="col s4 cart-col-img">
+                            {if $product.thumb?}
+                                <a href="{$product.id | url}">
+                                    <img src="{$product.thumb}" alt="{$product.pagetitle}">
+                                </a>
+                            {else}
+                                <a href="{$product.id | url}">
+                                <img src="{'assets_url' | option}components/minishop2/img/web/ms2_small.png"
+                                        srcset="{'assets_url' | option}components/minishop2/img/web/ms2_small@2x.png 2x"
+                                        alt="{$item.pagetitle}" width="50" />
+                                </a>
+                            {/if}
+                        </div>
+                        <div class="col s8 cart-col-info">
+                            <a href="{$product.id | url}" class="cart-item-title">{$product.pagetitle}</a>
+                            <div class="stock-info-row article">
+                                <span class="info-label">{'product_label_article' | lexicon}: </span>
+                                <span class="info-value">{$product.article}</span>
+                            </div>
+                            <div class="price-wrap">
+                                <span class="price">{$product.price}</span>
+                                <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
+                            </div>
+                        </div>
+                    </div>
+                {/foreach}
+            </div>
+            <br>
+            <div class="subtitle">{'ms2_cart_total' | lexicon}</div>
+            <div class="order-details">
+                <div class="order-details-row">
+                    <div class="order-details-label">{$total.count} товар на сумму</div>
+                    <div class="order-details-price">{$total.cost} {'ms2_frontend_currency' | lexicon}</div>
+                </div>
+                <div class="order-details-row">
+                    <div class="order-details-label">Стоимость доставки</div>
+                    <div class="order-details-price">{$total.cost} {'ms2_frontend_currency' | lexicon}</div>
+                </div>
+            </div>
+            <div class="cart-totals">
+                <div class="order-details-row">
+                    <div class="order-details-label">Итого к оплате</div>
+                    <div class="order-details-price">
+                        <span id="ms2_order_cost">{$_modx->getPlaceholder('fullCost')}</span>
+                        <span> {'ms2_frontend_currency' | lexicon}</span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" name="ms2_action" value="order/submit" class="btn btn-primary primary small col s12 disabled">
+                {'ms2_frontend_order_submit' | lexicon}
+            </button>
+        </div>
+    {/if}
+</div>

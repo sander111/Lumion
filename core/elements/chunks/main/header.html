@@ -1,6 +1,6 @@
 {set $static = ''}
 {switch $_modx->resource.template}
-    {case '3','4'}
+    {case '3','4','6'}
     {set $static = 'static'}
 {/switch}
 
@@ -20,7 +20,11 @@
                     </button>
                 </div>
                 <div class="minicart">
-                    {$_modx->runSnippet('!msMiniCart', ['tpl' => '@FILE chunks/cart/minicart.html'])}
+                    {'!msMCDMiniCart' | snippet: [
+                        'tplOuter' => '@FILE chunks/cart/minicart.html',
+                        'tpl' => '@FILE chunks/cart/minicartRows.html',
+                        'img' => '50x50',
+                    ]}
                 </div>
                 <ul class="header-nav">
                     <li><a href="{3 | url}">Каталог</a></li>

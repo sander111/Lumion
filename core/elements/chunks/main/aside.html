@@ -1,0 +1,41 @@
+<aside class="col s3 sidebar">
+    <div class="sidebar-nav-wrap">
+        <div class="sidebar-title dark white-text">{'catalog_title' | lexicon}</div>
+        <ul class="sidebar-nav">
+            {$_modx->runSnippet('Localizator', [
+                'parents' => 3,
+                'limit' => 0,
+                'tpl' => '@INLINE <li><a href="{$id | url}">{$pagetitle}</a></li>'
+            ])}
+        </ul>
+    </div>
+    <div class="sidebar-info">
+        <div class="sidebar-info-item">
+            <div class="sidebar-info-title">{'delivery_block_title' | lexicon}</div>
+            <div class="uibox-row">
+                <div class="sidebar-info-left">
+                    <img src="app/img/delivery.png" alt="{'delivery_block_title' | lexicon}">
+                </div>
+                <div class="sidebar-info-right">{'delivery_block_text' | lexicon}</div>
+            </div>
+        </div>
+        <div class="sidebar-info-item">
+            <div class="sidebar-info-title">{'garanty_block_title' | lexicon}</div>
+            <div class="uibox-row">
+                <div class="sidebar-info-left">
+                    <img src="app/img/garanty.png" alt="{'garanty_block_title' | lexicon}">
+                </div>
+                <div class="sidebar-info-right">{'garanty_block_text' | lexicon}</div>
+            </div>
+        </div>
+        <div class="sidebar-info-item">
+            <div class="sidebar-info-title">{'payment_block_title' | lexicon}</div>
+            <div class="uibox-row">
+                <div class="sidebar-info-left">
+                    <img src="app/img/payment.png" alt="{'payment_block_title' | lexicon}">
+                </div>
+                <div class="sidebar-info-right">{'payment_block_text' | lexicon}</div>
+            </div>
+        </div>
+    </div>
+</aside>

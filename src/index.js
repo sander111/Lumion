@@ -6,8 +6,7 @@ import $ from 'jquery'
 import 'slick-carousel'
 require("@fancyapps/fancybox");
 
-$(document).ready(function(){
-
+$(window).on('load', function() {
     let box = $('.category-list').innerHeight()
     let items = document.querySelectorAll('.category-item')
     let offsets = []
@@ -46,6 +45,9 @@ $(document).ready(function(){
             items[i].style.margin = offsets[i - 1].height + '% -50% 0 -50%'
         }
     }
+})
+
+$(document).ready(function(){
 
     $('.nav-toggle').on('click', function(){
         $('.menu-layout').fadeIn(300)
@@ -138,5 +140,52 @@ $(document).ready(function(){
             }
         })
     })
+
+
+    // Minicart count change
+    $(document).on('click', '.count-btn', function(e) {
+        e.preventDefault()
+        var input = $(this).parents('.cart-count-row').find('.cart-count')
+        var currentCount = $(input).val()
+        if ($(this).hasClass('plus')) {
+            $(input).val(+currentCount + 1).change()
+        } else if ($(this).hasClass('minus')) {
+            if (+currentCount > 1) {
+                $(input).val(+currentCount - 1).change()
+            }
+        }
+    })
+
+    // Order form stepper
+    $('.order-step-btn').on('click', function(e) {
+        e.preventDefault()
+
+        let next = $(this).parents('.order-row').index()
+        let parent = $(this).parents('.order-row')
+        $(parent).find('.form-block').slideUp(300)
+        $(parent).addClass('checked')
+
+        let inputs = $(parent).find('input[type=text]')
+        let data = []
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].value.length > 0) {
+                data.push(inputs[i].value)
+            }
+        }
+        $(parent).find('.order-checkin-data').text(data.join(', '))
+
+        let nextStep = $('.order-row')[next + 1]
+        $(nextStep).addClass('active').find('.form-block').slideDown(300)
+        // console.log(data.join(', '))
+
+    })
+
+    $('.order-checkin-data-change').on('click', function(e){
+        e.preventDefault()
+
+        $('.order-row').removeClass('active').find('.form-block').slideUp(300)
+        $(this).parents('.order-row').removeClass('checked').addClass('active').find('.form-block').slideDown(300)
+    })
+
 
 })
