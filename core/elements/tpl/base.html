@@ -25,5 +25,30 @@
 
     {include 'file:chunks/main/alert.html'}
     {include 'file:chunks/main/scripts.html'}
+
+    <script>
+        $(document).ready(function() {
+
+            $('.search-toggle').on('click', function() {
+                $('.search-form').toggleClass('active')
+            })
+
+            miniShop2.Callbacks.add('Cart.add.ajax.always', 'ajax_log', function(xhr) {
+                if (xhr.responseJSON.data.total_count > 0) {
+                    $('.minicart-count').removeClass('hidden')
+                }
+            });
+            miniShop2.Callbacks.add('Cart.remove.ajax.always', 'ajax_log', function(xhr) {
+                if (xhr.responseJSON.data.total_count == 0) {
+                    $('.minicart-count').addClass('hidden')
+                }
+            });
+
+            $('.one-click-btn').on('click', function() {
+                $('#fast-order .minicart-title').text($('h1').text())
+            })
+
+        })
+    </script>
 </body>
 </html>

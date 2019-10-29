@@ -8,7 +8,7 @@
                     <div class="subtitle num-title">{'ms2_frontend_credentials' | lexicon}</div>
                     <div class="order-checkin-data-row">
                         <div class="order-checkin-data"></div>
-                        <button type="button" class="order-checkin-data-change">Изменить</button>
+                        <button type="button" class="order-checkin-data-change">{'change_order_data_btn' | lexicon}</button>
                     </div>
                     <div class="form-block">
                         {foreach ['receiver','phone','email'] as $field}
@@ -18,7 +18,7 @@
                                         class="input-text outlined form-control{($field in list $errors) ? ' error' : ''}">
                             </div>
                         {/foreach}
-                        <button type="button" class="btn btn-primary primary small order-step-btn">Далее</button>
+                        <button type="button" class="btn btn-primary primary small order-step-btn">{'order_onwards_btn' | lexicon}</button>
                     </div>
                     
                 </div>
@@ -27,7 +27,7 @@
                     <div class="subtitle num-title">{'delivery_block_title' | lexicon}</div>
                     <div class="order-checkin-data-row">
                         <div class="order-checkin-data"></div>
-                        <button type="button" class="order-checkin-data-change">Изменить</button>
+                        <button type="button" class="order-checkin-data-change">{'change_order_data_btn' | lexicon}</button>
                     </div>
                     <div class="form-block">
                         {foreach ['city'] as $field}
@@ -39,11 +39,11 @@
                                         name="{$field}" value="{$form[$field]}"
                                         class="oredr-city-input input-text outlined form-control{($field in list $errors) ? ' error' : ''}">
                                 <ul class="order-cities-list">
-                                    <li><button type="button" class="q-city">Киев</button></li>
-                                    <li><button type="button" class="q-city">Днепр</button></li>
-                                    <li><button type="button" class="q-city">Харьков</button></li>
-                                    <li><button type="button" class="q-city">Одесса</button></li>
-                                    <li><button type="button" class="q-city">Львов</button></li>
+                                    <li><button type="button" class="q-city">{'order_delivery_city_kiyv' | lexicon}</button></li>
+                                    <li><button type="button" class="q-city">{'order_delivery_city_dnepr' | lexicon}</button></li>
+                                    <li><button type="button" class="q-city">{'order_delivery_city_harkov' | lexicon}</button></li>
+                                    <li><button type="button" class="q-city">{'order_delivery_city_odessa' | lexicon}</button></li>
+                                    <li><button type="button" class="q-city">{'order_delivery_city_lvov' | lexicon}</button></li>
                                 </ul>
                             </div>
                         {/foreach}
@@ -69,15 +69,15 @@
                                                     </div>
                                                     <div class="delivery-item-right">
                                                         <label class="delivery" for="delivery_{$delivery.id}">
-                                                            Доставка в отделении "Новая почта" Стоимость доставки: <b>{$delivery.price} {'ms2_frontend_currency' | lexicon}</b>
+                                                            {'order_delivery_np_title' | lexicon}: <b>{$delivery.price} {'ms2_frontend_currency' | lexicon}</b>
                                                         </label>
                                                         <div class="delivery-block">
                                                             <div class="form-group">
                                                                 <div class="col s12 uibox-row inputs-row">
                                                                     <input type="text" name="warehouse" class="input-text outlined" placeholder="Укажите отделение">
-                                                                    <a class="primary-text get-np-map" href="">Выбрать на карте</a>
+                                                                    <a class="primary-text get-np-map" href="">{'msd_np_change_on_map' | lexicon}</a>
                                                                 </div>
-                                                                <p>Бесплатная доставка по Киеву от <b>10 000</b> грн</p>
+                                                                <p>{'order_delivery_np_descr' | lexicon} <b>10 000</b> грн</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -97,14 +97,14 @@
                                                     </div>
                                                     <div class="delivery-item-right">
                                                         <label class="delivery" for="delivery_{$delivery.id}">
-                                                            Самовывоз из магазина Стоимость доставки: <b>бесплатно</b>
+                                                            {'order_delivery_default_title' | lexicon}: <b>бесплатно</b>
                                                         </label>
                                                     </div>
                                                 </div>
                                         {/switch}
                                     {/foreach}
                                 </div>
-                                <button type="button" class="btn btn-primary primary small order-step-btn">Далее</button>
+                                <button type="button" class="btn btn-primary primary small order-step-btn">{'order_onwards_btn' | lexicon}</button>
                             </div>
                         </div>
                     </div> 
@@ -122,7 +122,8 @@
                                     <div class="custom-radio-outer">
                                         <div class="custom-radio-checked"></div>
                                     </div>
-                                    <span class="custom-radio-title">{$payment.name}</span>
+                                    {set $paymentTitle = 'order_payment_title_id_' ~ $payment.id}
+                                    <span class="custom-radio-title">{$paymentTitle | lexicon}</span>
                                 </label>
                             </div>
                         {/foreach}

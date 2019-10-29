@@ -32,9 +32,9 @@
         <div class="uibox-container">
             <div class="uibox-row">
                 <div class="col s5 beautify-left">
-                    <div class="subtitle white-text">
+                    <h3 class="white-text">
                         Украсьте помещение онлайн
-                    </div>
+                    </h3>
                     <div class="intro white-text">
                         Выберите тип вашего коттеджа
                     </div>
@@ -85,14 +85,12 @@
         'snippet' => 'msProducts',
         'parents' => 3
         'limit' => 6,
-        'includeTVs' => 'img',
+        'includeTVs' => 'figure',
         'sortby' => 'menuindex',
         'sortdir' => 'ASC',
         'tpl' => '@INLINE <li>
                             <a href="{$id | url}">
-                                <span class="nav-icon">
-                                    <img class="icon" src="" alt="{$pagetitle}">
-                                </span>
+                                <span class="nav-icon" style="background: url(/{$figure}) no-repeat;"></span>
                                 <span class="products-home-list-title">{$pagetitle}</span>
                             </a>
                         </li>'

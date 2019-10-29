@@ -99,6 +99,14 @@ h2 {
     letter-spacing: 1px;
     color: $darkText;
 }
+h3 {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 1px;
+    color: $darkText;
+    margin: 15px 0;
+}
 h4 {
     font-family: $fontBold, Arial, Helvetica, sans-serif;
     font-size: 28px;
@@ -224,6 +232,8 @@ p {
 }
 .primary-text {
     color: $primary;
+}.secondary-text {
+    color: $primaryText;
 }
 .primary {
     background: $primary;
@@ -292,6 +302,7 @@ p {
     }
     li:hover .nav-icon {
         border-color: $primary;
+        filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(13);
     }
     a {
         display: flex;
@@ -305,6 +316,7 @@ p {
         text-align: center;
         border: 1px solid #484848;
         transition: all .3s ease 0s;
+        background-position: center center !important;
     } 
 }
 .products-home-list-title {

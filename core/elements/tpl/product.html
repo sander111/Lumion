@@ -18,7 +18,7 @@
                     </div>
                     {include 'file:chunks/product/productDetails.html'}
 
-                    {include 'file:chunks/product/lookedProducts.html'}
+                    {include 'file:chunks/lookedProducts.html'}
                 </div>
             </div>
         </div>
@@ -27,4 +27,6 @@
 
     </div>
 </main>
+{$_modx->runSnippet('addLooked', ['template' => 4])}
+{include 'file:chunks/product/fastOrderModal.html'}
 {/block}

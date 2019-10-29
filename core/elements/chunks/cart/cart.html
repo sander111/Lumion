@@ -40,17 +40,18 @@
             <div class="subtitle">{'ms2_cart_total' | lexicon}</div>
             <div class="order-details">
                 <div class="order-details-row">
-                    <div class="order-details-label">{$total.count} товар на сумму</div>
+                    {set $declension_product = 'declension_product' | lexicon}
+                    <div class="order-details-label">{$total.count} {$total.count | declension : $declension_product } {'order_total_sum_text' | lexicon}</div>
                     <div class="order-details-price">{$total.cost} {'ms2_frontend_currency' | lexicon}</div>
                 </div>
                 <div class="order-details-row">
-                    <div class="order-details-label">Стоимость доставки</div>
+                    <div class="order-details-label">{'delivery_cost_title' | lexicon}</div>
                     <div class="order-details-price">{$total.cost} {'ms2_frontend_currency' | lexicon}</div>
                 </div>
             </div>
             <div class="cart-totals">
                 <div class="order-details-row">
-                    <div class="order-details-label">Итого к оплате</div>
+                    <div class="order-details-label">{'total_to_pay_title' | lexicon}</div>
                     <div class="order-details-price">
                         <span id="ms2_order_cost">{$_modx->getPlaceholder('fullCost')}</span>
                         <span> {'ms2_frontend_currency' | lexicon}</span>

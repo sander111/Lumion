@@ -5,11 +5,14 @@
                 <div class="col s3">
                     <a class="logo-link" href="/">
                         <img src="app/img/logo.png" alt="{$_modx->config.site_name}">
-                        <span class="logo-title">Lumion</span>
                     </a>
                 </div>
                 <div class="col s9 header-right">
                     <div class="search">
+                        <form class="search-form" action="{6 | url}" method="get">
+                            <input class="search-input" type="text" name="query" value="[[+mse2_query]]" />
+                            <button type="submit" class="search-btn">Найти</button>
+                        </form>
                         <button type="button" class="btn icon-btn white-text search-toggle">
                             <i class="icon icon-search" aria-hidden="true"></i>
                         </button>

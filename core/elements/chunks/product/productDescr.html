@@ -25,7 +25,11 @@
             </div>
             <div class="product-col">
                 <div class="stock-info">
-                    <div class="stock-info-row stock instock">{'product_label_instock' | lexicon}</div>
+                    {if $instock ?}
+                        <div class="stock-info-row stock instock">{'product_label_instock' | lexicon}</div>
+                    {else}
+                        <div class="stock-info-row stock primary-text">{'product_label_outstock' | lexicon}</div>
+                    {/if}
                     <div class="stock-info-row article">
                         <span class="info-label">{'product_label_article' | lexicon}: </span>
                         <span class="info-value">{$article}</span>
@@ -155,7 +159,7 @@
             </div>
             <div class="product-actions">
                 <button class="add-cart-btn btn btn-primary primary" name="ms2_action" value="cart/add">{'btn_buy_title' | lexicon}</button>
-                <button class="one-click-btn btn btn-outlined">{'btn_one_click_buy_title' | lexicon}</button>
+                <button type="button" class="one-click-btn btn btn-outlined" data-fancybox="" data-src="#fast-order">{'btn_one_click_buy_title' | lexicon}</button>
             </div>
         </div>
     </form>

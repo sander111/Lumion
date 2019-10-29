@@ -1,8 +1,11 @@
 <div id="msMiniCart" class="{$total_count > 0 ? 'full' : ''}">
     <div class="empty">
-        <div class="minicart-title">Корзина</div>
+        <div class="minicart-title">{'cart_title' | lexicon}</div>
+        <button type="button" data-fancybox-close="" class="fancybox-button fancybox-close-small custom-fc-close" title="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+        </button>
         <div class="center minicart-empty">
-            <div class="col s12 minicart-title">В вашей корзине совсем пусто =(</div>
+            <div class="col s12 minicart-title">{'cart_empty_title' | lexicon}</div>
             <p>У нас есть <a href="">акционные</a> и <a href="">ТОП</a> товары</p>
         </div>
         <div class="center">
@@ -11,11 +14,11 @@
         <br>
         <br>
         <div class="center">
-            <a href="" class="btn btn-primary primary link-btn small">Поиграть в подбор гирлянды</a>
+            <a href="" class="btn btn-primary primary link-btn small">{'play_lamps_constr_btn' | lexicon}</a>
         </div>
     </div>
     <div class="not_empty">
-        <div class="minicart-title">Корзина</div>
+        <div class="minicart-title">{'cart_title' | lexicon}</div>
         <button type="button" data-fancybox-close="" class="fancybox-button fancybox-close-small custom-fc-close" title="Close">
             <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
         </button>
@@ -110,10 +113,10 @@
             </div>
             <div class="uibox-row cart-footer-actions">
                 <div class="col s6 cart-footer-action">
-                    <button class="col s12 btn btn-outlined small" data-fancybox-close="">Продолжить покупки</button>
+                    <button class="col s12 btn btn-outlined small" data-fancybox-close="">{'continue_shopping_btn' | lexicon}</button>
                 </div>
                 <div class="col s6 cart-footer-action">
-                    <a href="{9 | url}" class="col s12 btn btn-primary primary small link-btn">Оформить заказ</a>
+                    <a href="{9 | url}" class="col s12 btn btn-primary primary small link-btn">{'checkout_order' | lexicon}</a>
                 </div>
             </div>
         </div>

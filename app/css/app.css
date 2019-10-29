@@ -262,6 +262,14 @@ h2 {
   letter-spacing: 1px;
   color: #193444; }
 
+h3 {
+  font-family: "Avenir Next Cyr Demi", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 1px;
+  color: #193444;
+  margin: 15px 0; }
+
 h4 {
   font-family: "Avenir Next Cyr Bold", Arial, Helvetica, sans-serif;
   font-size: 28px;
@@ -383,6 +391,9 @@ p {
 
 .primary-text {
   color: #CD293D; }
+
+.secondary-text {
+  color: #383838; }
 
 .primary {
   background: #CD293D; }
@@ -593,6 +604,60 @@ p {
   .header-nav a {
     color: #fff; }
 
+.search {
+  position: relative; }
+
+.search-form {
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 44px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  top: -6px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease 0s; }
+
+.search-form.active {
+  width: 600%;
+  opacity: 1;
+  visibility: visible; }
+
+.search-input {
+  width: calc(100% - 52px);
+  border: none;
+  height: 35px;
+  padding: 0 10px;
+  color: #fff;
+  background: transparent;
+  font-size: 1rem; }
+
+.search-btn {
+  border: none;
+  background: transparent;
+  height: 35px;
+  position: absolute;
+  right: 6px;
+  top: -2px;
+  cursor: pointer;
+  color: #fff;
+  padding: 0;
+  font-size: 1rem;
+  font-family: "Avenir Next Cyr Medium", Arial, Helvetica, sans-serif; }
+
+.search-form::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-radius: 2px;
+  height: 3px;
+  width: 100%;
+  background: #CD293D;
+  box-shadow: 0px 0px 6px #CD293D;
+  transition: all .3s ease 0s; }
+
 .simple-banner {
   position: relative;
   background: #121925; }
@@ -731,14 +796,22 @@ p {
 
 .product-item-inner {
   position: relative;
-  transition: all .3s ease 0s; }
+  transition: all .3s ease 0s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between; }
 
 .product-item-inner:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.13); }
 
 .product-item-link {
   display: block;
-  line-height: 1px; }
+  line-height: 1px;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  height: 100%; }
 
 .product-item-img {
   width: 100%; }
@@ -1169,6 +1242,9 @@ p {
   width: 100%;
   overflow: hidden; }
 
+.works-list {
+  margin: 36px 0 0 0; }
+
 .work-item {
   transition: all .3s ease .1s; }
 
@@ -1473,6 +1549,7 @@ p {
   bottom: 0; }
 
 .modal {
+  display: none;
   padding: 36px 26px !important;
   width: 100%;
   max-width: 978px !important; }
@@ -1500,6 +1577,12 @@ p {
 .minicart-modal .fancybox-close-small.custom-fc-close {
   display: inline-block !important; }
 
+#fast-order {
+  max-width: 600px !important; }
+
+.fast-order-form {
+  margin: 60px 0 0 0; }
+
 .order-header-info {
   text-align: right;
   line-height: 25px; }
@@ -1525,6 +1608,9 @@ p {
 
 #msOrder {
   margin: 0 0 0 0 !important; }
+
+.minicart-count.hidden {
+  display: none; }
 
 .minicart-empty {
   margin: 40px 0 30px 0;
@@ -1809,6 +1895,68 @@ p {
 .cart-totals {
   margin: 36px 0; }
 
+.order-thanks {
+  background: url("../img/lamps-bg.png") no-repeat;
+  background-position: right -115px;
+  font-family: "Avenir Next Cyr Medium", Arial, Helvetica, sans-serif;
+  color: #828282; }
+
+.order {
+  max-width: 810px;
+  margin: 0 auto;
+  padding: 100px 0; }
+
+.thanks-title {
+  color: #CD293D;
+  font-family: "Avenir Next Cyr Medium", Arial, Helvetica, sans-serif;
+  font-size: 40px; }
+
+.order-msg {
+  font-size: 18px; }
+
+.order-details-table {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.11);
+  padding: 0 25px;
+  margin: 36px 0; }
+
+.order-details-table-row {
+  padding: 20px 0;
+  border-bottom: 2px solid #EBEBEB; }
+
+.order-details-table-row:last-child {
+  border-bottom: none; }
+
+.order-num {
+  font-family: "Avenir Next Cyr Demi", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 24px; }
+
+.order-createdon {
+  display: inline-block;
+  margin: 0 0 0 10%;
+  font-size: 18px;
+  line-height: 24px;
+  color: #828282; }
+
+.order-product-link {
+  font-size: 18px;
+  color: #383838; }
+
+.order-total-col {
+  margin: 20px 0 0 0; }
+
+.order-total-cost,
+.order-payment,
+.order-delivery-cost {
+  font-family: "Avenir Next Cyr Demi", Arial, Helvetica, sans-serif; }
+
+.continue-shopping-link {
+  font-size: 20px; }
+
+.table-responsive .uibox-row {
+  flex-wrap: nowrap;
+  align-items: center; }
+
 .products-home-list {
   margin: 0; }
   .products-home-list li {
@@ -1821,7 +1969,8 @@ p {
   .products-home-list li:hover a {
     color: #CD293D; }
   .products-home-list li:hover .nav-icon {
-    border-color: #CD293D; }
+    border-color: #CD293D;
+    filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(13); }
   .products-home-list a {
     display: flex;
     align-items: center;
@@ -1832,7 +1981,8 @@ p {
     height: 50px;
     text-align: center;
     border: 1px solid #484848;
-    transition: all .3s ease 0s; }
+    transition: all .3s ease 0s;
+    background-position: center center !important; }
 
 .products-home-list-title {
   font-family: "Avenir Next Cyr Medium", Arial, Helvetica, sans-serif;

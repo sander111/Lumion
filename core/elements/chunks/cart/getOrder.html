@@ -1,60 +1,48 @@
 <div class="order-thanks">
     <div class="uibox-container">
-        <div class="thanks-title">Спасибо за заказ!</div>
-        <p>Наш менеджер свяжется с вами в ближайшее время</p>
+        <div class="order">
+            <div class="thanks-title">{'order_thank_title' | lexicon}</div>
+            <p class="order-msg">{'order_thank_msg' | lexicon}</p>
 
-        <div class="order-details-table">
-            <div class="order-details-table-row">
-                <span class="order-num">Заказ № {$order.num}</span>
-                <span class="order-createdon">от {$order.createdon | date_format : "%d.%m.%Y"}</span>
-            </div>
-            <div id="msCart">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        {foreach $products as $product}
-                            <tr>
-                                <td class="title">
-                                    <div class="d-flex">
-                                        <div class="title">
-                                            {if $product.id?}
-                                                <a href="{$product.id | url}">{$product.pagetitle}</a>
-                                            {else}
-                                                {$product.name}
-                                            {/if}
-                                            
-                                        </div>
+            <div class="order-details-table">
+                <div class="order-details-table-row">
+                    <span class="order-num secondary-text">{'order_num_label' | lexicon} {$order.num}</span>
+                    <span class="order-createdon">{'order_createdon_prefix' | lexicon} {$order.createdon | date_format : "%d.%m.%Y"}</span>
+                </div>
+                <div class="order-details-table-row">
+                    <div id="msCart">
+                        <div class="table-responsive">
+                            {foreach $products as $product}
+                                <div class="uibox-row">
+                                    <div class="col s12 secondary-text">
+                                        <a class="order-product-link secondary-text" href="{$product.id | url}">{$product.pagetitle}</a>
                                     </div>
-                                </td>
-                                <td class="count text-nowrap">{$product.count} {'ms2_frontend_count_unit' | lexicon}</td>
-                                <td class="price text-nowrap">{$product.price} {'ms2_frontend_currency' | lexicon}</td>
-                            </tr>
-                        {/foreach}
-                        <!-- <tr class="footer">
-                            <th class="total">{'ms2_cart_total' | lexicon}:</th>
-                            <th class="total_count text-nowrap">
-                                <span class="ms2_total_count">{$total.cart_count}</span> {'ms2_frontend_count_unit' | lexicon}
-                            </th>
-                           
-                            <th class="total_cost text-nowrap">
-                                <span class="ms2_total_cost">{$total.cart_cost}</span> {'ms2_frontend_currency' | lexicon}
-                            </th>
-                        </tr> -->
-                    </table>
-                </div>
-            </div>
-            <div class="order-details-table-row">
-                <div>Сумма: {$total.cost}</div>
-                <div class="uibox-row">
-                    <div class="col s4">
-                        Стоимость доставки: <b>{$total.delivery_cost} {'ms2_frontend_currency' | lexicon}</b>
+                                    <div class="col s3 secondary-text">
+                                        {$product.count} {'ms2_frontend_count_unit' | lexicon}
+                                    </div>
+                                    <div class="col s3 secondary-text">
+                                        {$product.price} {'ms2_frontend_currency' | lexicon}
+                                    </div>
+                                </div>
+                            {/foreach}
+                        </div>
                     </div>
-                    <div class="col s8">
-                        Способ оплаты: <b>{$payment.name}</b>
+                </div>
+                <div class="order-details-table-row">
+                    <div>{'total_order_sum_title' | lexicon}: <span class="secondary-text order-total-cost">{$total.cost} {'ms2_frontend_currency' | lexicon}</span></div>
+                    <div class="uibox-row">
+                        <div class="col s6 order-total-col">
+                            {'delivery_cost_title' | lexicon}: <b class="secondary-text order-delivery-cost">{$total.delivery_cost} {'ms2_frontend_currency' | lexicon}</b>
+                        </div>
+                        <div class="col s6 order-total-col">
+                            {set $paymentTitle = 'order_payment_title_id_' ~ $payment.id}
+                            {'ms2_frontend_payments' | lexicon}: <b class="secondary-text order-payment">{$paymentTitle | lexicon}</b>
+                        </div>
                     </div>
                 </div>
             </div>
+            <a href="{$_modx->config.site_url}" class="primary-text continue-shopping-link">{'continue_shopping_btn' | lexicon}</a>
         </div>
-        <a href="{$_modx->config.site_url}" class="primary-text">Продолжить покупки</a>
     </div>
 </div>
 

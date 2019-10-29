@@ -13,3 +13,5 @@ ht.access
 path.php
 
 !core/elements/
+!core/components/minishop2/plugins/customfields/
+!assets/components/minishop2/plugins/customfields/

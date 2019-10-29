@@ -4,12 +4,11 @@
             <div class="col s3 header-left">
                 <a class="logo-link" href="/">
                     <img src="app/img/logo.png" alt="{$_modx->config.site_name}">
-                    <span class="logo-title">Lumion</span>
                 </a>
             </div>
             <div class="col s9 header-right">
                 <div class="order-header-info">
-                    <div class="order-header-worktime">Горячая лания (09:00 - 18:00)</div>
+                    <div class="order-header-worktime">{'hotline_label' | lexicon} (09:00 - 18:00)</div>
                     <div class="order-header-hotline">
                         <a href="tel:+38{$_modx->config.phone | replace : $phonePattern : ''}">{$_modx->config.phone}</a>
                     </div>

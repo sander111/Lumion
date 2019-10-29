@@ -1,9 +1,12 @@
-<div class="col s3 product-item">
+{switch $_modx->resource.template}
+    {case '3'}
+        {set $colSize = 3}
+    {case '4'}
+        {set $colSize = 4}
+{/switch}
+<div class="col s{$colSize} product-item">
     <div class="product-item-inner">
         <a class="product-item-link" href="{$id | url}">
-            {if $popular ?}
-                <div class="product-sticker top">Топ</div>
-            {/if}
             {if $thumb ?}
                 <img class="product-item-img" src="{$thumb}" alt="{$pagetitle}">
             {else}

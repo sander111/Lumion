@@ -3,9 +3,11 @@
         <div class="sidebar-title dark white-text">{'catalog_title' | lexicon}</div>
         <ul class="sidebar-nav">
             {$_modx->runSnippet('Localizator', [
-                'parents' => 3,
+                'parents' => $_modx->resource.parent,
                 'limit' => 0,
-                'tpl' => '@INLINE <li><a href="{$id | url}">{$pagetitle}</a></li>'
+                'sortby' => 'menuindex',
+                'sortdir' => 'ASC',
+                'tpl' => '@INLINE <li><a href="{$id | url}">{$menutitle ? $menutitle : $pagetitle}</a></li>'
             ])}
         </ul>
     </div>
