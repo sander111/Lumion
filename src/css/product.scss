@@ -91,8 +91,12 @@
     color: $primaryText;
     margin: 0 0 10px 0;
 }
+.options-title.primary-text {
+    color: $primary;
+}
 .options-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     margin: 0 0 0 -5px;
 }

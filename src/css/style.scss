@@ -92,6 +92,11 @@ a:hover {
     color: $primary;
 }
 
+h1 {
+    font-size: 40px;
+    margin: 0 0 40px 0;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+}
 h2 {
     font-family: $fontDemi, Arial, Helvetica, sans-serif;
     font-size: 40px;
@@ -274,6 +279,7 @@ p {
 @import './content.scss';
 @import './product-item.scss';
 @import './product.scss';
+@import './blog.scss';
 @import './share.scss';
 @import './tabs.scss';
 @import './banner.scss';

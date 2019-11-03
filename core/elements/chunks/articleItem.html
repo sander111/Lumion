@@ -7,8 +7,12 @@
             <div class="card-publishedon">{$publishedon | date : 'd.m.Y'}</div>
             <a class="card-item-title" href="{$id | url}">{$pagetitle}</a>
             <ul class="card-tags">
-                <li><a href="">#украсить дом</a></li>
-                <li><a href="">#иллюминация</a></li>
+                {set $tags = $_pls['tv.tags_' ~ $_modx->config.cultureKey] | split : ','}
+                {if $tags[0] ?}
+                    {foreach $tags as $tag}
+                        <li><a href="{$parent | url}?tv|tags_{$_modx->config.cultureKey}={$tag}">#{$tag}</a></li>
+                    {/foreach}
+                {/if}
             </ul>
             <a class="btn btn-outlined link-btn" href="{$id | url}">Читать</a>
         </div>

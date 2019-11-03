@@ -1,0 +1,50 @@
+.article .uibox-container {
+    max-width: 828px;
+}
+.article-header-row {
+    margin: 0 0 26px 0;
+}
+.article-header-left {
+    width: calc(100% - 210px);
+    padding: 0 3% 0 0;
+}
+.article-header-right {
+    width: 210px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.article-meta-row {
+    display: flex;
+    align-items: center;
+    margin: 0 30px 0 0;
+}
+.article-meta-row .icon {
+    margin: 0 6px 0 0;
+}
+
+.btn-outlined.icon-btn {
+    padding: 0;
+    display: inline-flex;
+    align-items: stretch;
+}
+.btn-outlined.icon-btn:hover .btn-title,
+.btn-outlined.icon-btn:hover .btn-icon-wrap {
+    color: #fff;
+}
+.btn-outlined.icon-btn .btn-title {
+    color: $primaryText;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 1.2rem 1rem;
+    transition: all .3s ease 0s;
+}
+.btn-icon-wrap {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid $primary;
+    font-size: 1.6rem;
+    padding: 0 .8rem;
+}

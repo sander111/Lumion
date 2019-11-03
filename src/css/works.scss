@@ -98,11 +98,24 @@
 
 
 // Card
+.filters-panel {
+    margin: 0 0 55px 0;
+}
+.filters-panel .option-box-title {
+    padding: 0 12px;
+    height: 40px;
+    line-height: 38px;
+}
+.reset-btn-hidden {
+    display: none !important;
+}
+
 .blog-layout {
     margin: 0 0 100px 0;
 }
 .blog-list {
-    margin: 0 0 80px 0;
+    margin: 0 0 80px -1%;
+    width: 102%;
 }
 .card-item {
     padding: 1%;
@@ -139,6 +152,7 @@
 .card-tags {
     margin: 0 0 20px 0;
     display: flex;
+    flex-wrap: wrap;
     
     li {
         display: inline-block;
@@ -149,6 +163,7 @@
     }
     a {
         color: #777777;
+        white-space: nowrap;
     }
     a:hover {
         color: $primary;

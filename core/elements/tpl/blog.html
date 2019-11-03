@@ -30,19 +30,25 @@
 <main class="main">
     
     <div class="blog-layout">
-        <div id="pdopage" class="uibox-container">
-            <div class="uibox-row blog-list rows">
-                {$_modx->runSnippet('!pdoPage@pagin', [
-                    'element' => 'Localizator',
-                    'includeTVs' => 'img',
-                    'limit' => 3,
-                    'ajaxMode' => 'default',
-                    'tpl' => '@FILE chunks/articleItem.html'
-                ])}
-            </div>
-            <div class="pagin">
-                {$_modx->getPlaceholder('page.nav')}
-            </div>
+        <div class="uibox-container">
+            {$_modx->runSnippet('!mFilter2', [
+                'parents' => $_modx->resource.id,
+                'paginator' => 'pdoPage@pagin',
+                'element' => 'pdoResources',
+                'limit' => 8,
+                'ajaxMode' => 'default',
+                'includeTVs' => 'img,tags_ru,tags_uk',
+                'tpl' => '@FILE chunks/articleItem.html',
+                'tplOuter' => '@FILE chunks/filters/blog/outer.html',
+                'sortby' => 'id',
+                'sortdir' => 'DESC',
+                'filters' => 'tv|tags_' ~ $locale,
+                
+                'tplFilter.outer.tv|tags_ru' => '@FILE chunks/filters/boxOuter.html',
+                'tplFilter.row.tv|tags_ru' => '@FILE chunks/filters/radio.html',
+                'tplFilter.outer.tv|tags_uk' => '@FILE chunks/filters/boxOuter.html',
+                'tplFilter.row.tv|tags_uk' => '@FILE chunks/filters/radio.html',
+            ])}
         </div>
     </div>
 </main>

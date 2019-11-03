@@ -1,0 +1,13 @@
+{var $key = $table ~ $delimeter ~ $filter}
+<fieldset id="mse2_{$key}">
+    <div class="options-title primary-text">{('mse2_filter_' ~ $table ~ '_' ~ $filter) | lexicon}</div>
+    <div class="options-list">
+        <div class="option-box">
+            <label class="option-box-label">
+                <button type="reset" class="reset-btn-hidden"></button>
+                <span class="option-box-title">Все темы</span>
+            </label>
+        </div>
+        {$rows}
+    </div>
+</fieldset>

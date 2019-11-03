@@ -9,13 +9,33 @@
 .content h2:first-child {
     margin: 0 0 20px 0;
 }
+.content h2,
+.content h3 {
+    margin: 60px 0 20px 0;
+}
 .content {
     line-height: 28px;
 }
 .content p,
 .content li {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 26px;
+}
+.content ul li {
+    list-style: none;
+    padding: 0 0 0 48px;
+    position: relative;
+    margin: 10px 0;
+}
+.content ul li::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    background: $primary;
+    border-radius: 50%;
 }
 .video {
     position: relative;
@@ -57,4 +77,24 @@
 }
 .play-btn path {
     fill: $primary;
+}
+blockquote {
+    padding: 36px 28px 36px 100px;
+    background: #F2F2F2;
+    border-left: 7px solid #FF1B00;
+    position: relative;
+    font-size: 20px;
+    line-height: 26px;
+    margin: 40px 0;
+}
+blockquote::before {
+    content: '';
+    position: absolute;
+    left: 1%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    background: url('../img/blq.png') no-repeat;
 }

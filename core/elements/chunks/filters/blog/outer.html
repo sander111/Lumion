@@ -1,0 +1,22 @@
+<div class="row msearch2" id="mse2_mfilter">
+    <div class="filters-panel">
+        <form action="{$_modx->resource.id | url}" method="post" id="mse2_filters">
+            <div>
+                {$filters}
+            </div>
+            {if $filters}
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary hidden">{'mse2_submit' | lexicon}</button>
+                </div>
+            {/if}
+        </form>
+    </div>
+
+    <div id="mse2_results" class="uibox-row blog-list">
+        {$results}
+    </div>
+
+    <div class="mse2_pagination pagin">
+        {'page.nav' | placeholder}
+    </div>
+</div>
