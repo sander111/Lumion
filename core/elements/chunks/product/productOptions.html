@@ -1,0 +1,11 @@
+<div class="options-list" data-relation-options="{$relations}">
+    {foreach $data as $value index=$index}
+        <div class="option-box">
+            <label class="option-box-label">
+                <input type="radio" value="{$value.value}" name="options[{$value.key}]" data-relations="{$value.relations}" {if $index == 0}checked="checked"{/if}/>
+                <span class="option-box-title">{$value.value}{if $value.key == 'lamps_count'} ламп{/if}</span>
+            </label>
+        </div>
+
+    {/foreach}
+</div>

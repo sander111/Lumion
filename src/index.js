@@ -5,6 +5,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import $ from 'jquery'
 import 'slick-carousel'
 require("@fancyapps/fancybox");
+// require('./js/forms')
+require('./js/jquery.form.min.js')
 
 $(window).on('load', function() {
     let box = $('.category-list').innerHeight()
@@ -98,6 +100,74 @@ $(document).ready(function(){
         protect: true,
         animationEffect: "zoom",
         transitionEffect: "slide",
+    })
+
+    // Reload gallery
+    setTimeout(function() {
+        $('.colors-options input:first').prop('checked', true)
+        $('.colors-options input:first').change()
+    },300)
+    
+    $('.colors-options input').on('change', function() {
+        var color = $(this).val()
+        $.ajax({
+            url: '/assets/components/request/connectors/web/connector.php',
+            dataType: 'json',
+            data: {
+                action: 'getgallery',
+                color: color,
+                productId: +$('#msProduct input[name=id]').val()
+            },
+            success: function(data){
+                if (!data.success) {
+                    console.log('error:' + message);
+                    return;
+                } else {
+                    // console.log(data.object.galleryMain)
+                    // console.log(data.object.galleryNav)
+                    $('.gallery-main').slick('unslick');
+                    $('.gallery-nav').slick('unslick');
+
+                    $('.gallery-main').html(data.object.galleryMain)
+                    $('.gallery-nav').html(data.object.galleryNav)
+
+                    
+
+                    $('.gallery-main').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        fade: false,
+                        asNavFor: '.gallery-nav',
+                        prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"><i class="icon fa fa-angle-left"></i></button>',
+                        nextArrow: '<button class="slick-next" aria-label="Next" type="button"><i class="icon fa fa-angle-right"></i></button>',
+                        responsive: [
+                            {
+                                breakpoint: 1024,
+                                settings: {
+                                    fade: false,
+                                }
+                            }
+                        ]
+                    })
+                    $('.gallery-nav').slick({
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        asNavFor: '.gallery-main',
+                        dots: false,
+                        arrows: false,
+                        centerMode: false,
+                        focusOnSelect: true
+                    });
+                    
+                    setTimeout(function(){
+                        // $('.gallery-main').slick('refresh')
+                        // $('.gallery-nav').slick('refresh')
+                        // $('.gallery-nav').slick('reInit')
+                    },1000)
+                }
+            }
+        });
     })
 
     $('.colors .option-box-title').on('mouseenter', function(e){

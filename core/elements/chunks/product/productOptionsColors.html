@@ -1,0 +1,33 @@
+
+{set $colorsRepository = 26 | resource : 'productColors'}
+{set $colors = json_decode($colorsRepository, true)}
+
+<div class="options-list colors-options" data-relation-options="{$relations}">
+    {set $colorsData = $data | sortProductColors}
+    {foreach $colorsData as $value index=$index}
+        {set $color = $row.color}
+        {foreach $colors as $row}
+            {if $row.color_title == $value.value}
+                {set $color = $row.color}
+                {set $colorPattern = $row.pattern}
+            {/if}
+        {/foreach}
+        <div class="option-box">
+            <label class="option-box-label">
+                <input type="radio" value="{$value.value}" name="options[{$value.key}]" data-relations="{$value.relations}" />
+                <span class="option-box-title" data-tooltip="{$value.value}">
+                    {if $color ?}
+                        <div class="color" style="background-color: #{$color};">
+                            <div class="color-inner" style="background-color: #{$color};"></div>
+                        </div>
+                    {else}
+                        <div class="color-pattern" style="background-image: url({$colorPattern});"></div>
+                    {/if}
+                </span>
+            </label>
+        </div>
+
+    {/foreach}
+</div>
+
+

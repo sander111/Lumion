@@ -1,0 +1,65 @@
+{extends 'file:tpl/base.html'}
+{block 'main'}
+<div class="simple-banner">
+    <div class="simple-banner-inner">
+        <div class="simple-banner-descr">
+            <div class="uibox-container">
+                <div class="uibox-row">
+                    <div class="col s5 banner-left">
+                        <div class="banner-crumbs">
+                            {include 'file:chunks/main/crumbs.html'}
+                        </div>
+                        <div class="banner-title">{$_modx->resource.longtitle ? $_modx->resource.longtitle : $_modx->resource.pagetitle}</div>
+                        <div class="banner-text white-text">
+                            <p>{$_modx->resource.introtext}</p>
+                        </div>
+                    </div>
+                    <div class="col s7 banner-right">
+                        {if $_modx->resource.img ?}
+                            <div class="simple-banner-img-wrap">
+                                <img class="simple-banner-img" src="{$_modx->resource.img | phpthumbon : 'w=426&h=357&zc=1'}" alt="{$_modx->resource.pagetitle}">
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="main">
+    <div class="section">
+        <div class="uibox-container">
+            <div class="uibox-row">
+                <div class="col s6 section-col section-col-left">
+                    <div class="section-row">
+                        <h2 style="color: #484848;">Наши проекты</h2>
+                    </div>
+                </div>
+                <div class="col s6 section-col section-col-right">
+                    <div class="section-row">
+                        <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает состредоточиться. Лорем ипсум используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а так же реальное распределение букв</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pdopage" class="works-list-metro">
+        <div class="rows">
+            {$_modx->runSnippet('!pdoPage', [
+                'element' => 'Localizator',
+                'ajaxMode' => 'button',
+                'limit' => 4,
+                'includeTVs' => 'img',
+                'sortby' => 'menuindex',
+                'sortdir' => 'DESC',
+                'tpl' => '@FILE chunks/workItem.html',
+                'ajaxTplMore' => '@INLINE <div class="center clr"><button class="btn btn-outlined btn-more">Смотреть еще</button></div>'
+            ])}
+            <div class="clr"></div>
+        </div>
+        {$_modx->getPlaceholder('page.nav')}
+    </div>
+</main>
+{/block}

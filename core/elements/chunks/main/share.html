@@ -2,22 +2,22 @@
     <span class="share-title">{'share_title' | lexicon}</span>
     <ul class="share-list">
         <li class="share-item">
-            <a href="" rel="nofollow">
+            <a href="https://www.facebook.com/sharer/sharer.php?u={$_modx->config.site_url}{$_modx->resource.id | url}" target="_blank" rel="nofollow">
                 <i class="icon icon-facebook"></i>
             </a>
         </li>
-        <li class="share-item">
+        <!-- <li class="share-item">
             <a href="" rel="nofollow">
                 <i class="icon icon-instagram"></i>
             </a>
-        </li>
+        </li> -->
         <li class="share-item">
-            <a href="" rel="nofollow">
-                <i class="icon icon-facebook"></i>
+            <a href="viber://forward?text={$_modx->config.site_url}{$_modx->resource.id | url}" target="_blank" rel="nofollow">
+                <i class="icon icon-viber"></i>
             </a>
         </li>
         <li class="share-item">
-            <a href="" rel="nofollow">
+            <a href="https://telegram.me/share/url?url={$_modx->config.site_url}{$_modx->resource.id | url}&text={$_modx->resource.pagetitle}" target="_blank" rel="nofollow">
                 <i class="icon icon-telegram"></i>
             </a>
         </li>

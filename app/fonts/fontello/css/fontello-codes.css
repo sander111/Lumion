@@ -1,9 +1,10 @@
 
 .icon-search:before { content: '\e800'; } /* '' */
-.icon-cart:before { content: '\e801'; } /* '' */
+.icon-viber:before { content: '\e801'; } /* '' */
 .icon-right-open:before { content: '\e802'; } /* '' */
 .icon-right-open-mini:before { content: '\e803'; } /* '' */
 .icon-telegram:before { content: '\e804'; } /* '' */
+.icon-minicart:before { content: '\e805'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-youtube-play:before { content: '\f16a'; } /* '' */
 .icon-instagram:before { content: '\f16d'; } /* '' */

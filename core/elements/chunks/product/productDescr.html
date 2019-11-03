@@ -1,26 +1,20 @@
+{$_modx->runSnippet('!msOptionsPrice.initialize')}
+
+
 <h1>{$_modx->resource.pagetitle}</h1>
 <div class="product-descr">
-    <form class="ms2_form" method="post">
+    <form class="ms2_form msoptionsprice-product" method="post">
         <input type="hidden" name="id" value="{$_modx->resource.id}"/>
         <input type="number" name="count" id="product_price" class="hidden" value="1"/>
         <div class="product-descr-row uibox-row">
             <div class="product-col">
                 <div class="options led">
                     <div class="options-title">{'product_option_lamps_title' | lexicon}</div>
-                    <div class="options-list">
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="led">
-                                <span class="option-box-title">100 ламп</span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="led">
-                                <span class="option-box-title">200 ламп</span>
-                            </label>
-                        </div>
-                    </div>
+                    {$_modx->runSnippet('!getProductOptions', [
+                        'onlyOption' => 'lamps_count',
+                        'tpl' => '@FILE chunks/product/productOptions.html',
+                        'constraintOptions' => ['operating_mode','colors', 'wire_color'],
+                    ])}
                 </div>
             </div>
             <div class="product-col">
@@ -45,83 +39,21 @@
             <div class="product-col">
                 <div class="options colors">
                     <div class="options-title">{'product_option_colors_title' | lexicon}</div>
-                    <div class="options-list">
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="color">
-                                <span class="option-box-title" data-tooltip="Белый холодный">
-                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
-                                </span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="color">
-                                <span class="option-box-title" data-tooltip="Blue">
-                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
-                                </span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="color">
-                                <span class="option-box-title" data-tooltip="Green">
-                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
-                                </span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="color">
-                                <span class="option-box-title" data-tooltip="Yellow">
-                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
-                                </span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="color">
-                                <span class="option-box-title" data-tooltip="Белый холодный">
-                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
-                                </span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="color">
-                                <span class="option-box-title" data-tooltip="Белый холодный">
-                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
-                                </span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="color">
-                                <span class="option-box-title" data-tooltip="Белый холодный">
-                                    <img class="option-box-pattern" src="uploads/color-blue.png" alt="">
-                                </span>
-                            </label>
-                        </div>
-                    </div>
+                    {$_modx->runSnippet('!getProductOptions', [
+                        'onlyOption' => 'colors',
+                        'tpl' => '@FILE chunks/product/productOptionsColors.html',
+                        'constraintOptions' => ['operating_mode','lamps_count', 'wire_color'],
+                    ])}
                 </div>
             </div>
             <div class="product-col">
                 <div class="options led">
                     <div class="options-title">{'product_option_wire_colors_title' | lexicon}</div>
-                    <div class="options-list">
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="wire">
-                                <span class="option-box-title">Белый</span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="wire">
-                                <span class="option-box-title">Чёрный</span>
-                            </label>
-                        </div>
-                    </div>
+                    {$_modx->runSnippet('!getProductOptions', [
+                        'onlyOption' => 'wire_color',
+                        'tpl' => '@FILE chunks/product/productOptionsWire.html',
+                        'constraintOptions' => ['operating_mode','colors', 'lamps_count'],
+                    ])}
                 </div>
             </div>
         </div>
@@ -129,32 +61,17 @@
             <div class="product-col">
                 <div class="options led">
                     <div class="options-title">{'product_option_operating_mode_title' | lexicon}</div>
-                    <div class="options-list">
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="operating_mode">
-                                <span class="option-box-title">Static</span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="operating_mode">
-                                <span class="option-box-title">Flicker</span>
-                            </label>
-                        </div>
-                        <div class="option-box">
-                            <label class="option-box-label">
-                                <input type="radio" name="operating_mode">
-                                <span class="option-box-title">All flicker</span>
-                            </label>
-                        </div>
-                    </div>
+                        {$_modx->runSnippet('!getProductOptions', [
+                            'onlyOption' => 'operating_mode',
+                            'tpl' => '@FILE chunks/product/productOptions.html',
+                            'constraintOptions' => ['wire_color','colors', 'lamps_count'],
+                        ])}
                 </div>
             </div>
         </div>
         <div class="product-descr-row uibox-row product-actions-row">
             <div class="price-wrap">
-                <span class="price">{$price}</span>
+                <span class="price msoptionsprice-cost msoptionsprice-[[*id]]">{$price}</span>
                 <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
             </div>
             <div class="product-actions">

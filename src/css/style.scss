@@ -121,7 +121,7 @@ p {
 .subtitle {
     font-family: $fontDemi, Arial, Helvetica, sans-serif;
     font-size: 22px;
-    line-height: 18px;
+    line-height: 24px;
     letter-spacing: 1px;
     margin: 10px 0;
     position: relative;
@@ -271,6 +271,7 @@ p {
 @import './simple-banner.scss';
 @import './crumbs.scss';
 @import './aside.scss';
+@import './content.scss';
 @import './product-item.scss';
 @import './product.scss';
 @import './share.scss';
@@ -285,7 +286,21 @@ p {
 @import './alert.scss';
 @import './modal.scss';
 @import './cart.scss';
+@import './table.scss';
+@import './pagination.scss';
+@import './loader.scss';
 
+.btn-more {
+    width: auto !important;
+    margin: 46px auto 0 auto !important;
+    min-width: 232px;
+}
+.page {
+    margin: 30px 0 0 0;
+}
+.page-right {
+    width: 70%;
+}
 .products-home-list {
     margin: 0;
 
@@ -477,14 +492,14 @@ p {
         list-style: none;
         position: relative;
         margin: 0 0 40px 0;
-        padding: 0 0 0 70px;
+        padding: 0 0 0 96px;
     }
     li:before {
         counter-increment: storyCounter;
         content:counter(storyCounter);
         color: $primary;
         position: absolute;
-        left: -25px;
+        left: 0;
         top: 0;
         background: transparent;
         display: inline-block;

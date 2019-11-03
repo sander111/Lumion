@@ -1,0 +1,16 @@
+<div class="col s4 blog-item card-item">
+    <div class="card-item-inner">
+        <a class="work-item-link" href="{$id | url}">
+            <img class="work-item-img" src="{$_pls['tv.img'] | phpthumbon : 'w=376&h=280&zc=1'}" alt="{$pagetitle}">
+        </a>
+        <div class="card-item-content">
+            <div class="card-publishedon">{$publishedon | date : 'd.m.Y'}</div>
+            <a class="card-item-title" href="{$id | url}">{$pagetitle}</a>
+            <ul class="card-tags">
+                <li><a href="">#украсить дом</a></li>
+                <li><a href="">#иллюминация</a></li>
+            </ul>
+            <a class="btn btn-outlined link-btn" href="{$id | url}">Читать</a>
+        </div>
+    </div>
+</div>

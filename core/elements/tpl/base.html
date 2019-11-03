@@ -7,6 +7,16 @@
     {block 'head'}
         {include 'file:chunks/main/head.html'}
     {/block}
+
+    <style>
+        .minicart-toggle svg,
+        .minicart-toggle svg path {
+            transition: all .3s ease 0s;
+        }
+        .minicart-toggle:hover svg path {
+            fill: #CD293D;
+        }
+    </style>
 </head>
 <body>
     <div class="layout">
@@ -25,14 +35,49 @@
 
     {include 'file:chunks/main/alert.html'}
     {include 'file:chunks/main/scripts.html'}
+    {include 'file:chunks/main/loader.html'}
 
     <script>
         $(document).ready(function() {
+            // Reviews pagin
+            $('.pagin').on('click', 'a', function(){
+                // window.scrollTo($('#pdopage').offset().top, 0)
+                // console.log($('#pdopage').offset().top)
+            })
 
+            // Options module
+            $('#msProduct').on('change', '.option-box input', function() {
+                
+                let optionRelations = $(this).parents('.options-list').attr('data-relation-options').split('&')
+                let needle = $(this).attr('name').match(/[^[\]]+(?=])/g) + '=' + $(this).val()
+                let relations = []
+                
+                for (let i = 0; i < optionRelations.length; i++) {
+                    $('#msProduct .option-box input[name="options['+optionRelations[i]+']"]').each(function(){
+                        if (typeof $(this).attr('data-relations') !== 'undefined') {
+                            relations = $(this).attr('data-relations').split('&')
+                            if (relations.indexOf( needle ) == -1) {
+                                if ($(this).prop('checked') === true) {
+                                    $('#msProduct .option-box input[name="options['+optionRelations[i]+']"]:first').prop('checked', true);
+                                    $(this).prop('checked', false)
+                                }
+                                $(this).prop('disabled', true)
+                                
+                            } else {
+                                $(this).prop('disabled', false)
+                            }
+                        }
+                    })
+                }
+            })
+
+
+            // search
             $('.search-toggle').on('click', function() {
                 $('.search-form').toggleClass('active')
             })
 
+            // cart module
             miniShop2.Callbacks.add('Cart.add.ajax.always', 'ajax_log', function(xhr) {
                 if (xhr.responseJSON.data.total_count > 0) {
                     $('.minicart-count').removeClass('hidden')

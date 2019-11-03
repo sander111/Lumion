@@ -1,0 +1,28 @@
+{if $files?}
+    {foreach $files as $file}
+        {if $file['type'] == 'video'}
+            <div class="gallery-nav-item">
+                <div class="gallery-nav-inner">
+                    <span class="video-slide">
+                        <img src="/assets/images/products/{$file['product_id']}/small/{$file['file']}" alt="{$file['name']}">
+                        <span class="play-overlay">
+                            <svg class="icon" width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 10.268C21.3333 11.0378 21.3333 12.9623 20 13.7321L3.5 23.2583C2.16666 24.0281 0.500001 23.0659 0.500001 21.5263L0.500002 2.47372C0.500002 0.934117 2.16667 -0.0281314 3.5 0.741669L20 10.268Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        {else}
+            <div class="gallery-nav-item">
+                <div class="gallery-nav-inner">
+                        <img src="{$file['small']}" alt="{$file['name']}">
+                </div>
+            </div>
+        {/if}
+    {/foreach}
+{else}
+    <img src="{('assets_url' | option) ~ 'components/minishop2/img/web/ms2_medium.png'}"
+            srcset="{('assets_url' | option) ~ 'components/minishop2/img/web/ms2_medium@2x.png'} 2x"
+            alt="" title=""/>
+{/if}

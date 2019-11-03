@@ -40,6 +40,11 @@
     height: 50px;
     box-shadow: none;
 }
+.textarea.outlined {
+    border: 1px solid #B0B0B0;
+    height: 110px;
+    box-shadow: none;
+}
 .inline-form {
     align-items: flex-end;
     flex-wrap: nowrap;
@@ -93,7 +98,13 @@
 .custom-radio input[type="radio"]:checked + .custom-radio-outer {
     border-color: $primary;
 }
+.option-box-label input[type="radio"]:disabled + .option-box-title {
+    opacity: .3;
+}
 .custom-radio-title {
     display: inline-block;
     margin: 0 0 0 .6rem;
+}
+.reviews-btn {
+    background: #415576;
 }

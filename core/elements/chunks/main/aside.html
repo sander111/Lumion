@@ -1,43 +1,62 @@
-<aside class="col s3 sidebar">
+<aside class="sidebar">
     <div class="sidebar-nav-wrap">
-        <div class="sidebar-title dark white-text">{'catalog_title' | lexicon}</div>
-        <ul class="sidebar-nav">
+        <div class="sidebar-title dark white-text">
             {$_modx->runSnippet('Localizator', [
-                'parents' => $_modx->resource.parent,
-                'limit' => 0,
-                'sortby' => 'menuindex',
-                'sortdir' => 'ASC',
-                'tpl' => '@INLINE <li><a href="{$id | url}">{$menutitle ? $menutitle : $pagetitle}</a></li>'
+                'parents' => 0,
+                'resources' => "{$_modx->resource.parent}",
+                'limit' => 1,
+                'tpl' => '@INLINE {$pagetitle}'
             ])}
-        </ul>
+        </div>
+        {$_modx->runSnippet('Localizator', [
+            'snippet' => 'pdoMenu',
+            'parents' => $_modx->resource.parent,
+            'limit' => 0,
+            'level' => 1,
+            'sortby' => 'menuindex',
+            'sortdir' => 'ASC',
+            'tplOuter' => '@INLINE <ul class="sidebar-nav">{$wrapper}</ul>',
+            'tpl' => '@INLINE <li {$classes}><a href="{$id | url}">{$menutitle ? $menutitle : $pagetitle}</a></li>'
+        ])}
     </div>
     <div class="sidebar-info">
-        <div class="sidebar-info-item">
-            <div class="sidebar-info-title">{'delivery_block_title' | lexicon}</div>
-            <div class="uibox-row">
-                <div class="sidebar-info-left">
-                    <img src="app/img/delivery.png" alt="{'delivery_block_title' | lexicon}">
+        {if $_modx->resource.template == '4' ?}
+            <div class="sidebar-info-item">
+                <div class="sidebar-info-title">{'delivery_block_title' | lexicon}</div>
+                <div class="uibox-row">
+                    <div class="sidebar-info-left">
+                        <img src="app/img/delivery.png" alt="{'delivery_block_title' | lexicon}">
+                    </div>
+                    <div class="sidebar-info-right">{'delivery_block_text' | lexicon}</div>
                 </div>
-                <div class="sidebar-info-right">{'delivery_block_text' | lexicon}</div>
             </div>
-        </div>
-        <div class="sidebar-info-item">
-            <div class="sidebar-info-title">{'garanty_block_title' | lexicon}</div>
-            <div class="uibox-row">
-                <div class="sidebar-info-left">
-                    <img src="app/img/garanty.png" alt="{'garanty_block_title' | lexicon}">
+            <div class="sidebar-info-item">
+                <div class="sidebar-info-title">{'garanty_block_title' | lexicon}</div>
+                <div class="uibox-row">
+                    <div class="sidebar-info-left">
+                        <img src="app/img/garanty.png" alt="{'garanty_block_title' | lexicon}">
+                    </div>
+                    <div class="sidebar-info-right">{'garanty_block_text' | lexicon}</div>
                 </div>
-                <div class="sidebar-info-right">{'garanty_block_text' | lexicon}</div>
             </div>
-        </div>
-        <div class="sidebar-info-item">
-            <div class="sidebar-info-title">{'payment_block_title' | lexicon}</div>
-            <div class="uibox-row">
-                <div class="sidebar-info-left">
-                    <img src="app/img/payment.png" alt="{'payment_block_title' | lexicon}">
+            <div class="sidebar-info-item">
+                <div class="sidebar-info-title">{'payment_block_title' | lexicon}</div>
+                <div class="uibox-row">
+                    <div class="sidebar-info-left">
+                        <img src="app/img/payment.png" alt="{'payment_block_title' | lexicon}">
+                    </div>
+                    <div class="sidebar-info-right">{'payment_block_text' | lexicon}</div>
                 </div>
-                <div class="sidebar-info-right">{'payment_block_text' | lexicon}</div>
             </div>
-        </div>
+        {else}
+            <div class="fb-widget">
+                <div class="fb-widget-header dark">
+                    <img class="widget-logo" src="/app/img/logo.png" alt="{$_modx->config.site_name}">
+                </div>
+                <div class="fb-page" data-href="https://www.facebook.com/Lumionsoftware/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Lumionsoftware/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Lumionsoftware/">Lumion</a></blockquote></div>
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>
+            </div>
+        {/if}
     </div>
 </aside>
