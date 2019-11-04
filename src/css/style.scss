@@ -237,7 +237,8 @@ p {
 }
 .primary-text {
     color: $primary;
-}.secondary-text {
+}
+.secondary-text {
     color: $primaryText;
 }
 .primary {
@@ -518,4 +519,52 @@ p {
         border-radius: 50%;
         border: 3px solid #CD293D;
     }
+}
+
+
+.search-title {
+    font-size: 28px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    margin: 15px 0;
+}
+.search-list {
+    margin: 50px 0;
+}
+.empty-search {
+    max-width: 430px;
+}
+.empty-search p {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+
+.not-found {
+    background-color: #262626;
+    background-image: url('../img/banner-pattern.png');
+}
+.not-found-layout {
+    background: url('../img/404.png') no-repeat;
+    background-position: 85% 90px;
+    padding: 140px 0 80px 0;
+
+    h1 {
+        font-size: 60px;
+        font-family: $fontBold, Arial, Helvetica, sans-serif;
+        color: #7A7A7A;
+    }
+}
+.not-found-title {
+    font-family: $fontBold, Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #FFFFFF;
+    max-width: 500px;
+}
+.not-found-descr {
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    max-width: 500px;
 }

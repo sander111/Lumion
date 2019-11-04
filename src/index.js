@@ -257,13 +257,13 @@ $(document).ready(function(){
         $(this).parents('.order-row').removeClass('checked').addClass('active').find('.form-block').slideDown(300)
     })
 
-    $('.articles-list').slick({
+    $('.articles-slider').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
         fade: false,
         prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"><i class="icon fa fa-angle-left"></i></button>',
-        nextArrow: '<button class="slick-next" aria-label="Next" type="button"><i class="icon fa fa-angle-right"></i></button>',
+        nextArrow: '<button class="slick-next" aria-label="Next" type="button"><i class="icon icon-right-open-mini"></i></button>',
         responsive: [
 			{
 				breakpoint: 1024,
@@ -273,6 +273,19 @@ $(document).ready(function(){
 			}
 		]
     })
+
+    if (typeof $('.content') !== undefined) {
+        const wordsPerMinute = 200
+        let result
+
+        let textLength = $('.content').text().split(' ').length
+        if(textLength > 0){
+            let value = Math.ceil(textLength / wordsPerMinute);
+            result = `${value}`;
+        }
+
+        $('.read-time').text(result)
+    }
 
     require('./js/cart')
 })

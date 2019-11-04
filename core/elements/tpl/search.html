@@ -1,0 +1,39 @@
+{extends 'file:tpl/base.html'}
+{block 'main'}
+<main class="main">
+    <div class="uibox-container">
+        {include 'file:chunks/main/crumbs.html'}
+    </div>
+
+    <div class="products">
+        <div id="pdopage" class="uibox-container">
+            [[!mSearch2? &setTotal=`1` &wrapIfEmpty=`1` &tplWrapper=`@FILE chunks/main/searchWrap.html`]]
+            <div class="search-list">
+                <div class="uibox-row products-list rows">
+                    [[!pdoPage@pagin?
+                        &element=`msProducts`
+                        &parents=`0`
+                        &limit=`32`
+                        &ajaxMode=`default`
+                        &resources=`[[!mSearch2:default=`999999`?returnIds=`1`&limit=`0`]]`
+                        &sortby=`ids`
+                        &leftJoin=`{
+                            "localizator" : {
+                                "class" : "localizatorContent",
+                                "alias" : "localizator",
+                                "on" : "localizator.resource_id = msProduct.id"
+                            }
+                        }`
+                        &select=`{ "localizator" : "msProduct.*, localizator.*, msProduct.id" }`
+                        &where'=`{ "localizator.key" : "' ~ ('localizator_key' | option) ~ '"}`
+                        &tpl=`@FILE chunks/productItem.html`
+                    ]]
+                </div>
+                <div class="pagin">
+                    {$_modx->getPlaceholder('page.nav')}
+                </div>
+            </div>            
+        </div>
+    </div>
+</main>
+{/block}

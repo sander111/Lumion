@@ -1,31 +1,7 @@
 {extends 'file:tpl/base.html'}
 {block 'main'}
-<div class="simple-banner">
-    <div class="simple-banner-inner">
-        <div class="simple-banner-descr">
-            <div class="uibox-container">
-                <div class="uibox-row">
-                    <div class="col s5 banner-left">
-                        <div class="banner-crumbs">
-                            {include 'file:chunks/main/crumbs.html'}
-                        </div>
-                        <div class="banner-title">{$_modx->resource.longtitle ? $_modx->resource.longtitle : $_modx->resource.pagetitle}</div>
-                        <div class="banner-text white-text">
-                            <p>{$_modx->resource.introtext}</p>
-                        </div>
-                    </div>
-                    <div class="col s7 banner-right">
-                        {if $_modx->resource.img ?}
-                            <div class="simple-banner-img-wrap">
-                                <img class="simple-banner-img" src="{$_modx->resource.img | phpthumbon : 'w=426&h=357&zc=1'}" alt="{$_modx->resource.pagetitle}">
-                            </div>
-                        {/if}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+{include 'file:chunks/main/simpleBanner.html'}
 
 <main class="main">
     <div class="page">

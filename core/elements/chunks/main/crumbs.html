@@ -1,13 +1,11 @@
 <div class="crumbs">
-    <div class="uibox-container">
-        {$_modx->runSnippet('Localizator', [
-            'snippet' => 'pdoCrumbs',
-            'showHome' => 1,
-            'tplHome' => '@INLINE <li><a href="{$link}">{$menutitle}</a></li>',
-            'tplWrapper' => '@INLINE <ul class="breadcrumb">{$output}</ul>',
-            'tpl' => '@INLINE <li><a href="{$link}">{$menutitle}</a></li>',
-            'tplCurrent' => '@INLINE <li class="current"><a href="{$link}">{$menutitle}</a></li>',
-            'outputSeparator' => '<li class="crumbs-separator"><i class="icon icon-right-open-mini"></i></li>'
-        ])}
-    </div>
+    {$_modx->runSnippet('Localizator', [
+        'snippet' => 'pdoCrumbs',
+        'showHome' => 1,
+        'tplHome' => '@INLINE <li><a href="{$link}">{$menutitle}</a></li>',
+        'tplWrapper' => '@INLINE <ul class="breadcrumb">{$output}</ul>',
+        'tpl' => '@INLINE <li><a href="{$link}">{$menutitle}</a></li>',
+        'tplCurrent' => '@INLINE <li class="current"><a href="{$link}">{$menutitle}</a></li>',
+        'outputSeparator' => '<li class="crumbs-separator"><i class="icon icon-right-open-mini"></i></li>'
+    ])}
 </div>

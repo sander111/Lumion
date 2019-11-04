@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body>
+<body {if $_modx->resource.template == '13'} class="not-found" {/if}>
     <div class="layout">
         {block 'header'}
             {include 'file:chunks/main/header.html'}

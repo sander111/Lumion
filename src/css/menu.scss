@@ -123,6 +123,18 @@
         color: $primary;
     }
 }
+.menu-blog {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    list-style: none;
+    line-height: 20px;
+    margin: 14px 0;
+}
+.menu-blog a {
+    color: #fff;
+}
+.menu-blog a:hover {
+    color: $primary;
+}
 .header-soc {
     margin: 25px 0 0 -9px;
     display: flex;

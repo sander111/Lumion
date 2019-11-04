@@ -98,3 +98,17 @@ blockquote::before {
     height: 60px;
     background: url('../img/blq.png') no-repeat;
 }
+.content .calc-lead-block-img-wrap {
+    bottom: -3px;
+    width: 34%;
+    left: -5px;
+}
+.content .inline-form {
+    flex-wrap: wrap;
+}
+.content .inline-form .form-group {
+    width: calc(50% - 40px);
+}
+.content .inline-form .form-group:last-child {
+    margin: 15px 0;
+}

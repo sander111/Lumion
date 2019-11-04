@@ -26,14 +26,14 @@
                                         </svg>
                                         
                                 {$_modx->resource.publishedon | date : 'd.m.Y'}</div>
-                            <div class="article-meta-row read-time">
+                            <div class="article-meta-row">
                                 <svg class="icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="9" y="4.19824" width="1" height="8.31733" fill="#484848"/>
                                     <rect x="9" y="12.5154" width="1.03966" height="6" transform="rotate(-90 9 12.5154)" fill="#484848"/>
                                     <circle cx="10.5" cy="10.5" r="9.75" stroke="#484848" stroke-width="1.5"/>
                                 </svg>
 
-                                10 минут</div>
+                                <span class="read-time"></span>&nbsp;минут</div>
                         </div>
                     </div>
                     <div class="article-header-right">
@@ -70,9 +70,9 @@
                 <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает состредоточиться. Лорем ипсум используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а так же реальное распределение букв Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает состредоточиться. Лорем ипсум используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а так же реальное распределение букв</p>
                 <blockquote>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает</blockquote>
             </div>
-            <div class="articles">
-                <h2>Читайте также</h2>
-                <div class="uibox-row articles-list">
+            <div class="related-articles">
+                <h2 class="secondary-text">Читайте также</h2>
+                <div class="uibox-row articles-slider">
                     {$_modx->runSnippet('!Localizator', [
                         'parents' => 27,
                         'resources' => "-{$_modx->resource.id}",
