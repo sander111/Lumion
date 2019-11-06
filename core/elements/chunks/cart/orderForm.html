@@ -3,7 +3,8 @@
     <h1>{$_modx->resource.pagetitle}</h1>
     <form class="ms2_form order-form" id="msOrder" method="post">
         <div class="uibox-row">
-            <div class="col s6">
+            <div class="col s6 order-data">
+
                 <div class="order-row receiver-info active">
                     <div class="subtitle num-title">{'ms2_frontend_credentials' | lexicon}</div>
                     <div class="order-checkin-data-row">
@@ -15,15 +16,15 @@
                             <div class="form-group">
                                 <input type="text" id="{$field}" placeholder="{('ms2_frontend_' ~ $field) | lexicon}"
                                         name="{$field}" value="{$form[$field]}"
-                                        class="input-text outlined form-control{($field in list $errors) ? ' error' : ''}">
+                                        class="empty-field input-text outlined form-control{($field in list $errors) ? ' error' : ''}">
+                                <div class="error-msg"></div>
                             </div>
                         {/foreach}
                         <button type="button" class="btn btn-primary primary small order-step-btn">{'order_onwards_btn' | lexicon}</button>
                     </div>
-                    
                 </div>
             
-                <div class="order-row">
+                <div class="order-row delivery-info">
                     <div class="subtitle num-title">{'delivery_block_title' | lexicon}</div>
                     <div class="order-checkin-data-row">
                         <div class="order-checkin-data"></div>
@@ -35,9 +36,13 @@
                                 <label class="form-label" for="{$field}">
                                     {('ms2_frontend_' ~ $field) | lexicon} <span class="required-star">*</span>
                                 </label>
-                                <input type="text" id="{$field}" placeholder="Выберите город"
+                                <div class="input-row">
+                                    <input type="text" id="{$field}" placeholder="Выберите город"
                                         name="{$field}" value="{$form[$field]}"
-                                        class="oredr-city-input input-text outlined form-control{($field in list $errors) ? ' error' : ''}">
+                                        class="empty-field oredr-city-input input-text outlined form-control{($field in list $errors) ? ' error' : ''}">
+                                    <div class="error-msg"></div>
+                                </div>
+                                
                                 <ul class="order-cities-list">
                                     <li><button type="button" class="q-city">{'order_delivery_city_kiyv' | lexicon}</button></li>
                                     <li><button type="button" class="q-city">{'order_delivery_city_dnepr' | lexicon}</button></li>
@@ -50,6 +55,7 @@
 
                         <div id="deliveries" class="deliveries">
                             <div class="subtitle">{'ms2_frontend_deliveries' | lexicon}:</div>
+                            <div class="delivery-empty error-data">{'delivery_error_msg' | lexicon}</div>
                             <div class="form-group">
                                 <div class="delivery-group">
                                     {foreach $deliveries as $delivery index=$index}
@@ -61,7 +67,7 @@
                                                         <label class="custom-radio">
                                                             <input class="hidden" type="radio" name="delivery" value="{$delivery.id}" id="delivery_{$delivery.id}"
                                                                 data-payments="{$delivery.payments | json_encode}"
-                                                                {$checked ? 'checked' : ''}>
+                                                                >
                                                             <div class="custom-radio-outer">
                                                                 <div class="custom-radio-checked"></div>
                                                             </div>
@@ -69,12 +75,15 @@
                                                     </div>
                                                     <div class="delivery-item-right">
                                                         <label class="delivery" for="delivery_{$delivery.id}">
-                                                            {'order_delivery_np_title' | lexicon}: <b>{$delivery.price} {'ms2_frontend_currency' | lexicon}</b>
+                                                            <span class="order-checkin-add-data">{'order_delivery_np_title' | lexicon}</span> {'delivery_cost_title' | lexicon}: <b>{$delivery.price} {'ms2_frontend_currency' | lexicon}</b>
                                                         </label>
                                                         <div class="delivery-block">
                                                             <div class="form-group">
                                                                 <div class="col s12 uibox-row inputs-row">
-                                                                    <input type="text" name="warehouse" class="input-text outlined" placeholder="Укажите отделение">
+                                                                    <div class="input-row">
+                                                                        <input type="text" name="metro" class="input-text outlined" placeholder="Укажите отделение">
+                                                                        <div class="error-msg"></div>
+                                                                    </div>
                                                                     <a class="primary-text get-np-map" href="">{'msd_np_change_on_map' | lexicon}</a>
                                                                 </div>
                                                                 <p>{'order_delivery_np_descr' | lexicon} <b>10 000</b> грн</p>
@@ -89,7 +98,7 @@
                                                         <label class="custom-radio">
                                                             <input class="hidden" type="radio" name="delivery" value="{$delivery.id}" id="delivery_{$delivery.id}"
                                                                 data-payments="{$delivery.payments | json_encode}"
-                                                                {$checked ? 'checked' : ''}>
+                                                                >
                                                             <div class="custom-radio-outer">
                                                                 <div class="custom-radio-checked"></div>
                                                             </div>
@@ -97,7 +106,7 @@
                                                     </div>
                                                     <div class="delivery-item-right">
                                                         <label class="delivery" for="delivery_{$delivery.id}">
-                                                            {'order_delivery_default_title' | lexicon}: <b>бесплатно</b>
+                                                            <span class="order-checkin-add-data">{'order_delivery_default_title' | lexicon}</span> {'delivery_cost_title' | lexicon}: <b>бесплатно</b>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -110,15 +119,16 @@
                     </div> 
                 </div>
             
-                <div class="order-row" id="payments">
+                <div class="order-row payments-info" id="payments">
                     <div class="subtitle num-title">{'payment_block_title' | lexicon}</div>
                     <div class="form-block payments-block">
                         <div class="subtitle">{'ms2_frontend_payments' | lexicon}</div>
                         {foreach $payments as $payment index=$index}
+                            {if $payment.id !== '5'}
                             {var $checked = !($order.payment in keys $payments) && $index == 0 || $payment.id == $order.payment}
                             <div class="form-group">
                                 <label class="custom-radio">
-                                    <input class="hidden" type="radio" name="payment" value="{$payment.id}" id="payment_{$payment.id}"{$checked ? 'checked' : ''}>
+                                    <input class="hidden" type="radio" name="payment" value="{$payment.id}" id="payment_{$payment.id}">
                                     <div class="custom-radio-outer">
                                         <div class="custom-radio-checked"></div>
                                     </div>
@@ -126,11 +136,12 @@
                                     <span class="custom-radio-title">{$paymentTitle | lexicon}</span>
                                 </label>
                             </div>
+                            {/if}
                         {/foreach}
                     </div>
                 </div>
             </div>
-            <div class="col s5 offset-1">{$_modx->runSnippet('!msCart', ['tpl' => '@FILE chunks/cart/cart.html'])}</div>
+            <div class="col s5 offset-1 order-cart">{$_modx->runSnippet('!msCart', ['tpl' => '@FILE chunks/cart/cart.html'])}</div>
         </div>
     </form>
 </div>

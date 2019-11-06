@@ -1,12 +1,12 @@
-<div class="search-title">Результаты поиска: [[+mse2_query]]</div>
+<div class="search-title">{'search_results_title' | lexicon}: [[+mse2_query]]</div>
 {if $total ?}
-    <div class="search-count">Найдено товаров: {$total}</div>
+    <div class="search-count">{'search_count_title' | lexicon}: {$total}</div>
 {else}
     <div class="empty-search">
         <br>
-        <p>По вашему запросу ничего не найдено</p>
+        <p>{'search_empty_results_title' | lexicon}</p>
         <br>
-        <p>Не грустите! У нас есть для вас яркие предложения! Перейдите в "Каталог", у нас большой выбор гирлянд</p>
+        <p>{'search_empty_results_msg' | lexicon}</p>
         <br>
         <a href="{3 | url}" class="btn btn-primary primary link-btn">{'catalog_title' | lexicon}</a>
     </div>

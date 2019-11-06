@@ -4,7 +4,7 @@
             {'ms2_cart_is_empty' | lexicon}
         </div>
     {else}
-        <h4 class="h4 cart-title">Состав заказа</h4>
+        <h4 class="h4 cart-title">{'order_list_title' | lexicon}</h4>
         <div class="cart">
             <div class="cart-body">
                 {foreach $products as $product}
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" name="ms2_action" value="order/submit" class="btn btn-primary primary small col s12 disabled">
+            <button type="submit" name="ms2_action" value="order/submit" class="btn btn-primary primary small col s12 disabled order-send-btn" disabled="disabled">
                 {'ms2_frontend_order_submit' | lexicon}
             </button>
         </div>

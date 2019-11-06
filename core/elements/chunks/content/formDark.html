@@ -1,0 +1,39 @@
+<div class="section animate a-center">
+    <div class="uibox-row">
+        {if $block.image ?}
+        <div class="col s6 section-col section-col-left">
+            <img style="padding: 68px 0;" src="{$block.image}" alt="{$block.title}">
+        </div>
+        {/if}
+        <div class="col s6 section-col section-col-right white-text" style="background: #0A0B0A;">
+            <div class="section-row">
+                <div class="form-layout consult-form-wrap">
+                    <h2 style="color: #fff;">{$block.title}</h2>
+                    <form class="form consult-form" action="send" method="POST">
+                        <input type="hidden" name="form_id" value="2">
+                        <input type="hidden" name="id" value="{$_modx->resource.id}">
+                        <div class="form-group fly">
+                            <input class="input-text" type="text" name="fullname" placeholder="Ваше имя">
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" class="input-text" placeholder="Ваше имя">
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" class="input-text empty-field" placeholder="+380 (__) ___-__-__">
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="msg" class="textarea" cols="30" rows="10" placeholder="Что хотели бы заказать?"></textarea>
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary primary red-light">Получить консультацию</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

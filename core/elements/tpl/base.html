@@ -7,22 +7,13 @@
     {block 'head'}
         {include 'file:chunks/main/head.html'}
     {/block}
-
-    <style>
-        .minicart-toggle svg,
-        .minicart-toggle svg path {
-            transition: all .3s ease 0s;
-        }
-        .minicart-toggle:hover svg path {
-            fill: #CD293D;
-        }
-    </style>
 </head>
 <body {if $_modx->resource.template == '13'} class="not-found" {/if}>
-    <div class="layout">
         {block 'header'}
-            {include 'file:chunks/main/header.html'}
-        {/block}
+        {include 'file:chunks/main/header.html'}
+    {/block}
+    <div class="layout">
+        
         
         {block 'main'}
 
@@ -37,12 +28,101 @@
     {include 'file:chunks/main/scripts.html'}
     {include 'file:chunks/main/loader.html'}
 
+    
+    {include 'file:chunks/main/successModalDefault.html'}
+
+    {include 'file:chunks/main/successModalSendFile.html'}
+        
+
     <script>
+        $(window).on('load', function() {
+            let scrolled = window.pageYOffset || document.documentElement.scrollTop
+            scrolled = scrolled + document.documentElement.clientHeight - (document.documentElement.clientHeight / 4)
+            if($('.category-item').length > 0) {
+                $('.category-item').each(function() {
+                    if($(this).offset().top < scrolled) {
+                        $(this).addClass('show')
+                    } else {
+                        $(this).removeClass('show')
+                    }
+                })
+            }
+
+            if($('.product-item').length > 0) {
+                $('.product-item').each(function() {
+                    if($(this).offset().top < scrolled + (document.documentElement.clientHeight / 20)) {
+                        $(this).addClass('show')
+                    } else {
+                        $(this).removeClass('show')
+                    }
+                })
+            }
+            
+            if($('.section-social').length > 0) {
+                if($('.section-social').offset().top < scrolled + (document.documentElement.clientHeight / 20)) {
+                    $('.section-social').addClass('show')
+                } else {
+                    $('.section-social').removeClass('show')
+                }
+            }
+
+            if($('.animate').length > 0) {
+                $('.animate').each(function() {
+                    if($(this).offset().top < scrolled - (document.documentElement.clientHeight / 8)) {
+                        $(this).addClass('show')
+                    } else {
+                        $(this).removeClass('show')
+                    }
+                })
+            }
+            
+
+        })
         $(document).ready(function() {
-            // Reviews pagin
-            $('.pagin').on('click', 'a', function(){
-                // window.scrollTo($('#pdopage').offset().top, 0)
-                // console.log($('#pdopage').offset().top)
+            // scroll animate
+            
+
+            $(window).on('scroll', function() {
+                let scrolled = window.pageYOffset || document.documentElement.scrollTop
+                scrolled = scrolled + document.documentElement.clientHeight - (document.documentElement.clientHeight / 4)
+                
+                if($('.category-item').length > 0) {
+                    $('.category-item').each(function() {
+                        if($(this).offset().top < scrolled) {
+                            $(this).addClass('show')
+                        } else {
+                            $(this).removeClass('show')
+                        }
+                    })
+                }
+
+                if($('.product-item').length > 0) {
+                    $('.product-item').each(function() {
+                        if($(this).offset().top < scrolled + (document.documentElement.clientHeight / 20)) {
+                            $(this).addClass('show')
+                        } else {
+                            $(this).removeClass('show')
+                        }
+                    })
+                }
+
+                if($('.section-social').length > 0) {
+                    if($('.section-social').offset().top < scrolled + (document.documentElement.clientHeight / 20)) {
+                        $('.section-social').addClass('show')
+                    } else {
+                        $('.section-social').removeClass('show')
+                    }
+                }
+
+                if($('.animate').length > 0) {
+                    $('.animate').each(function() {
+                        if($(this).offset().top < scrolled - (document.documentElement.clientHeight / 8)) {
+                            $(this).addClass('show')
+                        } else {
+                            $(this).removeClass('show')
+                        }
+                    })
+                }
             })
 
             // Options module
@@ -73,7 +153,10 @@
 
 
             // search
-            $('.search-toggle').on('click', function() {
+            $('.search-toggle, .search-close-btn').on('click', function() {
+                if(document.body.clientWidth <= 1024) {
+                    // $('.layout').toggleClass('blured')
+                }
                 $('.search-form').toggleClass('active')
             })
 

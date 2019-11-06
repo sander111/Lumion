@@ -25,13 +25,14 @@
         <div class="rows">
             {$_modx->runSnippet('!pdoPage', [
                 'element' => 'Localizator',
+                'snippet' => 'pdoResources',
                 'ajaxMode' => 'button',
                 'limit' => 4,
-                'includeTVs' => 'img',
+                'includeTVs' => 'img,place',
                 'sortby' => 'menuindex',
                 'sortdir' => 'DESC',
                 'tpl' => '@FILE chunks/workItem.html',
-                'ajaxTplMore' => '@INLINE <div class="center clr"><button class="btn btn-outlined btn-more">Смотреть еще</button></div>'
+                'ajaxTplMore' => '@INLINE <div class="center clr"><button class="btn btn-outlined btn-more"></button></div>'
             ])}
             <div class="clr"></div>
         </div>
@@ -39,3 +40,5 @@
     </div>
 </main>
 {/block}
+
+{'view_more_btn' | lexicon}

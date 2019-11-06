@@ -49,14 +49,14 @@
                 </div>
             </div>
         {else}
+            {if $_modx->config.fb_widget ?}
             <div class="fb-widget">
                 <div class="fb-widget-header dark">
                     <img class="widget-logo" src="/app/img/logo.png" alt="{$_modx->config.site_name}">
                 </div>
-                <div class="fb-page" data-href="https://www.facebook.com/Lumionsoftware/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Lumionsoftware/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Lumionsoftware/">Lumion</a></blockquote></div>
-                <div id="fb-root"></div>
-                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>
+                {$_modx->config.fb_widget}
             </div>
+            {/if}
         {/if}
     </div>
 </aside>

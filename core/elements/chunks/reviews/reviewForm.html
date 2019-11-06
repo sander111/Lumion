@@ -12,8 +12,10 @@
             <label for="ec-user_name-{$fid}" class="form-label">{'form_fullname_label' | lexicon}</label>
             <div class="uibox-row">
                 <div class="col s7">
-                    <input type="text" name="user_name" class="input-text outlined" id="ec-user_name-{$fid}" value="{$user_name}" />
-                    <span class="ec-error help-block" id="ec-user_name-error-{$fid}"></span>
+                    <div class="input-row">
+                        <input type="text" name="user_name" class="input-text outlined" id="ec-user_name-{$fid}" value="{$user_name}" />
+                        <span class="ec-error help-block error-msg" id="ec-user_name-error-{$fid}"></span>
+                    </div>
                 </div>
                 <div class="col s5 right-col">{'form_fullname_label_example' | lexicon}</div>
             </div>
@@ -50,8 +52,10 @@
             <label for="ec-text-{$fid}" class="form-label">{'form_review_label' | lexicon}</label>
             <div class="uibox-row">
                 <div class="col s7">
-                    <textarea type="text" name="text" class="textarea outlined" rows="5" id="ec-text-{$fid}">{$text}</textarea>
-                    <span class="ec-error help-block" id="ec-text-error-{$fid}"></span>
+                    <div class="input-row">
+                        <textarea type="text" name="text" class="textarea outlined" rows="5" id="ec-text-{$fid}">{$text}</textarea>
+                        <span class="ec-error help-block error-msg" id="ec-text-error-{$fid}"></span>
+                    </div>
                 </div>
             </div>
         </div>

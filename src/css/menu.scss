@@ -30,9 +30,9 @@
     position: relative;
 
     a {
-        color: #fff;
+        color: #333;
         display: block;
-        padding: 5px 10px;
+        padding: 6px 15px;
     }
 }
 .dropdown-current {
@@ -44,8 +44,21 @@
     display: none;
     position: absolute;
     top: calc(100% + 10px);
-    left: 0;
-    background:#121925;
+    left: -12px;
+    background: rgba(255,255,255,.85);
+    width: 80px;
+    border-radius: 2px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.85);
+    padding: 5px 0;
+    z-index: 1;
+}
+.dropdown-list::after {
+    content: ''; 
+    position: absolute;
+    left: 17px;
+    top: -13px;
+    border: 6px solid transparent;
+    border-bottom: 8px solid rgba(255,255,255,.85); 
 }
 .menu-phones-list {
     color: #fff;
@@ -73,6 +86,15 @@
 .menu-body {
     width: 96%;
     margin: auto;
+    transition: all .4s ease-out 0.2s;
+    transform: translate(0, 30%);
+    opacity: 0;
+    visibility: hidden;
+}
+.menu-layout.active .menu-body {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
 }
 .menu-row {
     width: 100%;

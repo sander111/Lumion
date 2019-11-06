@@ -41,9 +41,12 @@
     position: relative;
     display: block;
     line-height: 1px;
+    overflow: hidden;
 }
 .video img {
     width: 100%;
+    display: block;
+    margin: -10% 0;
 }
 .video-overlay {
     position: absolute;

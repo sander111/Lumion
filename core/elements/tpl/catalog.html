@@ -1,6 +1,6 @@
 {extends 'file:tpl/base.html'}
 {block 'main'}
-<main class="main">
+<main class="main main-page">
     <div class="uibox-container">
         {include 'file:chunks/main/crumbs.html'}
     </div>
@@ -8,6 +8,48 @@
     <div class="products">
         <div class="uibox-container">
             <div class="uibox-row products-list">
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
+                {$_modx->runSnippet('!Localizator', [
+                    'snippet' => 'msProducts',
+                    'parents' => $_modx->resource.id,
+                    'limit' => 32,
+                    'tpl' => '@FILE chunks/productItem.html'
+                ])}
                 {$_modx->runSnippet('!Localizator', [
                     'snippet' => 'msProducts',
                     'parents' => $_modx->resource.id,

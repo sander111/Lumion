@@ -1,6 +1,6 @@
 {extends 'file:tpl/base.html'}
 {block 'main'}
-<main class="main">
+<main class="main main-page">
     <div class="uibox-container">
         {include 'file:chunks/main/crumbs.html'}
     </div>
@@ -30,5 +30,4 @@
     </div>
 </main>
 {$_modx->runSnippet('addLooked', ['template' => 4])}
-{include 'file:chunks/product/fastOrderModal.html'}
 {/block}

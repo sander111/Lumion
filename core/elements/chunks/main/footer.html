@@ -2,8 +2,8 @@
     <div class="uibox-container footer-top">
         <div class="uibox-row footer-row">
             <div class="col s3 footer-col footer-left">
-                <a class="footer-logo-link" href="">
-                    <img class="footer-logo" src="app/img/logo.png" alt="{$_modx->config.site_name}">
+                <a class="footer-logo-link" href="{$_modx->config.site_url}">
+                    <img class="footer-logo" src="/app/img/logo.png" alt="{$_modx->config.site_name}">
                 </a>
             </div>
             <div class="col s3 footer-col footer-center-left">
@@ -21,7 +21,7 @@
                     <li><a href="tel:+38{$_modx->config.phone | replace : $phonePattern : ''}">{$_modx->config.phone}</a></li>
                     <li><a href="mailto:{$_modx->config.email}">{$_modx->config.email}</a></li>
                     <li>{$_modx->config.address}</li>
-                    <li><button class="btn get-map">Смотреть на карте</button></li>
+                    <li><button class="btn get-map">{'view_on_map_btn_title' | lexicon}</button></li>
                 </ul>
             </div>
             <div class="col s3 footer-col footer-right">

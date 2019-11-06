@@ -2,6 +2,18 @@
     position: relative;
     margin: 23px 0;
 }
+.input-row {
+    position: relative;
+    width: 100%;
+}
+.error-data {
+    display: none;
+    background: #fb667a;
+    padding: 15px;
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.34);
+}
 .form-label {
     display: block;
     margin: 0 0 14px 0;
@@ -107,4 +119,22 @@
 }
 .reviews-btn {
     background: #415576;
+}
+.error-msg {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fd2543;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: .9rem;
+    line-height: 1;
+}
+.inline-form .error-msg {
+    top: -20px;
+}
+.fly {
+    position: absolute;
+    left: -9999px;
 }

@@ -155,6 +155,9 @@
     margin: auto;
     bottom: -10px;
 }
+.product-actions {
+    display: flex;
+}
 .product-actions-row {
     margin: 12px 0;
     align-items: center;
@@ -173,6 +176,9 @@
     margin: 0 6px;
     padding: 1rem 1.9rem;
     border: 1px solid $primary;
+}
+.one-click-btn {
+    margin: 0;
 }
 .product-details {
     margin: 75px 0;
@@ -231,4 +237,48 @@
 }
 .review-createdon {
     font-size: .85rem;
+}
+
+
+
+.fast-order-form {
+    display: flex;
+}
+.fast-order-input {
+    height: 54px !important;
+    font-size: .9rem;
+    padding: 0 5px;
+    width: 150px;
+}
+.fast-order-form .form-group {
+    margin: 0;
+    width: 0;
+    transition: all .3s ease 0s;
+    overflow: hidden;
+}
+.fast-order-form.active .form-group {
+    width: 150px;
+    overflow: visible;
+}
+.fast-order-form.active .one-click-btn {
+    background: $primary;
+    color: #fff;
+}
+.fast-order-form .form-group .form-label {
+    position: absolute;
+    font-size: 1rem;
+    top: -21px;
+    white-space: nowrap;
+}
+.fast-order-form .error-msg {
+    top: auto;
+    background: transparent;
+    color: red;
+    bottom: -2px;
+    left: 0;
+    right: auto;
+}
+.fast-success-msg p {
+    font-family: $fontDemi, Arial, Helvetica, sans-serif;
+    margin: 4px 16px;
 }

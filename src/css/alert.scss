@@ -19,3 +19,35 @@
 .alert.bottom {
     bottom: 0;
 }
+
+.fancybox-bg {
+    background: rgba(30, 30, 30, 0.8) !important;
+}
+.alert-modal-body {
+    width: 95%;
+    max-width: 800px;
+    display: none;
+    position: relative;
+    text-align: center;
+    background-image: url('../img/success-bg.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding: 56px 10%;
+}
+.alert-modal-body.alert-dark {
+    background-color: #262626;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.16);
+    color: #fff;
+}
+.alert-modal-logo {
+    max-width: 200px;
+}
+.alert-modal-title {
+    margin: 44px 0 20px 0;
+    font-size: 30px;
+    font-family: $fontBold, Arial, Helvetica, sans-serif;
+}
+.alert-modal-msg {
+    font-family: $fontMedium, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}

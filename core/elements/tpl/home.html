@@ -1,7 +1,9 @@
 {extends 'file:tpl/base.html'}
 {block 'main'}
 <div class="header-banner">
-    <img class="banner-img" src="uploads/image2-2.jpg" alt="">
+    <div class="banner-img-wrap">
+        <img class="banner-img" src="/uploads/header-main-bg.jpg" alt="">
+    </div>
     <div class="banner-descr">
         <div class="banner-container">
             <div class="banner-title">Засияй вместе <br>с LUMION</div>
@@ -14,58 +16,126 @@
 <main class="main">
 
     <div class="section categories categories-container">
-        <div class="category-list">
-            {$_modx->runSnippet('Localizator', [
-                'snippet' => 'pdoResources',
-                'parents' => 2
-                'limit' => 100,
-                'includeTVs' => 'img',
-                'sortby' => 'menuindex',
-                'sortdir' => 'ASC',
-                'tpl' => '@FILE chunks/applicationAreas.html'
-            ])}
-            <div class="clr"></div>
+        {set $data = $_modx->runSnippet('!Localizator', [
+            'snippet' => 'pdoResources',
+            'parents' => 2
+            'limit' => 100,
+            'includeTVs' => 'img',
+            'sortby' => 'menuindex',
+            'sortdir' => 'ASC',
+            'tpl' => ''
+            'return' => 'json'
+        ])}
+       
+        {set $i = 1}
+        {set $left = []}
+        {set $right = []}
+
+        {foreach json_decode($data, true) as $row index=$idx}
+            {if $idx == '0'}
+                {set $left[] = $row}
+            {elseif $idx % 6 == 0}
+                {set $right[] = $row}
+            {elseif $idx % 2 == 0}
+                {set $left[] = $row}
+            {elseif $idx % 1 == 0}
+                {set $right[] = $row}
+           
+            {/if}
+        {/foreach}
+        
+
+        <div class="uibox-row categoryes-rows">
+            <div class="col s6 categories-left">
+                {foreach $left as $item index=$idx}
+                    <div class="category-item">
+                        <div class="category-item-inner">
+                            <a href="{$item.id | url}" class="category-img-link">
+                                {if $idx == '0'}
+                                    <img class="category-item-img" src="{$item['tv.img'] | phpthumbon : 'w=482&h=514&zc=1'}" alt="{$item.pagetitle}">
+                                {else}
+                                    <img class="category-item-img" src="{$item['tv.img'] | phpthumbon : 'w=482&h=388&zc=1'}" alt="{$item.pagetitle}">
+                                {/if}
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="{$item.id | url}">{$item.pagetitle}</a>
+                                    <div class="category-item-intro white-text">{$item.introtext | limit : 135}</div>
+                                </div>
+                                <div class="category-item-footer">
+                                    <a class="category-item-more btn btn-secondary" href="{$item.id | url}">
+                                        <i class="icon icon-right-open-mini"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/foreach}
+            </div>
+            <div class="col s6 categories-right">
+                {foreach $right as $item}
+                    <div class="category-item">
+                        <div class="category-item-inner">
+                            <a href="{$item.id | url}" class="category-img-link">
+                                <img class="category-item-img" src="{$item['tv.img'] | phpthumbon : 'w=481&h=314&zc=1'}" alt="{$item.pagetitle}">
+                            </a>
+                            <div class="category-item-body">
+                                <div class="category-item-content">
+                                    <a class="category-item-title white-text" href="{$item.id | url}">{$item.pagetitle}</a>
+                                    <div class="category-item-intro white-text">{$item.introtext | limit : 135}</div>
+                                </div>
+                                <div class="category-item-footer">
+                                    <a class="category-item-more btn btn-secondary" href="{$item.id | url}">
+                                        <i class="icon icon-right-open-mini"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/foreach}
+            </div>
         </div>
     </div>
 
     <div class="section beautify darkless">
         <div class="uibox-container">
-            <div class="uibox-row">
+            <h3 class="white-text">
+                Украсьте помещение онлайн
+            </h3>
+            <div class="intro white-text">
+                Выберите тип вашего коттеджа
+            </div>
+            <div class="uibox-row beautify-row">
                 <div class="col s5 beautify-left">
-                    <h3 class="white-text">
-                        Украсьте помещение онлайн
-                    </h3>
-                    <div class="intro white-text">
-                        Выберите тип вашего коттеджа
-                    </div>
+                    
                     <ul class="beautify-nav metro-nav">
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="app/svg/dacha.svg" alt="">
+                                <img class="icon" src="/app/svg/dacha.svg" alt="">
                                 <span class="metro-nav-title white-text">Дача</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="app/svg/cottage.svg" alt="">
+                                <img class="icon" src="/app/svg/cottage.svg" alt="">
                                 <span class="metro-nav-title white-text">Коттедж</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="app/svg/vacation-home.svg" alt="">
+                                <img class="icon" src="/app/svg/vacation-home.svg" alt="">
                                 <span class="metro-nav-title white-text">Загородный дом</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="app/svg/terrace.svg" alt="">
+                                <img class="icon" src="/app/svg/terrace.svg" alt="">
                                 <span class="metro-nav-title white-text">Терасса</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="app/svg/private-house.svg" alt="">
+                                <img class="icon" src="/app/svg/private-house.svg" alt="">
                                 <span class="metro-nav-title">Частный дом</span>
                             </span>
                         </li>
@@ -73,7 +143,7 @@
                 </div>
                 <div class="col s7 beautify-right">
                     <div class="img-layout">
-                        <img src="uploads/image-3-1.jpg" alt="">
+                        <img src="/uploads/image-3-1.jpg" alt="">
                         <a class="btn btn-primary primary link-btn" href="">Перейти в каталог</a>
                     </div>
                 </div>
@@ -108,7 +178,7 @@
                 </div>
                 <div class="col s5 products-home-right">
                     <div class="section-img-wrap">
-                        <img class="section-img" src="uploads/lamps.jpg" alt="">
+                        <img class="section-img" src="/uploads/lamps.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -120,7 +190,7 @@
         <div class="uibox-row">
             <div class="col s5 section-col section-col-left">
                 <div class="section-img-wrap">
-                    <img class="section-img" src="uploads/hall.jpg" alt="">
+                    <img class="section-img" src="/uploads/hall.jpg" alt="">
                 </div>
             </div>
             <div class="col s7 section-col section-col-right gd-dark">
@@ -128,12 +198,18 @@
                     <h2 class="white-text">{'wholesale_buyer_form_title' | lexicon}</h2>
                     <div class="form-layout">
                         <form class="form dealers-form" action="send" method="POST">
+                            <input type="hidden" name="form_id" value="1">
+                            <input type="hidden" name="id" value="{$_modx->resource.id}">
+                            <div class="form-group fly">
+                                <input class="input-text" type="text" name="fullname" placeholder="Ваше имя">
+                                <div class="error-msg"></div>
+                            </div>
                             <div class="form-group">
                                 <input type="text" name="name" class="input-text" placeholder="{'form_label_name' | lexicon}">
                                 <div class="error-msg"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="phone" class="input-text" placeholder="+380 (__) ___-__-__">
+                                <input type="text" name="phone" class="input-text empty-field" placeholder="+380 (__) ___-__-__">
                                 <div class="error-msg"></div>
                             </div>
                             <div class="form-group">
@@ -162,7 +238,7 @@
     {if $works ?}
     <div class="section works">
         <div class="uibox-container">
-            <h2 class="black-text">{'portfolio_title' | lexicon}</h2>
+            <a href="{20 | url}" class="h2 black-text">{'portfolio_title' | lexicon}</h2>
         </div>
         <div class="uibox-row works-list">
             {$works}    

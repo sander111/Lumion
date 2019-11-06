@@ -15,13 +15,6 @@
     <div class="tabs-body">
         <div class="tab-content active">
             <div class="product-content">
-                <img src="app/img/icon1.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
-                <img src="app/img/icon2.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
-                <img src="app/img/icon3.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
-                <img src="app/img/icon4.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
-                <img src="app/img/icon5.jpg" alt="" style="float: left; margin: 0 20px 0 0;">
-                <p style="clear:both;"></p>
-                <br>
                 {$_modx->resource.localizator_content}
             </div>
         </div>
@@ -53,7 +46,7 @@
                             <div class="subtitle">{'reviews_block_title' | lexicon} {$_modx->resource.pagetitle}</div>
                         </div>
                         <div class="col s5 offset-1">
-                            <button class="btn btn-primary reviews-btn small">{'review_send_btn' | lexicon}</button>
+                            <button class="btn btn-primary reviews-btn small add-review">{'review_send_btn' | lexicon}</button>
                         </div>
                     </div>
                     <div class="reviews-list">
@@ -62,7 +55,7 @@
                                 'element' => 'ecMessages',
                                 'ajaxMode' => 'default',
                                 'pageVarKey' => 'reviews',
-                                'limit' => 1,
+                                'limit' => 10,
                                 'frontend_js' => '/assets/components/pdotools/js/custom.js'
                                 'tpl' => '@FILE chunks/reviews/reviewItem.html'
                             ])}
@@ -73,7 +66,10 @@
                     {$_modx->getPlaceholder('page.nav')}
                 </div>
             </div>
-            {$_modx->runSnippet('!ecForm', ['tplForm' => '@FILE chunks/reviews/reviewForm.html'])}
+            {$_modx->runSnippet('!ecForm', [
+                'tplForm' => '@FILE chunks/reviews/reviewForm.html',
+                'tplSuccess' => '@FILE chunks/reviews/reviewSuccess.html'
+            ])}
         </div>
     </div>
 </div>

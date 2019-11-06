@@ -4,9 +4,10 @@
 <h1>{$_modx->resource.pagetitle}</h1>
 <div class="product-descr">
     <form class="ms2_form msoptionsprice-product" method="post">
+        <input type="hidden" name="pm">
         <input type="hidden" name="id" value="{$_modx->resource.id}"/>
         <input type="number" name="count" id="product_price" class="hidden" value="1"/>
-        <div class="product-descr-row uibox-row">
+        <div class="product-descr-row uibox-row product-row-first">
             <div class="product-col">
                 <div class="options led">
                     <div class="options-title">{'product_option_lamps_title' | lexicon}</div>
@@ -75,8 +76,18 @@
                 <span class="currency">{'ms2_frontend_currency' | lexicon}</span>
             </div>
             <div class="product-actions">
-                <button class="add-cart-btn btn btn-primary primary" name="ms2_action" value="cart/add">{'btn_buy_title' | lexicon}</button>
-                <button type="button" class="one-click-btn btn btn-outlined" data-fancybox="" data-src="#fast-order">{'btn_one_click_buy_title' | lexicon}</button>
+                <button class="add-cart-btn btn btn-primary primary small" name="ms2_action" value="cart/add">{'btn_buy_title' | lexicon}</button>
+                <div class="fast-order">
+                    <div class="fast-order-form">
+                        <div class="form-group">
+                            <label class="form-label">{'form_label_phone_2' | lexicon}</label>
+                            <input type="text" name="phone" class="fast-order-input input-text outlined empty-field" placeholder="+380 (__) ___-____">
+                            <div class="error-msg"></div>
+                        </div>
+                        <button type="button" class="one-click-btn btn btn-outlined">{'btn_one_click_buy_title' | lexicon}</button>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </form>

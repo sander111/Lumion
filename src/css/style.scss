@@ -97,7 +97,7 @@ h1 {
     margin: 0 0 40px 0;
     font-family: $fontDemi, Arial, Helvetica, sans-serif;
 }
-h2 {
+h2, .h2 {
     font-family: $fontDemi, Arial, Helvetica, sans-serif;
     font-size: 40px;
     line-height: 49px;
@@ -180,6 +180,7 @@ p {
 }
 .btn-primary:hover {
     color: #fff;
+    box-shadow: 0px 3px 18px #CD293D;
 }
 .btn-secondary {
     color: #fff;
@@ -260,6 +261,9 @@ p {
 .main {
     min-height: 100vh;
 }
+.main-page {
+    margin: 134px 0 0 0;
+}
 .section {
     margin: 60px 0;
     padding: 50px 0;
@@ -269,6 +273,10 @@ p {
 }
 .blured {
     filter: blur(5px);
+}
+.btn-primary.reviews-btn:hover {
+    color:  #fff;
+    box-shadow: 0px 3px 18px #1738BB;
 }
 
 @import './forms.scss';
@@ -297,6 +305,12 @@ p {
 @import './pagination.scss';
 @import './loader.scss';
 
+.menu-phones-mob {
+    display: none;
+}
+.beautify-row {
+    align-items: center;
+}
 .btn-more {
     width: auto !important;
     margin: 46px auto 0 auto !important;
@@ -426,6 +440,20 @@ p {
         padding: 5% 11% 5% 0;
     }
 }
+.col.dark {
+    color: #fff;
+    p,h1,h2,h3,h4,h5,h6,li {
+        color: #fff;
+    }
+}
+.section-row.full {
+    width: 100%;
+    max-width: inherit;
+    padding: 0 !important;
+}
+.section-row.full > * {
+    width: 100%;
+}
 .section-col-right {
     display: flex;
     flex-direction: column;
@@ -443,19 +471,34 @@ p {
     width: 150%;
     margin: -35px 0 0 -50%;
 }
+.section-social {
+    width: 100%;
+    overflow: hidden;
+}
+.section-social.show .section-soc-item {
+    transform: translate(0,0);
+    opacity: 1;
+    visibility: visible;
+}
 .section-soc-item {
     list-style: none;
     background: #ccc;
     font-size: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(120%,0);
 }
 .section-soc-item.youtube {
     background: #E53935;
+    transition: all .4s ease-out 0s;
 }
 .section-soc-item.instagram {
     background: #EF4C5C;
+    transition: all .4s ease-out .4s;
 }
 .section-soc-item.facebook {
     background: #3B5999;
+    transition: all .4s ease-out .8s;
 }
 .section-soc-item a {
     width: 100%;
@@ -567,4 +610,78 @@ p {
     line-height: 25px;
     font-family: $fontDemi, Arial, Helvetica, sans-serif;
     max-width: 500px;
+}
+#modal-map {
+    padding: 0;
+    height: 90vh;
+    width: 90%;
+}
+#modal-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.animate.a-center {
+    transition: transform 1s ease-out 0s, opacity 1.4s linear 0s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+.animate.a-left-right .section-col-left .section-row {
+    transition: transform 1s ease-out 0s, opacity 1.4s linear 0s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+.animate.a-left-right .section-col-right .section-row {
+    transition: transform 1s ease-out .4s, opacity 1.4s linear .4s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+.animate.a-right-left .section-col-left .section-row {
+    transition: transform 1s ease-out .4s, opacity 1.4s linear .4s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+.animate.a-right-left .section-col-right {
+    transition: transform 1s ease-out 0s, opacity 1.4s linear 0s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+.animate.a-left-full .section-col-left {
+    transition: transform 1s ease-out 0s, opacity 1.4s linear 0s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+.animate.a-left-full-right .section-col-left {
+    transition: transform 1s ease-out .4s, opacity 1.4s linear .4s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+.animate.a-left-full-right .section-col-right {
+    transition: transform 1s ease-out 0s, opacity 1.4s linear 0s;
+    transform: translate(0, 40%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.animate.a-center.show,
+.animate.a-left-right.show .section-col-left .section-row,
+.animate.a-left-right.show .section-col-right .section-row,
+.animate.a-right-left.show .section-col-left .section-row,
+.animate.a-right-left.show .section-col-right,
+.show.animate.a-left-full .section-col-left,
+.show.animate.a-left-full-right .section-col-left,
+.show.animate.a-left-full-right .section-col-right
+ {
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
 }

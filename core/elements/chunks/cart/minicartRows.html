@@ -6,7 +6,11 @@
         </button>
         <div class="center minicart-empty">
             <div class="col s12 minicart-title">{'cart_empty_title' | lexicon}</div>
-            <p>У нас есть <a href="">акционные</a> и <a href="">ТОП</a> товары</p>
+            {if $_modx->config.cultureKey == 'ru'}
+                <p>У нас есть <a href="">акционные</a> и <a href="">ТОП</a> товары</p>
+            {else}
+                <p>В нас є <a href="">акціонні</a> та <a href="">ТОП</a> товари</p>
+            {/if}
         </div>
         <div class="center">
             <img src="/app/svg/cart.svg" alt="">
