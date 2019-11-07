@@ -2,16 +2,17 @@
 {block 'main'}
 <div class="header-banner">
     <div class="banner-img-wrap">
-        <img class="banner-img" src="/uploads/header-main-bg.jpg" alt="">
+        <img class="banner-img" src="{$_modx->resource.img | phpthumbon : 'w=1349&h=730&zc=1'}" alt="{$_modx->resource.longtitle}">
     </div>
     <div class="banner-descr">
         <div class="banner-container">
-            <div class="banner-title">Засияй вместе <br>с LUMION</div>
-            <a class="btn btn-primary link-btn primary red-light" href="">Подобрать онлайн</a>
+            <h1 class="banner-title">{$_modx->resource.longtitle}</h1>
+            <a class="btn btn-primary link-btn primary red-light" href="{$_modx->resource.res | url}">{'online_constr_btn' | lexicon}</a>
         </div>
     </div>
     <div class="banner-overlay"></div>
 </div>
+
 
 <main class="main">
 
@@ -174,7 +175,7 @@
                     <ul class="products-home-list">
                         {$products}
                     </ul>
-                    <a class="all-products-link" href="{3 | url}">Все товары</a>
+                    <a class="all-products-link" href="{3 | url}">{'all_products_btn' | lexicon}</a>
                 </div>
                 <div class="col s5 products-home-right">
                     <div class="section-img-wrap">

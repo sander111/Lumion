@@ -9,7 +9,10 @@
     {/block}
 </head>
 <body {if $_modx->resource.template == '13'} class="not-found" {/if}>
-        {block 'header'}
+    {include 'file:chunks/main/svg.html'}
+
+
+    {block 'header'}
         {include 'file:chunks/main/header.html'}
     {/block}
     <div class="layout">

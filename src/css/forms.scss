@@ -47,6 +47,9 @@
     box-shadow: none;
     height: 36px;
 }
+.underlined::placeholder {
+    color: #fff;
+}
 .input-text.outlined {
     border: 1px solid #B0B0B0;
     height: 50px;

@@ -1,0 +1,21 @@
+<svg id="lumion" width="823" height="150" viewBox="0 0 823 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M89.8001 146H0.600098V4.39999H35.0001V116.2H89.8001V146ZM224.991 92.6C224.991 109.667 219.391 123.467 208.191 134C197.124 144.533 182.391 149.8 163.991 149.8C145.591 149.8 130.924 144.6 119.991 134.2C109.057 123.667 103.591 109.8 103.591 92.6V4.39999H137.591V89.8C137.591 98.2 139.791 105.2 144.191 110.8C148.591 116.267 155.257 119 164.191 119C173.257 119 179.924 116.267 184.191 110.8C188.591 105.2 190.791 98.2 190.791 89.8V4.39999H224.991V92.6ZM418.447 146H385.047L385.847 45.8H385.247L348.447 146H324.447L288.647 45.8H288.047L288.847 146H256.647V4.39999H305.247L337.447 95.2H338.247L369.047 4.39999H418.447V146ZM486.063 146H451.663V4.39999H486.063V146ZM666.934 74.6C666.934 96.8667 659.668 115 645.134 129C630.601 142.867 612.134 149.8 589.734 149.8C567.468 149.8 549.068 142.867 534.534 129C520.001 115 512.734 96.8667 512.734 74.6C512.734 52.2 519.934 34.2667 534.334 20.8C548.868 7.33331 567.334 0.599976 589.734 0.599976C612.268 0.599976 630.734 7.33331 645.134 20.8C659.668 34.2667 666.934 52.2 666.934 74.6ZM630.334 74.6C630.334 62.0667 626.534 51.7333 618.934 43.6C611.334 35.4667 601.601 31.4 589.734 31.4C577.868 31.4 568.134 35.4667 560.534 43.6C553.068 51.7333 549.334 62.0667 549.334 74.6C549.334 87.4 553.068 97.9333 560.534 106.2C568.134 114.467 577.868 118.6 589.734 118.6C601.601 118.6 611.334 114.467 618.934 106.2C626.534 97.9333 630.334 87.4 630.334 74.6ZM822.252 146H783.452L726.452 53.4H725.852L726.652 146H693.452V4.39999H732.452L789.252 96.8H789.852L789.052 4.39999H822.252V146Z" fill="url(#paint0_linear)"/>
+    <defs>
+    <linearGradient id="paint0_linear" x1="673.5" y1="97.5" x2="62.0001" y2="100.5" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#FEBD49">
+            <animate attributeName="stop-color" values="#CD293D;#FEBD49; #CD293D;" dur="4s" repeatCount="indefinite"></animate>
+            <!-- <animate attributeName="offset" values="0%; 70%; 0%;" dur="4s" repeatCount="indefinite"></animate> -->
+        </stop>
+        <stop offset="33%" stop-color="#CD293D">
+            <!-- <animate attributeName="stop-color" values="#CD293D; #FEBD49; #CD293D;" dur="4s" repeatCount="indefinite"></animate> -->
+            <animate attributeName="offset" values="5%; 90%; 5%;" dur="4s" repeatCount="indefinite"></animate>
+        </stop>
+        
+        
+        <stop offset="100%" stop-color="#FEBD49" >
+            <animate attributeName="stop-color" values="#FEBD49;#CD293D; #FEBD49" dur="4s" repeatCount="indefinite"></animate>
+            <animate attributeName="offset" values="40%; 100%; 40%;" dur="4s" repeatCount="indefinite"></animate>
+        </stop>
+    </linearGradient>
+    </defs>
+</svg>

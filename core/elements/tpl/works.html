@@ -4,22 +4,10 @@
 {include 'file:chunks/main/simpleBanner.html'}
 
 <main class="main">
-    <div class="section">
-        <div class="uibox-container">
-            <div class="uibox-row">
-                <div class="col s6 section-col section-col-left">
-                    <div class="section-row">
-                        <h2 style="color: #484848;">Наши проекты</h2>
-                    </div>
-                </div>
-                <div class="col s6 section-col section-col-right">
-                    <div class="section-row">
-                        <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает состредоточиться. Лорем ипсум используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а так же реальное распределение букв</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {set $content = json_decode($_modx->resource.contentEditor, true)}
+    {foreach $content as $block}
+        {include "file:chunks/content/{$block.MIGX_formname}"}
+    {/foreach}
 
     <div id="pdopage" class="works-list-metro">
         <div class="rows">

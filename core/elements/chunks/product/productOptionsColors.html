@@ -3,19 +3,21 @@
 {set $colors = json_decode($colorsRepository, true)}
 
 <div class="options-list colors-options" data-relation-options="{$relations}">
-    {set $colorsData = $data | sortProductColors}
+    {set $colorsData = $data}
     {foreach $colorsData as $value index=$index}
         {set $color = $row.color}
         {foreach $colors as $row}
-            {if $row.color_title == $value.value}
+            {if $row.color_title_ru == $value.value}
                 {set $color = $row.color}
                 {set $colorPattern = $row.pattern}
+                {set $colorTitle = $row['color_title_' ~$_modx->config.cultureKey]}
             {/if}
         {/foreach}
+
         <div class="option-box">
             <label class="option-box-label">
                 <input type="radio" value="{$value.value}" name="options[{$value.key}]" data-relations="{$value.relations}" />
-                <span class="option-box-title" data-tooltip="{$value.value}">
+                <span class="option-box-title" data-tooltip="{$colorTitle}">
                     {if $color ?}
                         <div class="color" style="background-color: #{$color};">
                             <div class="color-inner" style="background-color: #{$color};"></div>
