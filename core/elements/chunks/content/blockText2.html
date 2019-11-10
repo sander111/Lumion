@@ -2,12 +2,12 @@
     <div class="uibox-row">
         <div class="col s6 section-col section-col-right {$block.col_left_bg}">
             <div class="section-row {$block.col_left_align} {$block.col_left_width}">
-                {$block.col_left}
+                {$block.col_left | replaceMedia}
             </div>
         </div>
         <div class="col s6 section-col section-col-left {$block.col_right_bg}">
             <div class="section-row valigne-center {$block.col_right_align} {$block.col_right_width}">
-                {$block.col_right}
+                {$block.col_right | replaceMedia}
             </div>
         </div>
     </div>

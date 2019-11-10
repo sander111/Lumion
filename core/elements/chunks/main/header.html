@@ -4,6 +4,10 @@
     {set $static = 'static'}
 {/switch}
 
+{if $_modx->resource.template == '5' && $_modx->resource.longtitle == ''}
+    {set $static = 'static'}
+{/if}
+
 <header class="page-header {$static}">
     <div class="uibox-container">
         <div class="uibox-row header-top">

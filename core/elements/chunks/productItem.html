@@ -5,7 +5,7 @@
                 <div class="product-sticker top">Топ</div>
             {/if}
             {if $thumb ?}
-                <img class="product-item-img" src="{$thumb}" alt="{$pagetitle}">
+                <img class="product-item-img lazyload" src="/assets/images/products/{$id}/doodle/image-3.jpg" data-src="{$thumb}" alt="{$pagetitle}">
             {else}
                 <img class="product-item-img" src="{'assets_url' | option}components/minishop2/img/web/ms2_small.png"
                     srcset="{'assets_url' | option}components/minishop2/img/web/ms2_small@2x.png 2x" alt="{$pagetitle}" title="{$pagetitle}"/>

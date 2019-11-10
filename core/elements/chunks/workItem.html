@@ -1,20 +1,24 @@
 {if $idx % 4 == 0}
     {set $position = 'full'}
     {set $crop = 'w=1349&h=474&zc=1'}
+    {set $cropDoodle = 'w=1349&h=474&zc=1&q=5'}
 {elseif $idx % 3 == 0}
     {set $position = 'left'}
     {set $crop = 'w=662&h=377&zc=1'}
+    {set $cropDoodle = 'w=662&h=377&zc=1&q=5'}
 {elseif $idx % 2 == 0}
     {set $position = 'right'}
     {set $crop = 'w=662&h=891&zc=1'}
+    {set $cropDoodle = 'w=662&h=891&zc=1&q=5'}
 {elseif $idx % 1 == 0}
     {set $position = 'left'}
     {set $crop = 'w=662&h=492&zc=1'}
+    {set $cropDoodle = 'w=662&h=492&zc=1&q=5'}
 {/if}
-<div class="work-item work-item-metro {$position}">
+<div class="work-item work-item-metro {$position}" data-id="{$id}">
     <div class="work-item-inner">
         <a href="{$id | url}" class="work-item-cover">
-            <img class="work-item-img" src="{$_pls['tv.img'] | phpthumbon : $crop}" alt="{$pagetitle}">
+            <img class="work-item-img lazyload" src="{$_pls['tv.img'] | phpthumbon : $cropDoodle}" data-src="{$_pls['tv.img'] | phpthumbon : $crop}" alt="{$pagetitle}">
         </a>
         <div class="work-item-metro-content">
             <div class="work-item-place white-text">{$_pls['tv.place']}</div>

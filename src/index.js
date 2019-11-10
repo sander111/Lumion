@@ -8,47 +8,9 @@ require("@fancyapps/fancybox");
 require('./js/forms')
 require('./js/jquery.form.min.js')
 require('./js/jquery.maskedinput')
+require('./js/lazysize')
 
-// $(window).on('load', function() {
-//     let box = $('.category-list').innerHeight()
-//     let items = document.querySelectorAll('.category-item')
-//     let offsets = []
-//     let offset = {}
 
-//     for (var i = 0; i < items.length; i++) {
-//         if(i > 1) {
-//             if( i % 2 === 0) {
-//                 offset = {
-//                     height: offsets[i - 2].height +  $(items[i]).outerHeight() / box * 100 + 10.75
-//                 }
-//             } else {
-//                 offset = {
-//                     height: offsets[i - 2].height +  $(items[i]).outerHeight() / box * 100 + 9.1
-//                 }
-//             }
-//         } else {
-//             if (i % 2 === 0) {
-//                 offset = {
-//                     height: $(items[i]).outerHeight() / box * 100 + 15.05
-//                 }
-//             } else {
-//                 offset = {
-//                     height: $(items[i]).outerHeight() / box * 100 + 9.9
-//                 }
-//             }
-//         }
-//         offsets.push(offset)
-        
-        
-//         if (i > 1) {
-//             items[i].style.margin = offsets[i - 2].height + '% -50% 0 -50%'
-//         }
-//         if (i === items.length - 1) {
-//             $(items[i]).css('float', 'right')
-//             items[i].style.margin = offsets[i - 1].height + '% -50% 0 -50%'
-//         }
-//     }
-// })
 
 $(document).ready(function(){
 

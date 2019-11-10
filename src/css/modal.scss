@@ -10,7 +10,10 @@
     font-family: $fontMedium, Arial, Helvetica, sans-serif;
     color: $primaryText;
 }
-.fancybox-slide--html,
+.empty-minicart-icon {
+    font-size: 7rem;
+    color: $primary;
+}
 .fancybox-close-small {
     right: 12px !important;
     top: 19px !important;

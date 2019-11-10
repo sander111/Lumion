@@ -107,7 +107,7 @@ h2, .h2 {
     font-size: 40px;
     line-height: 49px;
     letter-spacing: 1px;
-    color: $darkText;
+    color: $primaryText;
 }
 h3 {
     font-family: $fontDemi, Arial, Helvetica, sans-serif;
@@ -284,10 +284,14 @@ p {
     color:  #fff;
     box-shadow: 0px 3px 18px #1738BB;
 }
+.lazyload {
+    filter: blur(8px);
+}
 
-@import './forms.scss';
+
 
 @import './header.scss';
+@import '../../app/fonts/fontello/css/fontello.css';
 @import './simple-banner.scss';
 @import './crumbs.scss';
 @import './aside.scss';
@@ -308,6 +312,7 @@ p {
 @import './modal.scss';
 @import './cart.scss';
 @import './table.scss';
+@import './forms.scss';
 @import './pagination.scss';
 @import './loader.scss';
 
@@ -524,6 +529,27 @@ p {
     display: block;
     padding: 0 0 0 40px;
 }
+.section-col-right {
+    position: relative;
+    z-index: 1;
+}
+.section-col-left.grey-bg {
+    position: relative;
+}
+.section-col-left.grey-bg::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    background: #F9F9F9;
+    width: 120%;
+    height: 86%;
+    bottom: -18%;
+    z-index: 0;
+}
+.right-col-img {
+    width: 140% !important;
+    margin: 0 0 -30% -40%;
+}
 .consult-form-wrap h2 {
     line-height: 45px;
     margin: 34px 0 44px 0;
@@ -538,6 +564,9 @@ p {
     padding: 1.8rem 1.9rem;
     margin: 32px 0 0 0;
     width: 296px;
+}
+#lumion {
+    width: 84%;
 }
 
 .story {

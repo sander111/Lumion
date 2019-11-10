@@ -12,7 +12,7 @@
                         <div class="col s4 cart-col-img">
                             {if $product.thumb?}
                                 <a href="{$product.id | url}">
-                                    <img src="{$product.thumb}" alt="{$product.pagetitle}">
+                                    <img class="lazyload" src="" data-src="{$product.thumb}" alt="{$product.pagetitle}">
                                 </a>
                             {else}
                                 <a href="{$product.id | url}">

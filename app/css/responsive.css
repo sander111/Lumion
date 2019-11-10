@@ -179,14 +179,41 @@
         right: 10px;
         top: 25px;
     }
+    .np-map .form-group {
+        min-width: calc(50% - 20px);
+    }
+    .np-map-sidebar {
+        width: 100% !important;
+    }
+    .np-warehouses-list {
+        width: 100%;
+        max-width: 300px;
+        position: absolute;
+        background:#fff;
+        display: none;
+    }
+    .np-map-header {
+        padding: 26px 0 0 0 !important;
+    }
+    #npmap {
+        width: 100% !important;
+        height: 60vh !important;
+    }
+    #npmap .fancybox-close-small {
+        right: 0 !important;
+        top: 0 !important;
+    }
 }
 
 @media screen and (max-width: 900px) {
+    .uibox-container {
+        width: 92%;
+    }
     .section-col-left .section-row, .section-col-right .section-row {
-        padding: 24px 2%;
+        padding: 24px 4%;
     }
     .section-col.dark .section-row {
-        padding: 3% 2%;
+        padding: 3% 4%;
     }
     .col.s6.section-col {
         width: 100%;
@@ -294,6 +321,9 @@
 }
 
 @media screen and (max-width: 700px) {
+    .uibox-container {
+        width: 92%;
+    }
     .article-header-left {
         width: 100%;
     }
@@ -430,6 +460,12 @@
     .order-form .col.s5.order-cart {
         width: 100%;
     }
+    .order-row {
+        padding: 0;
+    }
+    .order-checkin-data {
+        font-size: 13px;
+    }
 }
 @media screen and (max-width: 600px) {
     .tabs-nav {
@@ -518,6 +554,9 @@
     .soc-icon {
         font-size: 3rem;
     }
+    .logo {
+        max-width: 80%;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -605,6 +644,29 @@
     }
     .order-cities-list button {
         font-size: .9rem;
+    }
+    .product-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .add-cart-btn {
+        width: 100%;
+    }
+    .fast-order {
+        width: 100%;
+        margin: 25px 6px 0 6px;
+    }
+    .fast-order-form,
+    .fast-order-form.active .form-group,
+    .fast-order-input,
+    .one-click-btn {
+        width: 100%;
+    }
+    .fast-order-form.active .one-click-btn {
+        width: auto;
+    }
+    .col.s4.product-item {
+        width: 50%;
     }
 }
 

@@ -16,6 +16,9 @@
 .content {
     line-height: 28px;
 }
+.content img {
+    height: auto;
+}
 .content p,
 .content li {
     font-size: 18px;
@@ -112,6 +115,18 @@ blockquote::before {
 .content .inline-form .form-group {
     width: calc(50% - 40px);
 }
-.content .inline-form .form-group:last-child {
-    margin: 15px 0;
+.content .calc-lead-block {
+    position: relative;
+}
+.content .calc-lead-block-before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: calc(100vw - 4px);
+    background:#BA1C2F;
+    top: 0;
+    left: -19.1vw;
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
 }

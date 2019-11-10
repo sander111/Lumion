@@ -53,9 +53,9 @@
                         <div class="category-item-inner">
                             <a href="{$item.id | url}" class="category-img-link">
                                 {if $idx == '0'}
-                                    <img class="category-item-img" src="{$item['tv.img'] | phpthumbon : 'w=482&h=514&zc=1'}" alt="{$item.pagetitle}">
+                                    <img class="category-item-img lazyload" src="{$item['tv.img'] | phpthumbon : 'w=482&h=514&zc=1&q=5'}" data-src="{$item['tv.img'] | phpthumbon : 'w=482&h=514&zc=1'}" alt="{$item.pagetitle}">
                                 {else}
-                                    <img class="category-item-img" src="{$item['tv.img'] | phpthumbon : 'w=482&h=388&zc=1'}" alt="{$item.pagetitle}">
+                                    <img class="category-item-img lazyload" src="{$item['tv.img'] | phpthumbon : 'w=482&h=388&zc=1&q=5'}" data-src="{$item['tv.img'] | phpthumbon : 'w=482&h=388&zc=1'}" alt="{$item.pagetitle}">
                                 {/if}
                             </a>
                             <div class="category-item-body">
@@ -78,7 +78,7 @@
                     <div class="category-item">
                         <div class="category-item-inner">
                             <a href="{$item.id | url}" class="category-img-link">
-                                <img class="category-item-img" src="{$item['tv.img'] | phpthumbon : 'w=481&h=314&zc=1'}" alt="{$item.pagetitle}">
+                                <img class="category-item-img lazyload" src="{$item['tv.img'] | phpthumbon : 'w=481&h=314&zc=1&q=5'}" data-src="{$item['tv.img'] | phpthumbon : 'w=481&h=314&zc=1'}" alt="{$item.pagetitle}">
                             </a>
                             <div class="category-item-body">
                                 <div class="category-item-content">
@@ -112,31 +112,31 @@
                     <ul class="beautify-nav metro-nav">
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="/app/svg/dacha.svg" alt="">
+                                <img class="icon lazyload" data-src="/app/svg/dacha.svg" alt="">
                                 <span class="metro-nav-title white-text">Дача</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="/app/svg/cottage.svg" alt="">
+                                <img class="icon lazyload" data-src="/app/svg/cottage.svg" alt="">
                                 <span class="metro-nav-title white-text">Коттедж</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="/app/svg/vacation-home.svg" alt="">
+                                <img class="icon lazyload" data-src="/app/svg/vacation-home.svg" alt="">
                                 <span class="metro-nav-title white-text">Загородный дом</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="/app/svg/terrace.svg" alt="">
+                                <img class="icon lazyload" data-src="/app/svg/terrace.svg" alt="">
                                 <span class="metro-nav-title white-text">Терасса</span>
                             </span>
                         </li>
                         <li class="white-text">
                             <span class="metro-nav-item-inner">
-                                <img class="icon" src="/app/svg/private-house.svg" alt="">
+                                <img class="icon lazyload" data-src="/app/svg/private-house.svg" alt="">
                                 <span class="metro-nav-title">Частный дом</span>
                             </span>
                         </li>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="col s7 beautify-right">
                     <div class="img-layout">
-                        <img src="/uploads/image-3-1.jpg" alt="">
+                        <img class="lazyload" src="{'/uploads/image-3-1.jpg' | phpthumbon : 'w=640&h=680&zc=1&q=5'}" data-src="/uploads/image-3-1.jpg" alt="">
                         <a class="btn btn-primary primary link-btn" href="">Перейти в каталог</a>
                     </div>
                 </div>
@@ -172,6 +172,7 @@
             <div class="uibox-row">
                 <div class="col s7 products-home-left">
                     <h2>{'catalog_title' | lexicon}</h2>
+                    <br>
                     <ul class="products-home-list">
                         {$products}
                     </ul>
@@ -179,7 +180,7 @@
                 </div>
                 <div class="col s5 products-home-right">
                     <div class="section-img-wrap">
-                        <img class="section-img" src="/uploads/lamps.jpg" alt="">
+                        <img class="section-img lazyload" src="{'/uploads/hall.jpg' | phpthumbon : 'w=500&h=547&zc=1&q=5'}" data-src="/uploads/lamps.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -191,7 +192,7 @@
         <div class="uibox-row">
             <div class="col s5 section-col section-col-left">
                 <div class="section-img-wrap">
-                    <img class="section-img" src="/uploads/hall.jpg" alt="">
+                    <img class="section-img lazyload" src="{'/uploads/hall.jpg' | phpthumbon : 'w=602&h=614&zc=1&q=5'}" data-src="/uploads/hall.jpg" alt="">
                 </div>
             </div>
             <div class="col s7 section-col section-col-right gd-dark">
@@ -231,11 +232,12 @@
         'snippet' => 'pdoResources',
         'parents' => 20
         'limit' => 4,
-        'includeTVs' => 'img',
+        'includeTVs' => 'img,place',
         'sortby' => 'menuindex',
         'sortdir' => 'DESC',
         'tpl' => '@FILE chunks/workItemHome.html'
     ])}
+
     {if $works ?}
     <div class="section works">
         <div class="uibox-container">

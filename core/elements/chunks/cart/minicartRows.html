@@ -13,7 +13,8 @@
             {/if}
         </div>
         <div class="center">
-            <img src="/app/svg/cart.svg" alt="">
+            <!-- <img class="lazyload" data-src="/app/svg/cart.svg" alt=""> -->
+            <i class="empty-minicart-icon icon icon-minicart"></i>
         </div>
         <br>
         <br>
@@ -33,7 +34,7 @@
                         <div class="col s2 cart-col-img">
                             {if $item.img?}
                                 <a href="{$item.id | url}">
-                                    <img src="{$item.img}" alt="{$item.pagetitle}">
+                                    <img class="lazyload" src="" data-src="{$item.img}" alt="{$item.pagetitle}">
                                 </a>
                             {else}
                                 <a href="{$item.id | url}">

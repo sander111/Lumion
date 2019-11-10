@@ -1,7 +1,15 @@
 {extends 'file:tpl/base.html'}
 {block 'main'}
 
-{include 'file:chunks/main/simpleBanner.html'}
+{if $_modx->resource.longtitle ? }
+    {include 'file:chunks/main/simpleBanner.html'}
+{else}
+    <div class="main-page">
+        <div class="uibox-container">
+            {include 'file:chunks/main/crumbs.html'}
+        </div>
+    </div>
+{/if}
 
 <main class="main">
     {set $content = json_decode($_modx->resource.contentEditor, true)}

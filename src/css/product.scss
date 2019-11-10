@@ -1,6 +1,17 @@
 .product-left {
     width: 36%;
 }
+.gallery-main,
+.gallery-nav {
+    display: flex;
+    overflow: hidden;
+}
+.gallery-main .gallery-item {
+    min-width: 100%;
+}
+.gallery-nav .gallery-nav-item {
+    min-width: 33%;
+}
 .video-slide {
     display: block;
     position: relative;

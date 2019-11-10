@@ -10,6 +10,7 @@
     z-index: 20;
 }
 .logo {
+    max-width: 100%;
     width: 210px;
     display: block;
     transition: all .3s ease 0s;
@@ -17,6 +18,7 @@
 .page-header.sticky {
     background: #121925;
     box-shadow: 0 3px 6px rgba(0,0,0,.45);
+    z-index: 10000;
 }
 .page-header.sticky .logo {
     width: 100px;

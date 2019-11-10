@@ -1,0 +1,44 @@
+<div id="npmap-window">
+    <div class="np-map">
+        <link rel="stylesheet" href="/assets/components/npmap/css/web/npmap.css?v=1.12">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+
+        <div class="col s12 uibox-row np-map-header">
+            <div class="col s2 form-group">
+                <label class="form-label">Область</label>
+                <select name="np_areas" class="np-map-select" data-method="getCities"></select>
+            </div>
+            <div class="col s2 form-group">
+                <label class="form-label">Населенный пункт</label>
+                <select name="np_cities" class="np-map-select" data-method="getWarehouses"></select>
+            </div>
+        </div>
+        <div class="uibox-row">
+            <div class="np-map-sidebar">
+                <div class="warehouses-search">
+                    <div class="uibox-row form-group">
+                        <button class="btn np-map-search-btn">
+                            <i class="icon icon-search"></i>
+                        </button>
+                        <input type="text" name="np_search">
+                        <button class="btn close clear-map-filter" type="submit" name="ms2_action" value="cart/remove" title="Удалить">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.28323 7.49955L14.6313 2.15149C15.1236 1.65919 15.1236 0.861028 14.6313 0.368804C14.139 -0.123492 13.3409 -0.123492 12.8486 0.368804L7.50047 5.71693L2.15234 0.368733C1.66005 -0.123562 0.861952 -0.123562 0.369657 0.368733C-0.122568 0.861028 -0.122568 1.65919 0.369657 2.15142L5.71778 7.49948L0.369657 12.8476C-0.122568 13.3399 -0.122568 14.1381 0.369657 14.6303C0.861952 15.1226 1.66005 15.1226 2.15234 14.6303L7.50047 9.28216L12.8486 14.6303C13.3408 15.1226 14.139 15.1226 14.6313 14.6303C15.1236 14.138 15.1236 13.3399 14.6313 12.8476L9.28323 7.49955Z" fill="#B0B0B0"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <rect width="15" height="15" fill="white"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="np-warehouses-list"></div>
+            </div>
+            <div id="npmap"></div>
+        </div>        
+    </div>
+</div>

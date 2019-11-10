@@ -1,0 +1,39 @@
+<div class="section fullscreen" style="padding: 0;margin:0;">
+    <div class="uibox-row">
+        <div class="col s5 section-col section-col-left">
+            <div class="section-img-wrap">
+                <img class="section-img lazyload" src="" data-src="/uploads/hall.jpg" alt="">
+            </div>
+        </div>
+        <div class="col s7 section-col section-col-right gd-dark">
+            <div class="section-form">
+                <h2 class="white-text">{'wholesale_buyer_form_title' | lexicon}</h2>
+                <div class="form-layout">
+                    <form class="form dealers-form" action="send" method="POST">
+                        <input type="hidden" name="form_id" value="1">
+                        <input type="hidden" name="id" value="{$_modx->resource.id}">
+                        <div class="form-group fly">
+                            <input class="input-text" type="text" name="fullname" placeholder="Ваше имя">
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" class="input-text" placeholder="{'form_label_name' | lexicon}">
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" class="input-text empty-field" placeholder="+380 (__) ___-__-__">
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="msg" class="textarea" cols="30" rows="10" placeholder="{'form_label_textarea_order' | lexicon}"></textarea>
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary primary red-light">{'send_btn' | lexicon}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

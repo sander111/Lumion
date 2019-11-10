@@ -5,9 +5,18 @@
 {block 'main'}
 <main class="main main-page">
     <div class="order-page">
+
         {$_modx->runSnippet('!msGetOrder', ['tpl' => '@FILE chunks/cart/getOrder.html'])}
         
         {$_modx->runSnippet('!msOrder', ['tpl' => '@FILE chunks/cart/orderForm.html'])}
     </div>
 </main>
+{/block}
+
+{block 'scripts'}
+{parent}
+
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script src="/assets/components/npmap/js/web/npmap.js"></script>
+
 {/block}

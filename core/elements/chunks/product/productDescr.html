@@ -9,14 +9,16 @@
         <input type="number" name="count" id="product_price" class="hidden" value="1"/>
         <div class="product-descr-row uibox-row product-row-first">
             <div class="product-col">
-                <div class="options led">
-                    <div class="options-title">{'product_option_lamps_title' | lexicon}</div>
-                    {$_modx->runSnippet('!getProductOptions', [
-                        'onlyOption' => 'lamps_count',
-                        'tpl' => '@FILE chunks/product/productOptions.html',
-                        'constraintOptions' => ['operating_mode','colors', 'wire_color'],
-                    ])}
-                </div>
+                {if $_modx->resource.lamps_count ?}
+                    <div class="options led">
+                        <div class="options-title">{'product_option_lamps_title' | lexicon}</div>
+                        {$_modx->runSnippet('!getProductOptions', [
+                            'onlyOption' => 'lamps_count',
+                            'tpl' => '@FILE chunks/product/productOptions.html',
+                            'constraintOptions' => ['operating_mode','colors', 'wire_color'],
+                        ])}
+                    </div>
+                {/if}
             </div>
             <div class="product-col">
                 <div class="stock-info">
@@ -38,6 +40,7 @@
         </div>
         <div class="product-descr-row uibox-row">
             <div class="product-col">
+                {if $_modx->resource.colors ?}
                 <div class="options colors">
                     <div class="options-title">{'product_option_colors_title' | lexicon}</div>
                     {$_modx->runSnippet('!getProductOptions', [
@@ -46,8 +49,10 @@
                         'constraintOptions' => ['operating_mode','lamps_count', 'wire_color'],
                     ])}
                 </div>
+                {/if}
             </div>
             <div class="product-col">
+                {if $_modx->resource.wire_color ?}
                 <div class="options led">
                     <div class="options-title">{'product_option_wire_colors_title' | lexicon}</div>
                     {$_modx->runSnippet('!getProductOptions', [
@@ -56,18 +61,21 @@
                         'constraintOptions' => ['operating_mode','colors', 'lamps_count'],
                     ])}
                 </div>
+                {/if}
             </div>
         </div>
         <div class="product-descr-row uibox-row">
             <div class="product-col">
-                <div class="options led">
-                    <div class="options-title">{'product_option_operating_mode_title' | lexicon}</div>
-                        {$_modx->runSnippet('!getProductOptions', [
-                            'onlyOption' => 'operating_mode',
-                            'tpl' => '@FILE chunks/product/productOptions.html',
-                            'constraintOptions' => ['wire_color','colors', 'lamps_count'],
-                        ])}
-                </div>
+                {if $_modx->resource.operating_mode ?}
+                    <div class="options led">
+                        <div class="options-title">{'product_option_operating_mode_title' | lexicon}</div>
+                            {$_modx->runSnippet('!getProductOptions', [
+                                'onlyOption' => 'operating_mode',
+                                'tpl' => '@FILE chunks/product/productOptions.html',
+                                'constraintOptions' => ['wire_color','colors', 'lamps_count'],
+                            ])}
+                    </div>
+                {/if}
             </div>
         </div>
         <div class="product-descr-row uibox-row product-actions-row">

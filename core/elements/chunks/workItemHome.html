@@ -1,12 +1,13 @@
-<div class="col s3 work-item card">
+<div class="col s3 work-item card" data-id="{$id}">
     <div class="work-item-inner">
-        <a class="work-item-link" href="{$id | url}">
-            <img class="work-item-img" src="{$_pls['tv.img'] | phpthumbon : 'w=337&h=311&zc=1'}" alt="{$pagetitle}">
+        <a class="work-item-link" href="{$id | url}" data-id="{$id}">
+            <img class="work-item-img lazyload" src="{$_pls['tv.img'] | phpthumbon : 'w=337&h=311&zc=5'}" data-src="{$_pls['tv.img'] | phpthumbon : 'w=337&h=311&zc=1'}" alt="{$pagetitle}">
         </a>
         <div class="work-item-content">
-            <a class="work-item-title" href="{$id | url}">{$pagetitle}</a>
-            <div class="work-item-intro">{$introtext | limit : 55}</div>
-            <a class="btn btn-outlined link-btn" href="{$id | url}">{'view_btn_title' | lexicon}</a>
+            <div class="work-item-place">{$_pls['tv.place']}</div>
+            <a class="work-item-title" href="{$id | url}" data-id="{$id}">{$pagetitle}</a>
+            <!-- <div class="work-item-intro">{$introtext | limit : 55}</div>
+            <a class="btn btn-outlined link-btn" href="{$id | url}">{'view_btn_title' | lexicon}</a> -->
         </div>
     </div>
 </div>

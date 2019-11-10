@@ -3,14 +3,14 @@
         <div class="uibox-row footer-row">
             <div class="col s3 footer-col footer-left">
                 <a class="footer-logo-link" href="{$_modx->config.site_url}">
-                    <img class="footer-logo" src="/app/img/logo.png" alt="{$_modx->config.site_name}">
+                    <img class="footer-logo lazyload" src="" data-src="/app/img/logo.png" alt="{$_modx->config.site_name}">
                 </a>
             </div>
             <div class="col s3 footer-col footer-center-left">
                 {$_modx->runSnippet('Localizator', [
                     'snippet' => 'pdoMenu',
                     'parents' => 0,
-                    'resources' => '3,4,5',
+                    'resources' => '3,4,5,27',
                     'level' => 1,
                     'tplOuter' => '@INLINE <ul class="footer-list footer-nav">{$wrapper}</ul>',
                     'tpl' => '@INLINE <li><a href="{$link}">{$menutitle}</a></li>'
