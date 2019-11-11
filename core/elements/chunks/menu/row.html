@@ -1,6 +1,6 @@
 <div class="col s3 menu-col">
     <div class="menu-col-title">
-        <a href="{$link}">{$menutitle}</a>
+        <a href="{if $id == '2'}{10 | url}{else}{$link}{/if}">{$menutitle}</a>
     </div>
     {$wrapper}
     {if $id == 5}

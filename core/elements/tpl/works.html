@@ -9,6 +9,7 @@
         {include "file:chunks/content/{$block.MIGX_formname}"}
     {/foreach}
 
+    {$_modx->setPlaceholder('btnMore', $btnMore)}
     <div id="pdopage" class="works-list-metro">
         <div class="rows">
             {$_modx->runSnippet('!pdoPage', [
@@ -20,7 +21,9 @@
                 'sortby' => 'menuindex',
                 'sortdir' => 'DESC',
                 'tpl' => '@FILE chunks/workItem.html',
-                'ajaxTplMore' => '@INLINE <div class="center clr"><button class="btn btn-outlined btn-more"></button></div>'
+                'ajaxTplMore' => '@INLINE <div class="center clr"><button class="btn btn-outlined btn-more">[[%pdopage_more]]</button></div>',
+                'frontend_js' => '',
+                'frontend_css' => ''
             ])}
             <div class="clr"></div>
         </div>

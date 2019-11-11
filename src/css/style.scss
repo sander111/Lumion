@@ -316,6 +316,11 @@ p {
 @import './pagination.scss';
 @import './loader.scss';
 
+// MODX Components
+@import '../../assets/components/minishop2/css/web/default.css';
+@import '../../assets/components/pdotools/css/pdopage.css';
+@import '../../assets/components/msearch2/css/web/default.css';
+
 .menu-phones-mob {
     display: none;
 }
@@ -720,3 +725,17 @@ p {
     opacity: 1;
     visibility: visible;
 }
+.jGrowl {
+    z-index: 999999;
+    max-width: 250px;
+}
+.jGrowl .alert {
+    max-width: 250px;
+    padding: 10px;
+    line-height: 1;
+    right: 10px !important;
+    position: fixed;
+    left: auto !important;
+}
+
+@import './responsive.css';

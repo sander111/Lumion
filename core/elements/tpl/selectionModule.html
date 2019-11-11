@@ -1,0 +1,535 @@
+{extends 'file:tpl/base.html'}
+{block 'main'}
+<link rel="stylesheet" href="/app/css/jquery.classyscroll.css">
+<style>
+    .header-block-dark .simple-banner {
+        background: #262626;
+        margin: 0;
+    }
+    .header-block-dark .simple-banner-img-wrap {
+        width: 100%;
+    }
+    .header-block-dark .simple-banner-img-wrap::before,
+    .header-block-dark .simple-banner-img-wrap::after {
+        display: none;
+    }
+
+    .main.dark-main {
+        background: #181818;
+        color: #fff;
+    }
+
+    .visual-module-nav {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    .visual-module-nav-item {
+        font-family: "Avenir Next Cyr Bold", Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        padding: 36px;
+        list-style: none;
+        background: #424242;
+        box-shadow: -2px -1px 6px rgba(0, 0, 0, 0.34);
+        transition: all .3s ease 0s;
+    }
+    .visual-module-nav-item.active,
+    .visual-module-nav-item:hover {
+        background: #9F202F;
+    }
+    .visual-module-body {
+        padding: 60px 0;
+    }
+    .visual-module-title {
+        font-family: "Avenir Next Cyr Bold", Arial, Helvetica, sans-serif;
+        font-size: 28px;
+        line-height: 1;
+        margin: 20px 0;
+    }
+    .visual-module-subtitle {
+        font-family: "Avenir Next Cyr Bold", Arial, Helvetica, sans-serif;
+        font-size: 23px;
+        line-height: 1;
+        margin: 0 0 20px 0;
+    }
+    .project-type-section .metro-nav {
+        max-width: inherit;
+    }
+    .visual-section {
+        margin: 52px 0;
+    }
+    .visual-img {
+        width: 100%;
+    }
+    .visual-section-row {
+        margin: 0 0 0 -2%;
+        width: 104%;
+        align-items: flex-start;
+    }
+    .visual-section-col {
+        padding: 0 2%;
+    }
+    .v-params-list {
+        max-height: 494px;
+        margin: 40px 0 0 0;
+        overflow: hidden;
+    }
+    .scrollbar-path-vertical {
+        width: 7px;
+        right: 40px;
+        background: #3E3E3E;
+    }
+    .scrollbar-handle {
+        background: #747474;
+    }
+    .v-params-row {
+        display: flex;
+        align-items: center;
+        color: #484848;
+        transition: all .3s ease 0s;
+        margin: 20px 0;
+    }
+    .v-params-row.active {
+        color: #CD293D;
+    }
+    .v-params-row.active .v-param-option,
+    .v-params-row.active .v-param-icon {
+        border-color: #CD293D;
+    }
+    .v-params-row.active .v-param-icon {
+        filter: brightness(0.7) sepia(1) hue-rotate(-60deg) saturate(7.8);
+    }
+    .v-param-icon {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        margin: 0 15px 0 0;
+        border: 1px solid #484848;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    .v-param-name {
+        cursor: pointer;
+        font-family: "Avenir Next Cyr Medium", Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        margin: 0 20px 0 15px;
+        width: 145px;
+    }
+    .v-param-option-wrap {
+        display: flex;
+        align-items: center;
+        margin: 0 15px;
+        cursor: pointer;
+    }
+    .v-param-option-wrap .icon {
+        transform: rotate(90deg);
+        font-size: 1.8rem;
+        margin: 3px 0 0 0;
+        color: #9E9E9E;
+    }
+    .v-param-option {
+        position: relative;
+        border: 1px solid #484848;
+        padding: 0 16px;
+        height: 50px;
+        line-height: 46px;
+        text-align: center;
+    }
+    .v-param-color .v-param-option {
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .v-param-color .color {
+        margin: -8px 0 0 0;
+    }
+    .v-module-actions-row {
+        margin: 40px 0 40px -2%;
+        width: 104%;
+    }
+    .v-module-actions-col {
+        padding: 0 2%;
+        position: relative;
+    }
+    .v-module-actions-descr {
+        display: inline-block;
+        font-size: 20px;
+        margin: 10px 0 0 0;
+        font-family: "Avenir Next Cyr Demi", Arial, Helvetica, sans-serif;
+    }
+    .btn-primary.white-btn {
+        background: #fff !important;
+        color: #CD293D !important;
+    }
+    .v-module-actions-label {
+        position: absolute;
+        top: -70px;
+        left: 0;
+    }
+    .v-module-actions-label span {
+        display: inline-block;
+        width: 200px;
+    }
+
+
+    .modal-form {
+        margin: auto;
+    }
+    .modal-form .inline-form {
+        flex-wrap: wrap;
+    }
+    .modal-form .inline-form .form-group {
+        margin: 15px 20px;
+        width: calc(50% - 40px);
+    }
+    .modal-form .form-group:last-child {
+        width: 100%;
+        text-align: center;
+    }
+    .modal-form .btn.btn-primary {
+        color: #484848 !important;
+    }
+    .modal-form .btn.btn-primary:hover {
+        background: #CD293D !important;
+        color: #fff !important;
+    }
+</style>
+
+<div class="header-block-dark">
+    <div class="simple-banner">
+        <div class="simple-banner-inner">
+            <div class="simple-banner-descr">
+                <div class="uibox-container">
+                    <div class="uibox-row">
+                        <div class="col s5 banner-left">
+                            <div class="banner-crumbs">
+                                {include 'file:chunks/main/crumbs.html'}
+                            </div>
+                            <h1 class="banner-title">{$_modx->resource.longtitle ? $_modx->resource.longtitle : $_modx->resource.pagetitle}</h1>
+                            <div class="banner-text white-text">
+                                <p>{$_modx->resource.introtext}</p>
+                            </div>
+                        </div>
+                        <div class="col s7 banner-right">
+                            {if $_modx->resource.img ?}
+                                <div class="simple-banner-img-wrap">
+                                    <img class="simple-banner-img" src="{$_modx->resource.img | phpthumbon : 'w=685&h=437&zc=1'}" alt="{$_modx->resource.pagetitle}">
+                                </div>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="main dark-main">
+
+    <ul class="visual-module-nav">
+        <li class="visual-module-nav-item active">Направление</li>
+        <li class="visual-module-nav-item">Вид гирлянды</li>
+        <li class="visual-module-nav-item">Готовый проект</li>
+    </ul>
+
+    <div class="visual-module-body">
+        <div class="uibox-container">
+            <div class="project-type-section">
+                <div class="visual-module-title">Выберите ваш проект</div>
+                <ul class="metro-nav">
+                    <li class="white-text active">
+                        <span class="metro-nav-item-inner">
+                            <img class="icon lazyload" data-src="/app/svg/dacha.svg" alt="">
+                            <span class="metro-nav-title white-text">Дача</span>
+                        </span>
+                    </li>
+                    <li class="white-text">
+                        <span class="metro-nav-item-inner">
+                            <img class="icon lazyload" data-src="/app/svg/cottage.svg" alt="">
+                            <span class="metro-nav-title white-text">Коттедж</span>
+                        </span>
+                    </li>
+                    <li class="white-text">
+                        <span class="metro-nav-item-inner">
+                            <img class="icon lazyload" data-src="/app/svg/vacation-home.svg" alt="">
+                            <span class="metro-nav-title white-text">Загородный дом</span>
+                        </span>
+                    </li>
+                    <li class="white-text">
+                        <span class="metro-nav-item-inner">
+                            <img class="icon lazyload" data-src="/app/svg/terrace.svg" alt="">
+                            <span class="metro-nav-title white-text">Терасса</span>
+                        </span>
+                    </li>
+                    <li class="white-text">
+                        <span class="metro-nav-item-inner">
+                            <img class="icon lazyload" data-src="/app/svg/private-house.svg" alt="">
+                            <span class="metro-nav-title">Частный дом</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="visual-section">
+                <div class="visual-module-title">Загородний коттедж</div>
+                <div class="uibox-row visual-section-row">
+                    <div class="col s6 visual-img-wrap visual-section-col">
+                        <img class="visual-img" src="/uploads/visual.jpg" alt="">
+                    </div>
+                    <div class="col s6 params-wrap visual-section-col">
+                        <div class="visual-module-subtitle">Вид гирлянды</div>
+                        
+                        <div class="v-params-list">
+                            <div class="v-params-row active">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">String light (нить)</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Smart string light</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Magic string light</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Icicle (Бахрома)</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Curtain (Штора)</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Led galaxy bulb string</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Belt light string</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Belt light string</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                            <div class="v-params-row">
+                                <div class="v-param-icon" style="background: url('/uploads/figures/figure1.png');"></div>
+                                <div class="v-param-name">Belt light string</div>
+                                <div class="v-param-option-wrap v-param-color">
+                                    <div class="v-param-option">
+                                        <div class="color" style="background-color: #ffdd2d;">
+                                            <div class="color-inner" style="background-color: #ffdd2d;"></div>
+                                        </div>
+                                    </div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                                <div class="v-param-option-wrap v-param-operating-mode">
+                                    <div class="v-param-option">Static</div>
+                                    <i class="icon icon-right-open-mini"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary primary small">Завершить проект</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual-module-actions">
+                <div class="visual-module-title">Заказывайте! Мы готовы освещать:)</div>
+                <div class="uibox-row v-module-actions-row">
+                    <div class="col s4 v-module-actions-col">
+                        <button class="col s12 btn btn-primary primary" data-fancybox="" data-src="#get-spec">Получить спецификацию на почту</button>
+                        <span class="v-module-actions-descr">+ промокод</span>
+                    </div>
+                    <div class="col s4 v-module-actions-col">
+                        <button class="col s12 btn btn-primary primary">Просчитать еще</button>
+                    </div>
+                    <div class="col s4 v-module-actions-col">
+                        <div class="uibox-row v-module-actions-label">
+                            <span>Но лучше дополнительно проконсультируйтесь</span>
+                            <svg width="65" height="70" viewBox="0 0 65 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.14648 16.1749C18.8004 12.2432 49.0562 19.0558 54.8485 54.4881" stroke="white"/>
+                                <path d="M61.1797 49.3746C58.8405 49.3948 54.9723 52.492 54.7218 56.4841" stroke="white"/>
+                                <path d="M47.0176 50.209C49.3068 49.7278 53.7486 51.9247 54.8482 55.7706" stroke="white"/>
+                            </svg>
+
+                        </div>
+                        <button class="col s12 btn btn-primary primary white-btn" data-fancybox="" data-src="#get-consult">Получить консультацию</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+<div id="get-spec" class="modal modal-form-dark alert-dark alert-modal-body">
+    <div class="center">
+        <div class="col s8 alert-modal-title">Оставьте контакты и мы отправим вам спецификацию + промокод на почту</div>
+    </div>
+    <div class="col s8 modal-form">
+        <form class="inline-form uibox-row form lead-form" action="send" method="POST">
+            <input type="hidden" name="form_id" value="3">
+            <input type="hidden" name="id" value="{$_modx->resource.id}">
+            <div class="form-group fly">
+                <input class="input-text" type="text" name="fullname" placeholder="Ваше имя">
+                <div class="error-msg"></div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="input-text underlined white-text" name="name" placeholder="{'form_label_name' | lexicon}">
+                <div class="error-msg"></div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="input-text underlined white-text empty-field" name="email" placeholder="{'form_label_email' | lexicon}">
+                <div class="error-msg"></div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary invert send-btn">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="get-consult" class="modal modal-form-dark alert-dark alert-modal-body">
+        <div class="center">
+            <div class="col s8 alert-modal-title">Оставьте контакты и мы вам перезвоним в течении 15 минут</div>
+        </div>
+        <div class="col s8 modal-form">
+            <form class="inline-form uibox-row form lead-form" action="send" method="POST">
+                <input type="hidden" name="form_id" value="3">
+                <input type="hidden" name="id" value="{$_modx->resource.id}">
+                <div class="form-group fly">
+                    <input class="input-text" type="text" name="fullname" placeholder="Ваше имя">
+                    <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="input-text underlined white-text" name="name" placeholder="{'form_label_name' | lexicon}">
+                    <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="input-text underlined white-text empty-field" name="phone" placeholder="+380 (__) ___-__-__">
+                    <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary invert send-btn">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{/block}
+
+{block 'scripts'}
+{parent}
+<script src="/app/jquery.classyscroll.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.v-params-list').ClassyScroll()
+    })
+</script>
+{/block}
